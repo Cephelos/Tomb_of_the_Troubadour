@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+
+/// HOW TO POKEMON GO TO THE POLLS:
+/// 1. Have the VoteGenerator's GameObject selected in the editor
+/// 2. Name your poll using the field under '----FOR TESTING----' in the inspector
+/// 3. Add options to the poll
+/// 3. ????
+/// 4. Profit
+
+
 public class VoteGenerator : MonoBehaviour
 {
     public Poll currentPoll;
@@ -63,7 +72,7 @@ public class VoteGenerator : MonoBehaviour
         PublishVoteResult();
     }
 
-    public void PublishVoteResult() // IRL, the GameController is going to handle this
+    public void PublishVoteResult() // IRL, the GameController is going to handle this - this is just used for testing
     {
         int voteResult = GetVoteResult();
         if (voteResult >= 0)
@@ -91,13 +100,14 @@ public class VoteGenerator : MonoBehaviour
 
 #if UNITY_EDITOR
 [CustomEditor(typeof(VoteGenerator))]
-public class VoteGeneratorEditor : Editor // Lets you generate polls using the inspector GUI
+public class VoteGeneratorEditor : Editor // Lets you generate polls using the inspector GUI (for testing purposes)
 {
     public Poll pollUnderConstruction  = new Poll("New Poll", new string[0]);
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
         VoteGenerator vote = target as VoteGenerator;
+        GUILayout.Label("----FOR TESTING----");
         if(pollUnderConstruction != null)
         {
             GUILayout.BeginHorizontal();
@@ -111,12 +121,13 @@ public class VoteGeneratorEditor : Editor // Lets you generate polls using the i
                 GUILayout.BeginHorizontal();
                 GUILayout.Label("Option " + (i+1) + ":");
                 option.optionName = GUILayout.TextField(option.optionName);
-                GUILayout.EndHorizontal();
-                if(GUILayout.Button("Remove Option"))
+                if (GUILayout.Button("Remove Option"))
                 {
                     pollUnderConstruction.options.RemoveAt(i);
                     i--;
                 }
+                GUILayout.EndHorizontal();
+                
             }
             if (GUILayout.Button("Add New Option"))
                 pollUnderConstruction.options.Add(new PollOption("New Option"));
