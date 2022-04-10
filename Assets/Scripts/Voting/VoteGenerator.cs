@@ -6,6 +6,7 @@ using UnityEditor;
 public class VoteGenerator : MonoBehaviour
 {
     public Poll currentPoll;
+    public VotingPanel votePanel;
 
     public void CreateVote(string question, string[] options) // creates a poll and sets it to be the active poll; sends a warning to the console if there is already a poll active
     {
@@ -18,6 +19,7 @@ public class VoteGenerator : MonoBehaviour
             Debug.LogWarning("Creating a poll while poll " + currentPoll.question + " is already active!");
         currentPoll = poll;
         Debug.Log("Creating Poll " + currentPoll.question + "!");
+        votePanel.Initialize(poll);
     }
         
 
@@ -49,6 +51,7 @@ public class VoteGenerator : MonoBehaviour
     public void ClosePoll() // Closes the currently active poll
     {
         currentPoll = null;
+        votePanel.ClearDisplays();
     }
 
 
