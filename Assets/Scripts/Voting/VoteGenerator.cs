@@ -43,7 +43,21 @@ public class VoteGenerator : MonoBehaviour
             return 2;
     }
 
-    public int GetVoteResult() // Returns the index number of the first option that has at least one vote, or -1 if none do
+    public string GetVoteResult() // Returns the index number of the first option that has at least one vote, or -1 if none do
+    {
+        if (currentPoll == null)
+            return "";
+        else
+        {
+            PollOption selected = currentPoll.options.Find(x => x.numVotes > 0);
+            if (selected == null)
+                return "";
+            else
+                return selected.optionName;
+        }
+    }
+
+    public int GetVoteResultInt() // Returns the index number of the first option that has at least one vote, or -1 if none do
     {
         if (currentPoll == null)
             return -1;
@@ -74,7 +88,7 @@ public class VoteGenerator : MonoBehaviour
 
     public void PublishVoteResult() // IRL, the GameController is going to handle this - this is just used for testing
     {
-        int voteResult = GetVoteResult();
+        int voteResult = GetVoteResultInt();
         if (voteResult >= 0)
         {
             Debug.Log("Vote Result : " + currentPoll.options[voteResult].optionName);
