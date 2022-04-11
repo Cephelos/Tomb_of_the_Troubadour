@@ -17,12 +17,25 @@ namespace Platformer.Mechanics
         private Animator animator;
         private float jumpInput;
         private float horizontalInput;
+        
+        public int maxJumps = 2;
+        private int jumps;
+        private float jumpForce = 6f;
+        bool double_jump = true;
+        bool grapple = false;
+        bool dash = true;
+
+        public float dashSpeed = 100;
+
 
         void Awake()
         {
             playerSprite = GetComponent<SpriteRenderer>();
             rBody = GetComponent<Rigidbody2D>();
-            animator = GetComponent<Animator>();
+            //animator = GetComponent<Animator>();
+            this.GetComponent<RopeSystem>().enabled = grapple;
+
+
         }
 
         void Update()
@@ -44,19 +57,54 @@ namespace Platformer.Mechanics
 
             rBody.AddForce(antiVelocity, ForceMode2D.Force);
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                
+                if (groundCheck)
+                {
+                    //gameObject.GetComponent<Rigidbody2D>().velocity.y = 0;
+                    rBody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                    jumps = maxJumps - 1;
+                }
+                else
+                //Double Jump Capabilities
+                {
+                    if (double_jump && jumps > 0)
+                    {
+                        jumps = jumps - 1;
+                        //Vector2 vel = new Vector2(rBody.velocity.x, 0);
+                        //rBody.velocity = vel;
+                        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                    }
+                }
+            }
+
+            if (dash && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Debug.Log("WHHYYY");
+                var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+                var facingDirection = worldMousePosition - transform.position;
+                Debug.Log(facingDirection);
+
+                rBody.AddForce(new Vector2(facingDirection.x, facingDirection.y), ForceMode2D.Impulse);
+
+            }
 
 
         }
 
         void FixedUpdate()
-        {
+        {   //if (!isSwinging)
+            //{
+
+
             if (horizontalInput < 0f || horizontalInput > 0f)
             {
-                animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+                //animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
                 playerSprite.flipX = horizontalInput < 0f;
                 if (isSwinging)
                 {
-                    animator.SetBool("IsSwinging", true);
+                    //animator.SetBool("IsSwinging", true);
 
                     // 1 - Get a normalized direction vector from the player to the hook point
                     var playerToHookDirection = (ropeHook - (Vector2)transform.position).normalized;
@@ -81,7 +129,7 @@ namespace Platformer.Mechanics
                 }
                 else
                 {
-                    animator.SetBool("IsSwinging", false);
+                    //animator.SetBool("IsSwinging", false);
                     if (!isSwinging)
                     {
                         var groundForce = speed * 2f;
@@ -90,23 +138,26 @@ namespace Platformer.Mechanics
                     }
                 }
             }
-            else
-            {
-                animator.SetBool("IsSwinging", false);
-                animator.SetFloat("Speed", 0f);
-            }
+            //else
+            //{
+            //animator.SetBool("IsSwinging", false);
+            //animator.SetFloat("Speed", 0f);
+            //}
 
-            if (!isSwinging)
-            {
-                if (!groundCheck) return;
 
-                isJumping = jumpInput > 0f;
-                if (isJumping)
-                {
-                    rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
-                }
-            }
+
+
         }
+
+
+
+
+
     }
+    
 
 }
+
+
+
+
