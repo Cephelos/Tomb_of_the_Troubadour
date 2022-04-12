@@ -1,6 +1,15 @@
 {
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+>>>>>>> 280ef81d93deb27c6702d568fc002346975118d3
     "com.unity.cinemachine": {
       "version": "2.6.11",
       "depth": 0,

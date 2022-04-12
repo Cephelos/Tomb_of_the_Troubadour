@@ -7672,6 +7672,7 @@ GameObject:
   - component: {fileID: 1754240609}
   - component: {fileID: 1754240610}
   - component: {fileID: 1754240611}
+  - component: {fileID: 1754240612}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -7754,6 +7755,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   votePanel: {fileID: 1406812448}
+--- !u!114 &1754240612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378c0a89f5306d64e8ffc8a5e73b1fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1812890451
 GameObject:
   m_ObjectHideFlags: 0
@@ -8594,6 +8607,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a8173975f48d2f648aa5d13655994ee8,
         type: 3}
+    - target: {fileID: 4578823211260424079, guid: 9f5927d23abfd0c4196058fdfe580d9c,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578823211260424079, guid: 9f5927d23abfd0c4196058fdfe580d9c,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578823211260424079, guid: 9f5927d23abfd0c4196058fdfe580d9c,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578823211260424079, guid: 9f5927d23abfd0c4196058fdfe580d9c,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.54
+      objectReference: {fileID: 0}
     - target: {fileID: 4580008805989068378, guid: 9f5927d23abfd0c4196058fdfe580d9c,
         type: 3}
       propertyPath: m_Name
