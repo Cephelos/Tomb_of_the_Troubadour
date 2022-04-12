@@ -10,7 +10,7 @@ namespace Platformer.Mechanics
         public float speed = 5f;
         public float jumpSpeed = 10f;
         public bool groundCheck;
-        public bool isSwinging;
+        public bool isSwinging = false;
         private SpriteRenderer playerSprite;
         private Rigidbody2D rBody;
         private bool isJumping;
@@ -21,12 +21,16 @@ namespace Platformer.Mechanics
         public int maxJumps = 2;
         private int jumps;
         private float jumpForce = 6f;
-        bool double_jump = true;
-        bool grapple = false;
-        bool dash = true;
 
-        public float dashSpeed = 100;
+        
 
+        public float dashSpeed = 100f;
+
+
+        bool double_jump;
+        bool grapple;
+        bool dash;
+        ///float speed;
 
         void Awake()
         {
@@ -35,7 +39,11 @@ namespace Platformer.Mechanics
             //animator = GetComponent<Animator>();
             this.GetComponent<RopeSystem>().enabled = grapple;
 
-
+            PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
+            double_jump = playerSettings.double_jump;
+            grapple = playerSettings.grapple;
+            dash = playerSettings.dash;
+            speed = playerSettings.speed;
         }
 
         void Update()
@@ -81,7 +89,7 @@ namespace Platformer.Mechanics
 
             if (dash && Input.GetKeyDown(KeyCode.LeftShift))
             {
-                Debug.Log("WHHYYY");
+                ///Debug.Log("WHHYYY");
                 var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
                 var facingDirection = worldMousePosition - transform.position;
                 Debug.Log(facingDirection);
@@ -96,10 +104,11 @@ namespace Platformer.Mechanics
         void FixedUpdate()
         {   //if (!isSwinging)
             //{
-
+            
 
             if (horizontalInput < 0f || horizontalInput > 0f)
             {
+                Debug.Log("WHYYY" + speed);
                 //animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
                 playerSprite.flipX = horizontalInput < 0f;
                 if (isSwinging)
@@ -132,6 +141,7 @@ namespace Platformer.Mechanics
                     //animator.SetBool("IsSwinging", false);
                     if (!isSwinging)
                     {
+                        
                         var groundForce = speed * 2f;
                         rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0));
                         rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
