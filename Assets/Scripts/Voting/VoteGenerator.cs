@@ -79,7 +79,7 @@ public class VoteGenerator : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    public void UpdateVotes()
     {
         if(currentPoll != null)
             RecordVotesByKeyboard();

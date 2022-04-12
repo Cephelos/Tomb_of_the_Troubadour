@@ -15,7 +15,7 @@ public class Teleport : MonoBehaviour
             if (currentTeleporter != null)
             {
                 transform.position = currentTeleporter.GetComponent<Door>().GetDestination().position;
-                currentTeleporter.GetComponent<Door>().ChangeCamera();
+                currentTeleporter.GetComponent<Door>().ChangeRoom();
             }
             Debug.Log(currentTeleporter);
             
