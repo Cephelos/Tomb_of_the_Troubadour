@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 5285999629219971815}
   - component: {fileID: 3153980432372754606}
   - component: {fileID: 2462851631248562135}
+  - component: {fileID: 6358955678163443811}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -501,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8534e17a0f90604c9afd4f5c73d829f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Id: 33128e44-b52a-4648-9bc3-d53d0689ee0f
+  m_Id: 2550527a-5056-4028-a41f-23de65ac8a7a
 --- !u!251 &-2670148272907267048
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -580,3 +581,20 @@ MonoBehaviour:
   knockbackX: 5
   knockbackY: 5
   stunTime: 50
+--- !u!114 &6358955678163443811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580008805989068378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8245f60b3b546524faf264edc836ebbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  double_jump: 1
+  grapple: 0
+  dash: 0
+  speed: 5
+  maxHP: 1

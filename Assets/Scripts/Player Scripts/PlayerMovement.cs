@@ -23,7 +23,7 @@ namespace Platformer.Mechanics
         private float jumpForce = 6f;
 
         
-        public int stunTimer = 25;
+        public int stunTimer = 0;
         public float dashSpeed = 100f;
 
 
@@ -40,6 +40,7 @@ namespace Platformer.Mechanics
             this.GetComponent<RopeSystem>().enabled = grapple;
 
             PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
+
             double_jump = playerSettings.double_jump;
             grapple = playerSettings.grapple;
             dash = playerSettings.dash;
@@ -154,6 +155,10 @@ namespace Platformer.Mechanics
             //animator.SetFloat("Speed", 0f);
             //}
 
+            }
+            else 
+            {
+                stunTimer -= 1;
             }
 
 
