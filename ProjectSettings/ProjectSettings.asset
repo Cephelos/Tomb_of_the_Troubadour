@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 22
+<<<<<<< HEAD
   productGUID: 0a5bb65ca89ddf2409958de0674b06b8
+=======
+  productGUID: 7060dc3d604b9314fbdd85510f6f2f74
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +17,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< HEAD
   productName: Grapple Getaway
+=======
+  productName: Tomb of the Troubador
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -42,8 +50,13 @@ PlayerSettings:
   m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
+<<<<<<< HEAD
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
+=======
+  defaultScreenWidth: 1920
+  defaultScreenHeight: 1080
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
@@ -65,8 +78,13 @@ PlayerSettings:
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
   androidStartInFullscreen: 1
+<<<<<<< HEAD
   androidRenderOutsideSafeArea: 0
   androidUseSwappy: 0
+=======
+  androidRenderOutsideSafeArea: 1
+  androidUseSwappy: 1
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   androidBlitType: 0
   androidResizableWindow: 0
   androidDefaultWindowWidth: 1920
@@ -74,7 +92,11 @@ PlayerSettings:
   androidMinimumWindowWidth: 400
   androidMinimumWindowHeight: 300
   androidFullscreenMode: 1
+<<<<<<< HEAD
   defaultIsNativeResolution: 0
+=======
+  defaultIsNativeResolution: 1
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   macRetinaSupport: 1
   runInBackground: 0
   captureSingleScreen: 0
@@ -84,7 +106,11 @@ PlayerSettings:
   deferSystemGesturesMode: 0
   hideHomeButton: 0
   submitAnalytics: 1
+<<<<<<< HEAD
   usePlayerLog: 0
+=======
+  usePlayerLog: 1
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
   useFlipModelSwapchain: 1
@@ -99,7 +125,11 @@ PlayerSettings:
   xboxEnableFitness: 0
   visibleInBackground: 1
   allowFullscreenSwitch: 1
+<<<<<<< HEAD
   fullscreenMode: 2
+=======
+  fullscreenMode: 1
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -113,7 +143,11 @@ PlayerSettings:
   xboxOneDisableEsram: 0
   xboxOneEnableTypeOptimization: 0
   xboxOnePresentImmediateThreshold: 0
+<<<<<<< HEAD
   switchQueueCommandMemory: 0
+=======
+  switchQueueCommandMemory: 1048576
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   switchQueueControlMemory: 16384
   switchQueueComputeMemory: 262144
   switchNVNShaderPoolsGranularity: 33554432
@@ -129,17 +163,30 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   m_SupportedAspectRatios:
+<<<<<<< HEAD
     4:3: 0
     5:4: 0
     16:10: 1
     16:9: 1
     Others: 1
   bundleVersion: 2.1.0
+=======
+    4:3: 1
+    5:4: 1
+    16:10: 1
+    16:9: 1
+    Others: 1
+  bundleVersion: 1.0
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
+<<<<<<< HEAD
   xboxOneDisableKinectGpuReservation: 0
+=======
+  xboxOneDisableKinectGpuReservation: 1
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   xboxOneEnable7thCore: 1
   vrSettings:
     enable360StereoCapture: 0
@@ -153,7 +200,11 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+<<<<<<< HEAD
     Standalone: com.unity.template.platformer
+=======
+    Standalone: com.DefaultCompany.2DProject
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -232,9 +283,15 @@ PlayerSettings:
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
   shaderPrecisionModel: 0
+<<<<<<< HEAD
   clonedFromGUID: 89985c6b8386a4e28b5828b7a0a4a51b
   templatePackageId: com.unity.template.platformer@2.1.0
   templateDefaultScene: 
+=======
+  clonedFromGUID: 10ad67313f4034357812315f3c407484
+  templatePackageId: com.unity.template.2d@5.0.1
+  templateDefaultScene: Assets/Scenes/SampleScene.unity
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   useCustomMainManifest: 0
   useCustomLauncherManifest: 0
   useCustomMainGradleTemplate: 0
@@ -296,12 +353,20 @@ PlayerSettings:
     m_GraphicsJobs: 0
   - m_BuildTarget: WebGLSupport
     m_GraphicsJobs: 0
+<<<<<<< HEAD
   m_BuildTargetGraphicsJobMode:
   - m_BuildTarget: PS4Player
     m_GraphicsJobMode: 0
   - m_BuildTarget: XboxOnePlayer
     m_GraphicsJobMode: 0
   m_BuildTargetGraphicsAPIs:
+=======
+  m_BuildTargetGraphicsJobMode: []
+  m_BuildTargetGraphicsAPIs:
+  - m_BuildTarget: AndroidPlayer
+    m_APIs: 150000000b000000
+    m_Automatic: 0
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
     m_Automatic: 1
@@ -448,7 +513,11 @@ PlayerSettings:
   switchDataLossConfirmation: 0
   switchUserAccountLockEnabled: 0
   switchSystemResourceMemory: 16777216
+<<<<<<< HEAD
   switchSupportedNpadStyles: 6
+=======
+  switchSupportedNpadStyles: 22
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   switchNativeFsCacheSize: 32
   switchIsHoldTypeHorizontal: 0
   switchSupportedNpadCount: 8
@@ -508,7 +577,11 @@ PlayerSettings:
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
   playerPrefsMaxSize: 32768
+<<<<<<< HEAD
   ps4Passcode: 5PN2qmWqBlQ9wQj99nsQzldVI5ZuGXbE
+=======
+  ps4Passcode: bi9UOuSpM2Tlh01vOzwvSikHFswuzleh
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -548,7 +621,11 @@ PlayerSettings:
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
+<<<<<<< HEAD
   webGLMemorySize: 256
+=======
+  webGLMemorySize: 32
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   webGLExceptionSupport: 1
   webGLNameFilesAsHashes: 0
   webGLDataCaching: 1
@@ -558,11 +635,16 @@ PlayerSettings:
   webGLTemplate: APPLICATION:Default
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
+<<<<<<< HEAD
   webGLCompressionFormat: 1
+=======
+  webGLCompressionFormat: 0
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
+<<<<<<< HEAD
   scriptingDefineSymbols:
     1: UNITY_POST_PROCESSING_STACK_V2;UNITY_TEMPLATE_PLATFORMER
     4: UNITY_POST_PROCESSING_STACK_V2
@@ -580,6 +662,9 @@ PlayerSettings:
     31: UNITY_POST_PROCESSING_STACK_V2
     32: UNITY_POST_PROCESSING_STACK_V2
     33: UNITY_POST_PROCESSING_STACK_V2
+=======
+  scriptingDefineSymbols: {}
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -593,20 +678,32 @@ PlayerSettings:
   enableRoslynAnalyzers: 1
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
+<<<<<<< HEAD
   gcIncremental: 0
+=======
+  gcIncremental: 1
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   assemblyVersionValidation: 1
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
+<<<<<<< HEAD
   metroPackageName: platformer-template
+=======
+  metroPackageName: 2D_BuiltInRenderer
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
+<<<<<<< HEAD
   metroApplicationDescription: platformer-template
+=======
+  metroApplicationDescription: 2D_BuiltInRenderer
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -618,8 +715,12 @@ PlayerSettings:
   metroDefaultTileSize: 1
   metroTileForegroundText: 2
   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
+<<<<<<< HEAD
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
     a: 1}
+=======
+  metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   metroSplashScreenUseBackgroundColor: 0
   platformCapabilities: {}
   metroTargetDeviceFamilies: {}

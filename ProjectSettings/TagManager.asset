@@ -3,19 +3,31 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - TutorialRequirement
   - Wall
   - lava
+=======
+  tags: []
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - Rope
   - Water
   - UI
   - Pivot
   - Ground
+=======
+  - 
+  - Water
+  - UI
+  - 
+  - 
+>>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
   - 
   - 
   - 
