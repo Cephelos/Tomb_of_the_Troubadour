@@ -101,7 +101,7 @@ public class VoteGenerator : MonoBehaviour
     {
         if(currentPoll != null)
             RecordVotesByKeyboard();
-        PublishVoteResult();
+       //PublishVoteResult();
     }
 
     public void PublishVoteResult() // IRL, the GameController is going to handle this - this is just used for testing
