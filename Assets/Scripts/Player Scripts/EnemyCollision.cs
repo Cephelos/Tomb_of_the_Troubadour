@@ -18,7 +18,7 @@ public class EnemyCollision : MonoBehaviour
 
     [SerializeField] private float knockbackX = 5;
     [SerializeField] private float knockbackY = 5;
-    [SerializeField] private int stunTime= 50;
+    [SerializeField] private float stunTime= 0.50f;
     void Awake(){
         rBody = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();

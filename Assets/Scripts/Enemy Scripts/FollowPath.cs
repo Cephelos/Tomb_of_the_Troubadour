@@ -10,7 +10,7 @@ public class FollowPath : MonoBehaviour
     [SerializeField] private Vector3[] positions;
 
 
-    private int index;
+    [SerializeField] private int index;
 
 
 
