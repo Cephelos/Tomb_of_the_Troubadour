@@ -234,15 +234,9 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-<<<<<<< HEAD
-    positiveButton: joystick button 0
-    altNegativeButton: 
-    altPositiveButton: joystick button 16
-=======
     positiveButton: joystick button 3
     altNegativeButton: 
     altPositiveButton: 
->>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -300,15 +294,6 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-<<<<<<< HEAD
-    m_Name: Menu
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: escape
-    altNegativeButton: 
-    altPositiveButton: joystick button 7
-=======
     m_Name: Enable Debug Button 1
     descriptiveName: 
     descriptiveNegativeName: 
@@ -444,7 +429,6 @@ InputManager:
     positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
->>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -453,8 +437,6 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
-<<<<<<< HEAD
-=======
   - serializedVersion: 3
     m_Name: Debug Vertical
     descriptiveName: 
@@ -503,4 +485,3 @@ InputManager:
     type: 2
     axis: 5
     joyNum: 0
->>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
