@@ -31,7 +31,7 @@ public class RoomManager : MonoBehaviour
             spawnEnemies.Spawn(intensity);
     }
 
-    public void RaiseLava(float intensity) 
+    public void RaiseLava() 
     {
         raiseLava.moveLava = true;
     }
@@ -42,8 +42,5 @@ public class RoomManager : MonoBehaviour
         spawnEnemies.ResetEnemies();
     }
 
-    public bool AllEnemiesDead()
-    {
-        return spawnEnemies.activeEnemies.Count == 0;
-    }
+
 }

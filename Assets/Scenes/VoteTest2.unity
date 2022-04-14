@@ -596,8 +596,8 @@ GameObject:
   m_Component:
   - component: {fileID: 101561263}
   - component: {fileID: 101561266}
-  - component: {fileID: 101561265}
   - component: {fileID: 101561264}
+  - component: {fileID: 101561265}
   m_Layer: 2
   m_Name: Weapon
   m_TagString: Untagged
@@ -631,21 +631,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c69622e66d3c34dbcce43f1c3fca2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
+  dmg: 1
   attackDuriation: 0.5
---- !u!65 &101561265
-BoxCollider:
+  timeSinceAttack: 0
+--- !u!61 &101561265
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101561262}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.02620411}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3.1417446}
+  m_EdgeRadius: 0
 --- !u!212 &101561266
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2297,7 +2311,6 @@ MonoBehaviour:
   removePlatforms: {fileID: 1231240754}
   spawnEnemies: {fileID: 1883283659}
   raiseLava: {fileID: 554793548}
-
 --- !u!1 &637530338
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,6 +3840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removePlatforms: {fileID: 1861620520}
   spawnEnemies: {fileID: 789879054}
+  raiseLava: {fileID: 0}
 --- !u!1 &1609201583
 GameObject:
   m_ObjectHideFlags: 0
@@ -5374,6 +5388,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_GravityScale
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578823211260424079, guid: 9f5927d23abfd0c4196058fdfe580d9c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.5833244
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578823211260424079, guid: 9f5927d23abfd0c4196058fdfe580d9c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.4355412
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578823211260424079, guid: 9f5927d23abfd0c4196058fdfe580d9c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.018205643
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578823211260424079, guid: 9f5927d23abfd0c4196058fdfe580d9c,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.018204689
       objectReference: {fileID: 0}
     - target: {fileID: 4580008805989068378, guid: 9f5927d23abfd0c4196058fdfe580d9c,
         type: 3}

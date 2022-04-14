@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
     public float dmg;
     private bool canDmg;
     public float attackDuriation;
-    private float timeSinceAttack;
+    [SerializeField] private float timeSinceAttack;
 
     void Update()
     {
@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
             Debug.Log("damage");
             ///gameObject bg = other.gameObject;
 
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Enemy>().Destruct();
             canDmg = false;
 
         }
