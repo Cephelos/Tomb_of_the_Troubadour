@@ -3,59 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags:
   - TutorialRequirement
   - Wall
-<<<<<<< HEAD
   - lava
-=======
-  tags: []
->>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
-=======
   - Teleporter
->>>>>>> 280ef81d93deb27c6702d568fc002346975118d3
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-<<<<<<< HEAD
   - Rope
   - Water
   - UI
   - Pivot
   - Ground
-=======
-  - 
-  - Water
-  - UI
-  - 
-  - 
->>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
