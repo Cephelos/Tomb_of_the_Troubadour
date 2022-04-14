@@ -13,6 +13,11 @@ public class RoomManager : MonoBehaviour
         
     }
 
+    public bool AllEnemiesDead()
+    {
+        return spawnEnemies.activeEnemies.Count == 0;
+    }
+
     public void RemovePlatforms(float intensity)
     {
         removePlatforms.RemoveRandomPlatform(intensity);
