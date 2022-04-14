@@ -38,6 +38,10 @@ public class VoteEvery30Seconds : MonoBehaviour
                 case "Less Platforms!":
                     Platformer.Mechanics.GameController.Instance.currentRoom.RemovePlatforms(intensity);
                     break;
+
+                case "Raise Lava!":
+                    Platformer.Mechanics.GameController.Instance.currentRoom.RaiseLava(50);
+                    break;
             }
             voteGenerator.ClosePoll();
             intensity += 1f;

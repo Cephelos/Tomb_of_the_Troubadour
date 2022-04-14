@@ -6,6 +6,8 @@ public class RoomManager : MonoBehaviour
 {
     public RemovePlatforms removePlatforms;
     public SpawnEnemies spawnEnemies;
+
+    public RaiseLava raiseLava;
     
 
     // Update is called once per frame
@@ -22,6 +24,11 @@ public class RoomManager : MonoBehaviour
     public void SpawnEnemies(float intensity)
     {
         spawnEnemies.Spawn(intensity);
+    }
+
+    public void RaiseLava(int lavaTimer)
+    {
+        raiseLava.moveLava = true;
     }
 
     public void ResetRoom()
