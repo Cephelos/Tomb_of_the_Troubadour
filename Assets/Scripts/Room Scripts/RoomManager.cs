@@ -26,7 +26,7 @@ public class RoomManager : MonoBehaviour
             spawnEnemies.Spawn(intensity);
     }
 
-    public void RaiseLava(int dist) 
+    public void RaiseLava() 
     {
         raiseLava.moveLava = true;
     }
