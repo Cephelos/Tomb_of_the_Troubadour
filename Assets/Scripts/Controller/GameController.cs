@@ -14,8 +14,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
         gameState = GameState.InitialVote;
     }
 
@@ -26,11 +24,9 @@ public class GameController : MonoBehaviour
         switch (gameState)
         {
             case GameState.InitialVote:
-
                 this.HandleVoting();
                 break;
             case GameState.Room:
-
                 break;
             default:
                 break;
@@ -71,12 +67,10 @@ public class GameController : MonoBehaviour
         // this.rooms[2].ResetRoom();
         // this.rooms[3].ResetRoom();
         // this.player.ResetPlayer();
-
         // hard coded for now
         switch (initialVoteResult)
         {
             case "1x":
-                
                 break;
             case "1.5x":
                 this.player.GetComponent<PlayerMovement>().speed *= 1.5f;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TutorialRequirement
   - Wall
+  - lava
   - Teleporter
   - Enemy
   - Lava
@@ -18,30 +19,6 @@ TagManager:
   - UI
   - Pivot
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0

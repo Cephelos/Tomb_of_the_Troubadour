@@ -157,17 +157,7 @@ namespace Platformer.Mechanics
             //animator.SetBool("IsSwinging", false);
             //animator.SetFloat("Speed", 0f);
             //}
-
             }
-
-
         }
-
-
-
-
-
     }
-    
-
 }

@@ -13,7 +13,9 @@ namespace Platformer.Mechanics
         /// <summary>
         /// The maximum hit points for the entity.
         /// </summary>
-        public int maxHP = 1;
+        
+        public int maxHP;
+        ///maxHP = playerSettings.maxHP;
 
         /// <summary>
         /// Indicates if the entity should be considered 'alive'.
@@ -53,8 +55,9 @@ namespace Platformer.Mechanics
         }
 
         void Awake()
-        {
-            currentHP = maxHP;
+        {   PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
+            currentHP = playerSettings.maxHP;
+            maxHP = playerSettings.maxHP;
         }
     }
 }
