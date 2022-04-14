@@ -8,9 +8,9 @@ public class Door : MonoBehaviour
     [SerializeField] private Camera oldCamera;
     [SerializeField] private Camera newCamera;
 
-    [SerializeField] private GameObject oldRoom;
+    [SerializeField] private RoomManager oldRoom;
 
-    [SerializeField] private GameObject newRoom;
+    [SerializeField] private RoomManager newRoom;
      
      public Transform GetDestination(){
          return destination;
@@ -19,7 +19,10 @@ public class Door : MonoBehaviour
      public void ChangeRoom(){
          oldCamera.enabled = false;
          newCamera.enabled = true;
-         oldRoom.SetActive(false);
-         newRoom.SetActive(true);
+         oldRoom.gameObject.SetActive(false);
+         newRoom.gameObject.SetActive(true);
+         Platformer.Mechanics.GameController.Instance.currentRoom = newRoom;
+         oldRoom.ResetRoom();
      }
+
 }

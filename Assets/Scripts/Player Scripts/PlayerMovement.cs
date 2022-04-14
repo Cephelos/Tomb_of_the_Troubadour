@@ -20,10 +20,12 @@ namespace Platformer.Mechanics
         
         public int maxJumps = 2;
         private int jumps;
-        private float jumpForce = 6f;
+        public float jumpForce = 6f;
 
         
-        public int stunTimer = 0;
+
+        public float stunTimer = 0.25f;
+
         public float dashSpeed = 100f;
 
 
@@ -49,6 +51,10 @@ namespace Platformer.Mechanics
 
         void Update()
         {
+            if(stunTimer > 0)
+                stunTimer -= Time.deltaTime;
+            if (stunTimer < 0)
+                stunTimer = 0;
             jumpInput = Input.GetAxis("Jump");
             horizontalInput = Input.GetAxis("Horizontal");
 
