@@ -1,15 +1,5 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    "com.unity.2d.sprite": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
->>>>>>> 280ef81d93deb27c6702d568fc002346975118d3
     "com.unity.cinemachine": {
       "version": "2.6.11",
       "depth": 0,
@@ -17,15 +7,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.collab-proxy": {
-      "version": "1.15.15",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.services.core": "1.0.1"
-      },
-      "url": "https://packages.unity.com"
-    },
+
     "com.unity.connect.share": {
       "version": "4.1.1",
       "depth": 0,
@@ -41,7 +23,6 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-=======
     "com.unity.2d.animation": {
       "version": "5.1.1",
       "depth": 0,
@@ -115,13 +96,12 @@
       "dependencies": {}
     },
     "com.unity.collab-proxy": {
-      "version": "1.15.13",
+      "version": "1.15.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.services.core": "1.0.1"
       },
->>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
       "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
@@ -156,7 +136,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
     "com.unity.learn.iet-framework": {
       "version": "1.2.3",
       "depth": 0,
@@ -174,13 +153,11 @@
       "dependencies": {
         "com.unity.modules.physics": "1.0.0"
       },
-=======
     "com.unity.mathematics": {
       "version": "1.1.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
->>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
       "url": "https://packages.unity.com"
     },
     "com.unity.services.core": {
@@ -192,7 +169,6 @@
       },
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
     "com.unity.settings-manager": {
       "version": "1.0.2",
       "depth": 1,
@@ -200,10 +176,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-=======
->>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
-    "com.unity.test-framework": {
-      "version": "1.1.31",
+1.1.31",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -498,4 +471,5 @@
       }
     }
   }
+}
 }
