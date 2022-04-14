@@ -42,6 +42,9 @@ public class EnemyCollision : MonoBehaviour
             player.stunTimer = stunTime;
             
         }
+        if (collision.CompareTag("Lava")) {
+            Destroy (gameObject);
+        }
 
     }
 }

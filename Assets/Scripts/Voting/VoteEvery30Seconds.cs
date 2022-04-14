@@ -41,7 +41,7 @@ public class VoteEvery30Seconds : MonoBehaviour
                     break;
 
                 case "Raise the Lava!":
-                    room.RaiseLava(intensity);
+                    room.RaiseLava(50);
                     break;
             }
             voteGenerator.ClosePoll();

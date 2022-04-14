@@ -7,6 +7,8 @@ public class RoomManager : MonoBehaviour
     public RemovePlatforms removePlatforms;
     public SpawnEnemies spawnEnemies;
 
+    public RaiseLava raiseLava;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,13 +22,13 @@ public class RoomManager : MonoBehaviour
 
     public void SpawnEnemies(float intensity)
     {
-        for(int i = 0; i < 1+Mathf.FloorToInt(intensity/2); i++)
+        for(int i = 0; i < 1+Mathf.FloorToInt(intensity/2); i++) // Intensity goes up by 1 any time the audience finishes a vote. Use this to make the bad stuff get worse over time!
             spawnEnemies.Spawn(intensity);
     }
 
-    public void RaiseLava(float intensity) // Intensity goes up by 1 any time the audience finishes a vote. Use this to make the bad stuff get worse over time!
+    public void RaiseLava(int dist) 
     {
-
+        raiseLava.moveLava = true;
     }
 
     public void ResetRoom()
