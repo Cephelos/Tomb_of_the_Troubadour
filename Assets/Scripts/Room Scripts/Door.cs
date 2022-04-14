@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
          oldRoom.gameObject.SetActive(false);
          newRoom.gameObject.SetActive(true);
          Platformer.Mechanics.GameController.Instance.currentRoom = newRoom;
-         oldRoom.ResetRoom();
+         newRoom.ResetRoom();
      }
 
 }

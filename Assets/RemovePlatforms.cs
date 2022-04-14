@@ -42,7 +42,7 @@ public class RemovePlatforms : MonoBehaviour
         Debug.Log("Removing a random platform!");
         if(activePlatforms.Count > 0)
         {
-            StartCoroutine(RemovePlatform(activePlatforms[Random.Range(0, activePlatforms.Count - 1)]));
+            Platformer.Mechanics.GameController.Instance.StartCoroutine(RemovePlatform(activePlatforms[Random.Range(0, activePlatforms.Count - 1)]));
         }
     }
 
@@ -53,6 +53,8 @@ public class RemovePlatforms : MonoBehaviour
         Color finalColor = Color.clear;
         while (timeRemaining > 0)
         {
+            if (!platform.gameObject.activeInHierarchy)
+                yield break;
             float timeRatio = (fadeTime - timeRemaining)/ fadeTime;
 
 

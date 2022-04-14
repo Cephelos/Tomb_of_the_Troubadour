@@ -6,8 +6,9 @@ public class FollowPath : MonoBehaviour
 {
 
     [SerializeField] private float speed;
+    public float Speed { get { return speed; } set { speed = value; } }
 
-    [SerializeField] private Vector3[] positions;
+    [SerializeField] private List<Vector3> positions;
 
 
     [SerializeField] private int index;
@@ -16,11 +17,12 @@ public class FollowPath : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, positions[index], Time.deltaTime * speed);
+        Vector3 roomPos = Platformer.Mechanics.GameController.Instance.currentRoom.transform.position;
+        transform.position = Vector2.MoveTowards(transform.position, roomPos + positions[index], Time.deltaTime * speed);
     
-        if (transform.position == positions[index])
+        if (transform.position == roomPos + positions[index])
         {
-                if (index == positions.Length -1)
+                if (index == positions.Count -1)
                 {
                     index = 0;
                 }
@@ -31,5 +33,10 @@ public class FollowPath : MonoBehaviour
                 }
         }
     
+    }
+
+    public void AddNode(Vector2 newNode)
+    {
+        positions.Add(new Vector3(newNode.x, newNode.y, 0));
     }
 }

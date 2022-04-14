@@ -138,3 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca9f7c53a198ef46845d75f46071b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 3279821613644764651}
+  renderer: {fileID: 6555220907968406189}
+  followPath: {fileID: 9134355656387737791}

@@ -29,14 +29,19 @@ public class VoteEvery30Seconds : MonoBehaviour
 
         if(voteGenerator.GetVoteResult() != "")
         {
-            switch(voteGenerator.GetVoteResult())
+            RoomManager room = Platformer.Mechanics.GameController.Instance.currentRoom;
+            switch (voteGenerator.GetVoteResult())
             {
                 case "More Enemies!":
-                    Platformer.Mechanics.GameController.Instance.currentRoom.SpawnEnemies(intensity);
+                    room.SpawnEnemies(intensity);
                     break;
 
                 case "Less Platforms!":
-                    Platformer.Mechanics.GameController.Instance.currentRoom.RemovePlatforms(intensity);
+                    room.RemovePlatforms(intensity);
+                    break;
+
+                case "Raise the Lava!":
+                    room.RaiseLava(intensity);
                     break;
             }
             voteGenerator.ClosePoll();
