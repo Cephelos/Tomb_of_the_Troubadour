@@ -1,30 +1,19 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    "com.unity.2d.sprite": "1.0.0",
->>>>>>> 280ef81d93deb27c6702d568fc002346975118d3
     "com.unity.cinemachine": "2.6.11",
     "com.unity.collab-proxy": "1.15.15",
     "com.unity.connect.share": "4.1.1",
-    "com.unity.ide.rider": "2.0.7",
-    "com.unity.ide.visualstudio": "2.0.14",
-    "com.unity.ide.vscode": "1.2.5",
     "com.unity.learn.iet-framework": "1.2.3",
     "com.unity.postprocessing": "3.2.0",
-=======
     "com.unity.2d.animation": "5.1.1",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.psdimporter": "4.2.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.spriteshape": "5.2.0",
     "com.unity.2d.tilemap": "1.0.0",
-    "com.unity.collab-proxy": "1.15.13",
     "com.unity.ide.rider": "2.0.7",
     "com.unity.ide.visualstudio": "2.0.14",
     "com.unity.ide.vscode": "1.2.5",
->>>>>>> 090e6ad0c91ec39970d8b75e2c7aca7c15123076
     "com.unity.test-framework": "1.1.31",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.4.8",
