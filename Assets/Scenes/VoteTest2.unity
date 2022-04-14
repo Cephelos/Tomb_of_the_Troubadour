@@ -2296,6 +2296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   removePlatforms: {fileID: 1231240754}
   spawnEnemies: {fileID: 1883283659}
+  raiseLava: {fileID: 554793548}
+
 --- !u!1 &637530338
 GameObject:
   m_ObjectHideFlags: 0
