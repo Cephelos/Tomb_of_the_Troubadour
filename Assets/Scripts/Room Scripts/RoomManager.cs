@@ -15,6 +15,11 @@ public class RoomManager : MonoBehaviour
         
     }
 
+    public bool AllEnemiesDead()
+    {
+        return spawnEnemies.activeEnemies.Count == 0;
+    }
+
     public void RemovePlatforms(float intensity)
     {
         removePlatforms.RemoveRandomPlatform(intensity);
@@ -26,7 +31,7 @@ public class RoomManager : MonoBehaviour
             spawnEnemies.Spawn(intensity);
     }
 
-    public void RaiseLava() 
+    public void RaiseLava(float intensity) 
     {
         raiseLava.moveLava = true;
     }
