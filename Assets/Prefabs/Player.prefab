@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 7270340587469570790}
   - component: {fileID: 5285999629219971815}
   - component: {fileID: 3153980432372754606}
+  - component: {fileID: 2462851631248562135}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -485,6 +486,9 @@ MonoBehaviour:
   jumpSpeed: 10
   groundCheck: 0
   isSwinging: 0
+  maxJumps: 2
+  stunTimer: 25
+  dashSpeed: 100
 --- !u!114 &4578823209721599457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,3 +565,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2462851631248562135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580008805989068378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211defebcc459764881a3cf775d1739c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackX: 5
+  knockbackY: 5
+  stunTime: 50
