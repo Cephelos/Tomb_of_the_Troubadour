@@ -16,6 +16,7 @@ public class VoteGenerator : MonoBehaviour
 {
     public Poll currentPoll;
     public VotingPanel votePanel;
+    public List<Poll> polls;
 
     public void CreateVote(string question, string[] options) // creates a poll and sets it to be the active poll; sends a warning to the console if there is already a poll active
     {
@@ -24,18 +25,27 @@ public class VoteGenerator : MonoBehaviour
 
     public void CreateVote(Poll poll)
     {
-        if (currentPoll != null)
+        if (currentPoll != null && currentPoll.options != null && currentPoll.options.Count != 0)
             Debug.LogWarning("Creating a poll while poll " + currentPoll.question + " is already active!");
         currentPoll = poll;
         Debug.Log("Creating Poll " + currentPoll.question + "!");
         votePanel.Initialize(poll);
     }
         
+    public Poll NextPoll() // Gets the next poll on the list and returns it, then moves it to the back of the list
+    {
+        Poll nextPoll = polls[0];
+        polls.RemoveAt(0);
+        polls.Add(nextPoll);
+        return nextPoll.Clone();
 
+    }
 
     public int GetVoteStatus() // Returns 0 if no poll is currently active, 1 if there is an active poll but no votes have been cast, or 2 if one or more votes have been cast in the active poll
     {
-        if (currentPoll == null)
+        if (currentPoll == null || currentPoll.options == null)
+            return 0;
+        else if (currentPoll.options.Count == 0)
             return 0;
         else if (currentPoll.options.Find(x => x.numVotes > 0) == null)
             return 1;
@@ -45,7 +55,9 @@ public class VoteGenerator : MonoBehaviour
 
     public string GetVoteResult() // Returns the index number of the first option that has at least one vote, or -1 if none do
     {
-        if (currentPoll == null)
+        if (currentPoll == null || currentPoll.options == null)
+            return "";
+        else if (currentPoll.options.Count == 0)
             return "";
         else
         {
@@ -59,7 +71,9 @@ public class VoteGenerator : MonoBehaviour
 
     public int GetVoteResultInt() // Returns the index number of the first option that has at least one vote, or -1 if none do
     {
-        if (currentPoll == null)
+        if (currentPoll == null || currentPoll.options == null)
+            return -1;
+        else if (currentPoll.options.Count == 0)
             return -1;
         else
         {
@@ -77,13 +91,17 @@ public class VoteGenerator : MonoBehaviour
         votePanel.ClearDisplays();
     }
 
+    private void Update()
+    {
+        UpdateVotes();
+    }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateVotes()
     {
-        if(currentPoll != null)
+        if(currentPoll != null && currentPoll.options != null)
             RecordVotesByKeyboard();
-        PublishVoteResult();
+       //PublishVoteResult();
     }
 
     public void PublishVoteResult() // IRL, the GameController is going to handle this - this is just used for testing
@@ -121,46 +139,64 @@ public class VoteGeneratorEditor : Editor // Lets you generate polls using the i
     {
         base.OnInspectorGUI();
         VoteGenerator vote = target as VoteGenerator;
-        GUILayout.Label("----FOR TESTING----");
-        if(pollUnderConstruction != null)
-        {
-            GUILayout.BeginHorizontal();
-            GUILayout.Label("Poll Question:");
-            pollUnderConstruction.question = GUILayout.TextField(pollUnderConstruction.question);
-            GUILayout.EndHorizontal();
-
-            for(int i = 0; i < pollUnderConstruction.options.Count; i++)
+        
+            GUILayout.Label("----FOR TESTING----");
+            if (pollUnderConstruction != null)
             {
-                PollOption option = pollUnderConstruction.options[i];
                 GUILayout.BeginHorizontal();
-                GUILayout.Label("Option " + (i+1) + ":");
-                option.optionName = GUILayout.TextField(option.optionName);
-                if (GUILayout.Button("Remove Option"))
-                {
-                    pollUnderConstruction.options.RemoveAt(i);
-                    i--;
-                }
+                GUILayout.Label("Poll Question:");
+                pollUnderConstruction.question = GUILayout.TextField(pollUnderConstruction.question);
                 GUILayout.EndHorizontal();
-                
-            }
-            if (GUILayout.Button("Add New Option"))
-                pollUnderConstruction.options.Add(new PollOption("New Option"));
 
-            if (GUILayout.Button("Open Poll"))
+                for (int i = 0; i < pollUnderConstruction.options.Count; i++)
+                {
+                    PollOption option = pollUnderConstruction.options[i];
+                    GUILayout.BeginHorizontal();
+                    GUILayout.Label("Option " + (i + 1) + ":");
+                    option.optionName = GUILayout.TextField(option.optionName);
+                    if (GUILayout.Button("Remove Option"))
+                    {
+                        pollUnderConstruction.options.RemoveAt(i);
+                        i--;
+                    }
+                    GUILayout.EndHorizontal();
+
+                }
+                if (GUILayout.Button("Add New Option"))
+                    pollUnderConstruction.options.Add(new PollOption("New Option"));
+            if (Application.IsPlaying(this))
             {
-                vote.CreateVote(pollUnderConstruction);
-                pollUnderConstruction = new Poll("New Poll", new string[0]);
+                if (GUILayout.Button("Open Poll"))
+                {
+                    vote.CreateVote(pollUnderConstruction);
+                    pollUnderConstruction = new Poll("New Poll", new string[0]);
+                }
+                
+
+            }
+            else
+            {
+                if (GUILayout.Button("Add Poll"))
+                {
+                    vote.polls.Add(pollUnderConstruction);
+                    pollUnderConstruction = new Poll("New Poll", new string[0]);
+                }
             }
 
+        }
+        if (GUILayout.Button("Close Poll"))
+        {
+            vote.ClosePoll();
         }
     }
 }
 #endif
 
+[System.Serializable]
 public class Poll // Represents a question on which voiting will take place; options are voted for by inputing their index +1 (so voting for option 0 in the list would require pressing '1')
 {
     public string question;
-    public List<PollOption> options;
+    public List<PollOption> options = new List<PollOption>();
 
     public void RecordVote(int whichOption)
     {
@@ -171,14 +207,24 @@ public class Poll // Represents a question on which voiting will take place; opt
     public Poll(string _question, string[] optionNames)
     {
         question = _question;
-        options = new List<PollOption>();
         foreach(string option in optionNames)
         {
             options.Add(new PollOption(option));
         }
     }
+
+    public Poll Clone() // Clones a poll - use this when instantiating new polls to avoid corrupting the old poll instance
+    {
+        List<string> optionNames = new List<string>();
+        foreach (PollOption option in options)
+            optionNames.Add(option.optionName);
+        Poll clone = new Poll(question, optionNames.ToArray());
+
+        return clone;
+    }
 }
 
+[System.Serializable]
 public class PollOption
 {
     public string optionName; // Describes the option

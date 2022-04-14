@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - lava
   - Teleporter
+  - Enemy
+  - Lava
   layers:
   - Default
   - TransparentFX

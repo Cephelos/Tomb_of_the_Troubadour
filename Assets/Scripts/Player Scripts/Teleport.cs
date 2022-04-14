@@ -12,10 +12,10 @@ public class Teleport : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (currentTeleporter != null)
+            if (currentTeleporter != null && Platformer.Mechanics.GameController.Instance.currentRoom.AllEnemiesDead())
             {
                 transform.position = currentTeleporter.GetComponent<Door>().GetDestination().position;
-                currentTeleporter.GetComponent<Door>().ChangeCamera();
+                currentTeleporter.GetComponent<Door>().ChangeRoom();
             }
             Debug.Log(currentTeleporter);
             

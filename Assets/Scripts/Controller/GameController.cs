@@ -1,27 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Platformer.Mechanics;
 
 public class GameController : MonoBehaviour
 {
-    private enum GameState { InitialVote, RoomOne, RoomTwo, RoomThree };
+    private enum GameState { InitialVote, Room};
     private GameState gameState;
     private VoteGenerator voteGenerator;
-    private List<Room> rooms;
-    private Player player;
+    [SerializeField] private List<GameObject> rooms;
+    [SerializeField] private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.rooms = new List<Room>()
-        {
-            RoomGenerator.GenerateNewRoom(0), // Initial vote room where player can practice/move about
-            RoomGenerator.GenerateNewRoom(1),
-            RoomGenerator.GenerateNewRoom(2),
-            RoomGenerator.GenerateNewRoom(3)
-        };
-        this.player = new Player();
-        this.gameState = InitialVote;
+        gameState = GameState.InitialVote;
     }
 
     // Update is called once per frame
@@ -31,29 +24,9 @@ public class GameController : MonoBehaviour
         switch (gameState)
         {
             case GameState.InitialVote:
-                playerResult = this.rooms[0].Update(this.player);
                 this.HandleVoting();
                 break;
-            case GameState.RoomOne:
-                playerResult = this.rooms[1].Update(this.player);
-                if (playerResult == 2)
-                {
-                    this.GameState = GameState.RoomTwo;
-                };
-                break;
-            case GameState.RoomTwo:
-                playerResult = this.rooms[2].Update(this.player);
-                if (playerResult == 2)
-                {
-                    this.GameState = GameState.RoomThree;
-                };
-                break;
-            case GameState.RoomThree:
-                playerResult = this.rooms[3].Update(this.player);
-                if (playerResult == 2)
-                {
-                    this.GameState = GameState.RoomOne;
-                };
+            case GameState.Room:
                 break;
             default:
                 break;
@@ -70,11 +43,12 @@ public class GameController : MonoBehaviour
         {
             case 0:
                 // poll not active so create one
-                this.voteGenerator.CreateVote("Player Movement Speed?", { "1x", "1.5x", "2x" }); // hard coded poll for now
+                string[] choices = {"1x", "1.5x", "2x" };
+                this.voteGenerator.CreateVote("Player Movement Speed?", choices); // hard coded poll for now
                 break;
             case 1:
                 // poll active but not finished yet
-                this.voteGenerator.Update();
+                this.voteGenerator.UpdateVotes();
                 break;
             case 2:
                 // poll finished
@@ -89,28 +63,26 @@ public class GameController : MonoBehaviour
     private void StartNewGame(string initialVoteResult)
     {
         // reset rooms, reset player
-        this.rooms[1].ResetRoom();
-        this.rooms[2].ResetRoom();
-        this.rooms[3].ResetRoom();
-        this.player.ResetPlayer();
-
+        // this.rooms[1].ResetRoom();
+        // this.rooms[2].ResetRoom();
+        // this.rooms[3].ResetRoom();
+        // this.player.ResetPlayer();
         // hard coded for now
         switch (initialVoteResult)
         {
             case "1x":
-                this.player.SetPlayerSpeed(1);
                 break;
             case "1.5x":
-                this.player.SetPlayerSpeed(1.5);
+                this.player.GetComponent<PlayerMovement>().speed *= 1.5f;
                 break;
             case "2x":
-                this.player.SetPlayerSpeed(2);
+                this.player.GetComponent<PlayerMovement>().speed *= 2f;
                 break;
             default:
                 break;
         }
 
         // switch to room one
-        this.gameState = GameState.RoomOne;
+        this.gameState = GameState.Room;
     }
 }
