@@ -30,18 +30,17 @@ public class Weapon : MonoBehaviour
         canDmg = false;
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         Debug.Log("collided");
-        if (canDmg)
+        if (canDmg && collision.CompareTag("Enemy"))
         {
             Debug.Log("damage");
             ///gameObject bg = other.gameObject;
-            if (other.gameObject.tag == "Enemy")
-            {
-                Destroy(other.gameObject);
-                canDmg = false;
-            }
+
+            Destroy(collision.gameObject);
+            canDmg = false;
 
         }
 
