@@ -6,7 +6,6 @@ public class RoomManager : MonoBehaviour
 {
     public RemovePlatforms removePlatforms;
     public SpawnEnemies spawnEnemies;
-    
 
     // Update is called once per frame
     void Update()
