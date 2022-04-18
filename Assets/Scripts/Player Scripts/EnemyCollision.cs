@@ -8,6 +8,7 @@ public class EnemyCollision : MonoBehaviour
 {
     private Rigidbody2D rBody;
     private Transform playerTransform;
+    private Animator animator;
 
     private PlayerMovement player;
 
@@ -23,6 +24,7 @@ public class EnemyCollision : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
         player = GetComponent<PlayerMovement>();
+        animator = GetComponent<Animator>();
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,6 +42,9 @@ public class EnemyCollision : MonoBehaviour
             rBody.AddForce(new Vector3(knockbackX, knockbackY, 0), ForceMode2D.Impulse);
 
             player.stunTimer = stunTime;
+
+            // Tell animator that the player has been hurt
+            animator.SetBool("Hurt", true);
             
         }
         if (collision.CompareTag("Lava")) {

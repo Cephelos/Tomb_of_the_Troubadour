@@ -44,6 +44,11 @@ public class Weapon : MonoBehaviour
         canDmg = false;
     }
 
+    public bool CanDamage() // Is the weapon's attack active?
+    {
+        return canDmg;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 

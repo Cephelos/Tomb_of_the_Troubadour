@@ -36,7 +36,7 @@ namespace Platformer.Mechanics
         {
             playerSprite = GetComponent<SpriteRenderer>();
             rBody = GetComponent<Rigidbody2D>();
-            //animator = GetComponent<Animator>();
+            animator = GetComponent<Animator>();
             this.GetComponent<RopeSystem>().enabled = grapple;
 
             PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
@@ -58,7 +58,10 @@ namespace Platformer.Mechanics
             var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
 
             // int layerMask = (LayerMask.GetMask("Ground"));
-            groundCheck = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
+            if (hit.collider != null)
+                Debug.Log("collider of " + hit.transform.gameObject.name + " was hit!");
+            groundCheck = hit.collider != null && hit.transform.gameObject.CompareTag("Wall");
 
            
 
@@ -77,6 +80,8 @@ namespace Platformer.Mechanics
                     //gameObject.GetComponent<Rigidbody2D>().velocity.y = 0;
                     rBody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                     jumps = maxJumps - 1;
+
+
                 }
                 else
                 //Double Jump Capabilities
@@ -87,6 +92,7 @@ namespace Platformer.Mechanics
                         //Vector2 vel = new Vector2(rBody.velocity.x, 0);
                         //rBody.velocity = vel;
                         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+
                     }
                 }
             }
@@ -101,8 +107,14 @@ namespace Platformer.Mechanics
                 rBody.AddForce(new Vector2(facingDirection.x, facingDirection.y), ForceMode2D.Impulse);
 
             }
-
-
+            // Set animator parameters
+            animator.SetFloat("Speed", Mathf.Abs(rBody.velocity.x));
+            animator.SetBool("Grounded", groundCheck);
+            animator.SetBool("Jumping", !groundCheck && rBody.velocity.y > 0f);
+            if (stunTimer == 0)
+            {
+                animator.SetBool("Hurt", false);
+            }
         }
 
         void FixedUpdate()
