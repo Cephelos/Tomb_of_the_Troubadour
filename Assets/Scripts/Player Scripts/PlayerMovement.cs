@@ -72,7 +72,7 @@ namespace Platformer.Mechanics
 
             rBody.AddForce(antiVelocity, ForceMode2D.Force);
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 
                 if (groundCheck)

@@ -15,6 +15,7 @@ namespace Platformer.Mechanics
         /// </summary>
         
         public int maxHP;
+        public bool playerCanDie = false; // Setting this false for now so y'all's scenes aren't completely messed up before we fix weapon collision
         ///maxHP = playerSettings.maxHP;
 
         /// <summary>
@@ -39,10 +40,11 @@ namespace Platformer.Mechanics
         public void Decrement()
         {
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
-            if (currentHP == 0)
+            if (currentHP == 0 && playerCanDie)
             {
                 var ev = Schedule<HealthIsZero>();
                 ev.health = this;
+                Destroy(gameObject);
             }
         }
 
@@ -55,7 +57,8 @@ namespace Platformer.Mechanics
         }
 
         void Awake()
-        {   PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
+        {   
+            PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
             currentHP = playerSettings.maxHP;
             maxHP = playerSettings.maxHP;
         }

@@ -9,10 +9,9 @@ public class EnemyCollision : MonoBehaviour
     private Rigidbody2D rBody;
     private Transform playerTransform;
     private Animator animator;
+    private Health health;
 
     private PlayerMovement player;
-
-    
 
     private Vector3 direction;
 
@@ -25,6 +24,7 @@ public class EnemyCollision : MonoBehaviour
         playerTransform = GetComponent<Transform>();
         player = GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
+        health = GetComponent<Health>();
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,6 +42,9 @@ public class EnemyCollision : MonoBehaviour
             rBody.AddForce(new Vector3(knockbackX, knockbackY, 0), ForceMode2D.Impulse);
 
             player.stunTimer = stunTime;
+
+            // Damage the player
+            health.Decrement();
 
             // Tell animator that the player has been hurt
             animator.SetBool("Hurt", true);

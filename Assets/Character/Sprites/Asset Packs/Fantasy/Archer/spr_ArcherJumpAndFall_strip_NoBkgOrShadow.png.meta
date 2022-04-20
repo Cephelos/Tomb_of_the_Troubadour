@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 814aa5df9e780444ea40e28ce5cc36c9
+guid: ce7a5edee294693499f1599943664966
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2219065651456378354
-    second: spr_ArcherJumpAndFall_strip_NoBkg_0
+      213: -3696460592522307502
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_0
   - first:
-      213: 909036703281560809
-    second: spr_ArcherJumpAndFall_strip_NoBkg_1
+      213: 1858595081051079790
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_1
   - first:
-      213: 2697561521814206091
-    second: spr_ArcherJumpAndFall_strip_NoBkg_2
+      213: 8463019860974501034
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_2
   - first:
-      213: -3263904415398710611
-    second: spr_ArcherJumpAndFall_strip_NoBkg_3
+      213: -1108483405638129190
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_3
   - first:
-      213: 6197709404368266594
-    second: spr_ArcherJumpAndFall_strip_NoBkg_4
+      213: -3136169527338818730
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_4
   - first:
-      213: 5576746003819696004
-    second: spr_ArcherJumpAndFall_strip_NoBkg_5
+      213: 1053741339056355012
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_5
   - first:
-      213: 6995673144358672470
-    second: spr_ArcherJumpAndFall_strip_NoBkg_6
+      213: -8037368298057754876
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_6
   - first:
-      213: -7798071144570975379
-    second: spr_ArcherJumpAndFall_strip_NoBkg_7
+      213: 4790739051047813158
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_7
   - first:
-      213: 4074719310926259543
-    second: spr_ArcherJumpAndFall_strip_NoBkg_8
+      213: 647989738081950930
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_8
   - first:
-      213: 1477694705114700619
-    second: spr_ArcherJumpAndFall_strip_NoBkg_9
+      213: -142830463307035591
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_9
   - first:
-      213: -4636590942019407041
-    second: spr_ArcherJumpAndFall_strip_NoBkg_10
+      213: 3517087910507365907
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_10
   - first:
-      213: -3653751484265009736
-    second: spr_ArcherJumpAndFall_strip_NoBkg_11
+      213: -3635874562187207022
+    second: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_0
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0afbaf0c8b4431e0800000000000000
-      internalID: -2219065651456378354
+      spriteID: 2585a700da883bcc0800000000000000
+      internalID: -3696460592522307502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_1
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_1
       rect:
         serializedVersion: 2
         x: 128
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ecb3eab01c8d9c00800000000000000
-      internalID: 909036703281560809
+      spriteID: e648653016e0bc910800000000000000
+      internalID: 1858595081051079790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_2
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_2
       rect:
         serializedVersion: 2
         x: 256
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b867f7b69e9af6520800000000000000
-      internalID: 2697561521814206091
+      spriteID: aacf57c79bfa27570800000000000000
+      internalID: 8463019860974501034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_3
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_3
       rect:
         serializedVersion: 2
         x: 384
@@ -204,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da2b4532a3844b2d0800000000000000
-      internalID: -3263904415398710611
+      spriteID: ad9268f2730ed90f0800000000000000
+      internalID: -1108483405638129190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_4
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_4
       rect:
         serializedVersion: 2
         x: 512
@@ -225,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 265e77ccddfa20650800000000000000
-      internalID: 6197709404368266594
+      spriteID: 653a0975e661a74d0800000000000000
+      internalID: -3136169527338818730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_5
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_5
       rect:
         serializedVersion: 2
         x: 640
@@ -246,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48f804091f4946d40800000000000000
-      internalID: 5576746003819696004
+      spriteID: 4c639973a24af9e00800000000000000
+      internalID: 1053741339056355012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_6
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_6
       rect:
         serializedVersion: 2
         x: 768
@@ -267,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6581d3ef8af951160800000000000000
-      internalID: 6995673144358672470
+      spriteID: 4071841ed18857090800000000000000
+      internalID: -8037368298057754876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_7
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_7
       rect:
         serializedVersion: 2
         x: 896
@@ -288,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6b8f962c9fa7c390800000000000000
-      internalID: -7798071144570975379
+      spriteID: 6200c45d8cf1c7240800000000000000
+      internalID: 4790739051047813158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_8
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_8
       rect:
         serializedVersion: 2
         x: 1024
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7552f2fdf9f4c8830800000000000000
-      internalID: 4074719310926259543
+      spriteID: 2dc197ccb3f1ef800800000000000000
+      internalID: 647989738081950930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_9
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_9
       rect:
         serializedVersion: 2
         x: 1152
@@ -330,14 +330,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4b56d05183d18410800000000000000
-      internalID: 1477694705114700619
+      spriteID: 93cca7b4370940ef0800000000000000
+      internalID: -142830463307035591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_10
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_10
       rect:
         serializedVersion: 2
         x: 1280
@@ -351,14 +351,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f33b32c9a1587afb0800000000000000
-      internalID: -4636590942019407041
+      spriteID: 316cc9df1d43fc030800000000000000
+      internalID: 3517087910507365907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherJumpAndFall_strip_NoBkg_11
+      name: spr_ArcherJumpAndFall_strip_NoBkgOrShadow_11
       rect:
         serializedVersion: 2
         x: 1408
@@ -372,8 +372,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bde3da22644b4dc0800000000000000
-      internalID: -3653751484265009736
+      spriteID: 29ed3f07957ca8dc0800000000000000
+      internalID: -3635874562187207022
       vertices: []
       indices: 
       edges: []
