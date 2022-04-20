@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 1
+  playerCanDie: 0
 --- !u!114 &3159101720004363182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,7 +415,7 @@ MonoBehaviour:
   grapple: 0
   dash: 0
   speed: 5
-  maxHP: 1
+  maxHP: 999
 --- !u!114 &7101269440203938941
 MonoBehaviour:
   m_ObjectHideFlags: 0

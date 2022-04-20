@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SortingLayerID: 1907945055
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 3204480812468917802, guid: 06d17f5f9fcd62b4bb3ed50ba9646e96, type: 3}
+  m_Sprite: {fileID: 2094173765588758402, guid: eaecabcd268c8e14399005bdb41402f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,18 +133,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.69281006, y: -2.7054892}
+  m_Offset: {x: -0.69281006, y: -2.5602555}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15, y: 10}
+    oldSize: {x: 16, y: 9.75}
     newSize: {x: 1.2, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.161293, y: 4.676527}
+  m_Size: {x: 2.161293, y: 4.3860598}
   m_EdgeRadius: 0
 --- !u!120 &8632998897562166113
 LineRenderer:
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8534e17a0f90604c9afd4f5c73d829f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Id: 33128e44-b52a-4648-9bc3-d53d0689ee0f
+  m_Id: 0be41a4a-3794-424c-8e84-3f5daf906ff5
 --- !u!251 &4070546682684773713
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 1
+  playerCanDie: 0
 --- !u!114 &3159101720004363182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +375,7 @@ Animator:
   m_GameObject: {fileID: 6702397830621622035}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8a4a1aee7a2512544bf7c823c555f0c2, type: 2}
+  m_Controller: {fileID: 9100000, guid: f1ee958d2f80bb14580fe577a72884db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -414,7 +415,7 @@ MonoBehaviour:
   grapple: 0
   dash: 0
   speed: 5
-  maxHP: 1
+  maxHP: 999
 --- !u!114 &7101269440203938941
 MonoBehaviour:
   m_ObjectHideFlags: 0
