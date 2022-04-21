@@ -114,7 +114,7 @@ namespace Platformer.Mechanics
                 }
             }
 
-            if (dash && Input.GetKeyDown(KeyCode.LeftShift))
+            if (dash && (Input.GetKeyDown("z")))
             {
                 ///Debug.Log("WHHYYY");
                 var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
