@@ -22,6 +22,9 @@ public class ArrowSystem : MonoBehaviour
             // Instantiate the projectile at the position and rotation of this transform
             GameObject clone;
             clone = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            Weapon arrowWpn = clone.GetComponent<Weapon>();
+            arrowWpn.Attack();
+            
 
             // Give the cloned object an initial velocity along the current
             // object's Z axis
