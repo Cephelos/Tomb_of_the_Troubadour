@@ -30,7 +30,7 @@ public class RaiseLava : MonoBehaviour
             }
             
 
-            lava.transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, oldY + dist, -1), Time.deltaTime * speed);
+            lava.transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, oldY + dist, transform.position.z), Time.deltaTime * speed);
             
             
         }

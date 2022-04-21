@@ -56,17 +56,13 @@ namespace Platformer.Mechanics
             jumpInput = Input.GetAxis("Jump");
             horizontalInput = Input.GetAxis("Horizontal");
 
-            var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
 
-            // int layerMask = (LayerMask.GetMask("Ground"));
-            // RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
-            // if (hit.collider != null)
-            //     Debug.Log("collider of " + hit.transform.gameObject.tag + " was hit!");
-            // groundCheck = hit.collider != null && hit.transform.gameObject.CompareTag("Wall");
-            // if (groundCheck)
-            //     Debug.Log("fuck");
-
-            groundCheck = rBody.IsTouchingLayers(7);
+            RaycastHit2D hit = Physics2D.Raycast(rBody.GetComponent<BoxCollider2D>().bounds.center, Vector2.down, rBody.GetComponent<BoxCollider2D>().bounds.extents.y + 0.05f);
+            Color color1 = Color.red;
+            if(hit) color1 = Color.green;
+            // Debug.DrawRay(rBody.GetComponent<BoxCollider2D>().bounds.center, Vector2.down * (rBody.GetComponent<BoxCollider2D>().bounds.extents.y + 0.05f), color1);
+        
+            groundCheck = hit;
 
 
             Vector2 antiVelocity;
