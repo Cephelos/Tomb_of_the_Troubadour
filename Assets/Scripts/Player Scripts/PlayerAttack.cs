@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
     {
         foreach (Weapon w in GetComponentsInChildren<Weapon>())
         {
-            w.Attack();
+            w.Attack(player);
         }
 
         // Tell animator when the player begins their attack
