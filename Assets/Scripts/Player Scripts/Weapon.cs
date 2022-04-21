@@ -5,34 +5,36 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public float dmg;
-    private bool canDmg;
+    public bool canDmg;
     public float attackDuriation;
-    [SerializeField] private float timeSinceAttack;
+    [SerializeField] public float timeSinceAttack;
 
     void Update()
     {       
         Renderer rend = gameObject.transform.GetComponent<Renderer>();
         Color matColor = rend.material.color;
         float a_value = rend.material.color.a;
-
+        BoxCollider2D sword_Collider = gameObject.GetComponent<BoxCollider2D>();
 
         timeSinceAttack += Time.deltaTime;
         if (timeSinceAttack > attackDuriation)
         {
             canDmg = false;
+            
         }
         if (!canDmg)
         {
-
-           rend.material.color = new Color(matColor.r, matColor.g, matColor.b, 0);
+            sword_Collider.size = new Vector2(0, 0);
+            rend.material.color = new Color(matColor.r, matColor.g, matColor.b, 0);
         }
         else
         {
+            sword_Collider.size = new Vector2(1, 1);
             rend.material.color = new Color(matColor.r, matColor.g, matColor.b, 0.7f);
         }
     }
 
-    public void Attack()
+    public virtual void Attack(Platformer.Mechanics.PlayerMovement playerMovement)
     {
         Debug.Log("attacked");
         canDmg = true;

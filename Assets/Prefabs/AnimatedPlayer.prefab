@@ -304,9 +304,10 @@ MonoBehaviour:
   groundCheck: 0
   isSwinging: 0
   maxJumps: 2
-  jumpForce: 12
+  jumpForce: 16
   stunTimer: 0.25
   dashSpeed: 100
+  isTurned: 0
 --- !u!114 &6703601026431866024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +315,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6702397830621622035}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8534e17a0f90604c9afd4f5c73d829f, type: 3}
   m_Name: 
@@ -411,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8245f60b3b546524faf264edc836ebbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  double_jump: 1
+  double_jump: 0
   grapple: 0
   dash: 0
   speed: 5
@@ -737,5 +738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
+  canDmg: 0
   attackDuriation: 0.35
   timeSinceAttack: 0

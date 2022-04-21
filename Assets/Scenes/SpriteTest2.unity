@@ -593,33 +593,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5281023140509723111, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e9e5989a3fc050c49a67ac1316963530, type: 2}
     - target: {fileID: 6702397830621622035, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
       propertyPath: m_Name
       value: Wizard
       objectReference: {fileID: 0}
-    - target: {fileID: 6703601025834741446, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
-      propertyPath: m_Size.y
-      value: 3.9248056
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703601025834741446, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.74520254
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703601025834741446, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703601025834741446, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703601026431866024, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
-      propertyPath: m_Id
-      value: e34521c1-3ca0-4f28-86b3-d900e2c4a803
+    - target: {fileID: 6702397830621622035, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6708101590497548021, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
       propertyPath: m_RootOrder
@@ -664,14 +644,6 @@ PrefabInstance:
     - target: {fileID: 6708101590497548021, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6914888817404760283, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -527067667717052600, guid: 72aaa2df2529b634884d15ed71fc220a, type: 3}
-    - target: {fileID: 7101269441561948902, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
@@ -1765,7 +1737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421228357}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: PlayerSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1779,7 +1751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421228356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39, y: -0.49, z: 0.3017578}
+  m_LocalPosition: {x: -18.36, y: -7.5, z: 0.3017578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4204,6 +4176,7 @@ GameObject:
   - component: {fileID: 1754240610}
   - component: {fileID: 1754240611}
   - component: {fileID: 1754240612}
+  - component: {fileID: 1754240613}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -4316,6 +4289,25 @@ MonoBehaviour:
   voteTimer: 0
   intensity: 0
   voteInterval: 10
+--- !u!114 &1754240613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96938af91eb43a547983ad1deeaa1470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voteGenerator: {fileID: 1754240611}
+  eventVotes: {fileID: 1754240612}
+  knightPrefab: {fileID: 6702397830621622035, guid: 96eea26ef78a098469ef89af385a8be7, type: 3}
+  archerPrefab: {fileID: 6702397830621622035, guid: 40493848043d8fb44b85126af37529cd, type: 3}
+  wizardPrefab: {fileID: 6702397830621622035, guid: 77d8df92ee674944a9ccf58b75385f1d, type: 3}
+  spawnLoc: {fileID: 421228356}
+  playerMovement: {fileID: 0}
 --- !u!1 &1783150334
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,6 +4752,10 @@ PrefabInstance:
     - target: {fileID: 6702397830621622035, guid: 40493848043d8fb44b85126af37529cd, type: 3}
       propertyPath: m_Name
       value: Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702397830621622035, guid: 40493848043d8fb44b85126af37529cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6708101590497548021, guid: 40493848043d8fb44b85126af37529cd, type: 3}
       propertyPath: m_RootOrder
@@ -5208,6 +5204,10 @@ PrefabInstance:
     - target: {fileID: 6702397830621622035, guid: 96eea26ef78a098469ef89af385a8be7, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702397830621622035, guid: 96eea26ef78a098469ef89af385a8be7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6708101590497548021, guid: 96eea26ef78a098469ef89af385a8be7, type: 3}
       propertyPath: m_RootOrder

@@ -20,7 +20,7 @@ namespace Platformer.Mechanics
         
         public int maxJumps = 2;
         private int jumps;
-        public float jumpForce = 6f;
+        public float jumpForce = 13f;
 
         
         public float stunTimer = 0.25f;
@@ -30,6 +30,8 @@ namespace Platformer.Mechanics
         bool double_jump;
         bool grapple;
         bool dash;
+
+        public bool isTurned;
         ///float speed;
 
         void Awake()
@@ -37,15 +39,35 @@ namespace Platformer.Mechanics
             playerSprite = GetComponent<SpriteRenderer>();
             rBody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
-            this.GetComponent<RopeSystem>().enabled = grapple;
+            
 
             PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
             double_jump = playerSettings.double_jump;
             grapple = playerSettings.grapple;
             dash = playerSettings.dash;
             speed = playerSettings.speed;
+            
+            this.GetComponent<RopeSystem>().enabled = grapple;
         }
 
+        public void SetAbility(int whichAbility)
+        {
+            switch(whichAbility)
+            {
+                case 0:
+                    dash = true;
+
+                    break;
+
+                case 1:
+                    double_jump = true;
+                    break;
+
+                case 2:
+                    grapple = true;
+                    break;
+            }
+        }
 
         void Update()
         {
@@ -96,14 +118,24 @@ namespace Platformer.Mechanics
                 }
             }
 
-            if (dash && Input.GetKeyDown(KeyCode.LeftShift))
+            if (dash && (Input.GetKeyDown("z") || Input.GetKeyDown(KeyCode.LeftShift)))
             {
-                ///Debug.Log("WHHYYY");
-                var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
-                var facingDirection = worldMousePosition - transform.position;
-                Debug.Log(facingDirection);
+                var facingDirection = new Vector2(1, 0);
+                // PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
+                   //bool isTurned = playerMovement.isTurned;
 
-                rBody.AddForce(new Vector2(facingDirection.x, facingDirection.y), ForceMode2D.Impulse);
+                if (!isTurned)
+                {
+                    facingDirection = new Vector2(-1, 0);
+                }
+
+                ///Debug.Log("WHHYYY");
+                //var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+                //var facingDirection = worldMousePosition - transform.position;
+                //Debug.Log(facingDirection);
+                rBody.position = new Vector2(rBody.position.x, rBody.position.y+0.01f);
+                rBody.AddForce(facingDirection*24, ForceMode2D.Impulse);
+
 
             }
             // Set animator parameters
@@ -123,7 +155,7 @@ namespace Platformer.Mechanics
             {
                 if (horizontalInput < 0f || horizontalInput > 0f)
                 {
-                    Debug.Log("WHYYY" + speed);
+
                     //animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
                     playerSprite.flipX = horizontalInput < 0f;
                     if (isSwinging)
@@ -156,7 +188,15 @@ namespace Platformer.Mechanics
                         //animator.SetBool("IsSwinging", false);
                         if (!isSwinging)
                         {
-                            
+                            if (horizontalInput > 0f)
+                            {
+                                isTurned = true;
+                            }
+                            if (horizontalInput < 0f)
+                            {
+                                isTurned = false;
+                            }
+
                             var groundForce = speed * 2f;
                             rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0));
                             rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);

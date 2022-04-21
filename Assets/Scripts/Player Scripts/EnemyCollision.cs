@@ -15,6 +15,9 @@ public class EnemyCollision : MonoBehaviour
 
     private Vector3 direction;
 
+        private Weapon wep_script;
+
+        private GameObject weapon;
 
     [SerializeField] private float knockbackX = 5;
     [SerializeField] private float knockbackY = 5;
@@ -25,13 +28,16 @@ public class EnemyCollision : MonoBehaviour
         player = GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
-        
-    }
+        weapon = gameObject.transform.GetChild(2).gameObject;
+        wep_script = weapon.GetComponent<Weapon>();
+
+        }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && !wep_script.canDmg)
         {
+            Debug.Log("tag" + collision.gameObject.tag);
             Vector3 enemyDir = (playerTransform.position - collision.gameObject.transform.position).normalized;
             if (enemyDir.x < 0)
             {
