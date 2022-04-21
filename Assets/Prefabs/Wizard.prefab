@@ -304,9 +304,10 @@ MonoBehaviour:
   groundCheck: 0
   isSwinging: 0
   maxJumps: 2
-  jumpForce: 12
+  jumpForce: 16
   stunTimer: 0.25
   dashSpeed: 100
+  isTurned: 0
 --- !u!114 &6703601026431866024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,5 +738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
+  canDmg: 0
   attackDuriation: 0.35
   timeSinceAttack: 0
