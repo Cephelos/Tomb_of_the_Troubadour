@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public float dmg;
-    private bool canDmg;
+    public bool canDmg;
     public float attackDuriation;
     [SerializeField] private float timeSinceAttack;
 
