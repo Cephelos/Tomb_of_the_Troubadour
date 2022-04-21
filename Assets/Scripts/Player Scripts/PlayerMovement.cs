@@ -118,7 +118,7 @@ namespace Platformer.Mechanics
                 }
             }
 
-            if (dash && (Input.GetKeyDown("z")))
+            if (dash && (Input.GetKeyDown("z") || Input.GetKeyDown(KeyCode.LeftShift)))
             {
                 var facingDirection = new Vector2(1, 0);
                 // PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
@@ -133,8 +133,9 @@ namespace Platformer.Mechanics
                 //var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
                 //var facingDirection = worldMousePosition - transform.position;
                 //Debug.Log(facingDirection);
+                rBody.position = new Vector2(rBody.position.x, rBody.position.y+0.01f);
+                rBody.AddForce(facingDirection*24, ForceMode2D.Impulse);
 
-                rBody.AddForce(facingDirection*32, ForceMode2D.Impulse);
 
             }
             // Set animator parameters

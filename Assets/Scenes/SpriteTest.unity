@@ -12678,7 +12678,7 @@ MonoBehaviour:
   fadeTime: 2
   enemyColor: {r: 1, g: 0, b: 0, a: 1}
   spawnLocLowerLeft: {x: -24, y: -12}
-  spawnLocUpperRight: {x: 17, y: 11}
+  spawnLocUpperRight: {x: 17, y: 7}
 --- !u!1 &867450344
 GameObject:
   m_ObjectHideFlags: 0
@@ -13087,6 +13087,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a481f6f33b707a419de4cd3c17e5d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmg: 0
+  canDmg: 0
+  attackDuriation: 0
+  timeSinceAttack: 0
   bulletPrefab: {fileID: 5952355808466800746, guid: d6344a3303542c849b78c101db1add41, type: 3}
 --- !u!1001 &1038222719
 PrefabInstance:
@@ -14881,7 +14885,7 @@ MonoBehaviour:
   fadeTime: 2
   enemyColor: {r: 1, g: 0, b: 0, a: 1}
   spawnLocLowerLeft: {x: -24, y: -12}
-  spawnLocUpperRight: {x: 17, y: 11}
+  spawnLocUpperRight: {x: 17, y: 7}
 --- !u!4 &1909921588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8516609088958146892, guid: 7520c7c73cb9ed14da7a9b17b69ce13b, type: 3}
@@ -15031,7 +15035,7 @@ MonoBehaviour:
   fadeTime: 2
   enemyColor: {r: 1, g: 0, b: 0, a: 1}
   spawnLocLowerLeft: {x: -24, y: -12}
-  spawnLocUpperRight: {x: 17, y: 11}
+  spawnLocUpperRight: {x: 17, y: 7}
 --- !u!4 &2007701040
 Transform:
   m_ObjectHideFlags: 0
