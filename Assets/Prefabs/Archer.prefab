@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3493409414017326678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3160701817517379297}
+  - component: {fileID: 30116906533287606}
+  m_Layer: 0
+  m_Name: Bow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3160701817517379297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3493409414017326678}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 0}
+  m_Children: []
+  m_Father: {fileID: 6708101590497548021}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &30116906533287606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3493409414017326678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a481f6f33b707a419de4cd3c17e5d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 0
+  attackDuriation: 0.35
+  timeSinceAttack: 0
+  bulletPrefab: {fileID: 5952355808466800746, guid: d6344a3303542c849b78c101db1add41, type: 3}
 --- !u!1 &6702397830621622035
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +71,6 @@ GameObject:
   - component: {fileID: 4657012751097435806}
   - component: {fileID: 7101269440203938938}
   - component: {fileID: 7101269440203938941}
-  - component: {fileID: 7338979305150859036}
   m_Layer: 2
   m_Name: Archer
   m_TagString: Player
@@ -45,6 +91,7 @@ Transform:
   m_Children:
   - {fileID: 6703601026871861854}
   - {fileID: 6703601025773186319}
+  - {fileID: 3160701817517379297}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -429,19 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d7dc787dc617b428ba80e6fd259957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7338979305150859036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6702397830621622035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a481f6f33b707a419de4cd3c17e5d47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5952355808466800746, guid: d6344a3303542c849b78c101db1add41, type: 3}
 --- !u!1 &6703601025773186313
 GameObject:
   m_ObjectHideFlags: 0

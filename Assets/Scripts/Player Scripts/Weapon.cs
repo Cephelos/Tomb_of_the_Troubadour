@@ -5,9 +5,9 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public float dmg;
-    private bool canDmg;
+    public bool canDmg;
     public float attackDuriation;
-    [SerializeField] private float timeSinceAttack;
+    [SerializeField] public float timeSinceAttack;
 
     void Update()
     {       
@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public virtual void Attack(Platformer.Mechanics.PlayerMovement playerMovement)
     {
         Debug.Log("attacked");
         canDmg = true;
