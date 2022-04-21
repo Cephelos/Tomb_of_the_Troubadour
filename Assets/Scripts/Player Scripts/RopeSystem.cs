@@ -37,7 +37,7 @@ namespace Platformer.Mechanics
 
         public LineRenderer ropeRenderer;
         public LayerMask ropeLayerMask;
-        private float ropeMaxCastDistance = 10f;
+        private float ropeMaxCastDistance = 100f;
         private List<Vector2> ropePositions = new List<Vector2>();
 
 
@@ -179,10 +179,12 @@ namespace Platformer.Mechanics
             {
                 aimDirection = new Vector2(-1, 1);
             }
+            Debug.Log(isTurned);
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetKeyDown("z"))
             {
-                if(cooldownTimer2 != 0)
+                Debug.Log("got input");
+                if (cooldownTimer2 != 0)
                     return;
                 cooldownTimer2 = 1;
                 if (ropeAttached)
@@ -217,7 +219,7 @@ namespace Platformer.Mechanics
             }
 
 
-            if (Input.GetMouseButton(1))
+            if (Input.GetKeyDown("z") && ropeAttached)
             {
                 if(cooldownTimer != 0) 
                     return;
