@@ -172,6 +172,14 @@ namespace Platformer.Mechanics
         private void HandleInput(Vector2 aimDirection)
         {
             aimDirection = new Vector2(1, 1);
+            PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
+            bool isTurned = playerMovement.isTurned;
+
+            if (!isTurned)
+            {
+                aimDirection = new Vector2(-1, 1);
+            }
+
             if (Input.GetMouseButton(0))
             {
                 if(cooldownTimer2 != 0)

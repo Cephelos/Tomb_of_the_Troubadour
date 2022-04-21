@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerSettings : MonoBehaviour
 {
 
-    public bool double_jump = true;
-    public bool grapple = false;
+    public bool double_jump = false;
+    public bool grapple = true;
     public bool dash = false;
 
     public float speed = 5f;

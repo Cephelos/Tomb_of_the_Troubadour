@@ -30,6 +30,8 @@ namespace Platformer.Mechanics
         bool double_jump;
         bool grapple;
         bool dash;
+
+        public bool isTurned;
         ///float speed;
 
         void Awake()
@@ -174,7 +176,15 @@ namespace Platformer.Mechanics
                         //animator.SetBool("IsSwinging", false);
                         if (!isSwinging)
                         {
-                            
+                            if (horizontalInput > 0f)
+                            {
+                                isTurned = true;
+                            }
+                            if (horizontalInput < 0f)
+                            {
+                                isTurned = false;
+                            }
+
                             var groundForce = speed * 2f;
                             rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0));
                             rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
