@@ -46,6 +46,7 @@ namespace Platformer.Mechanics
             speed = playerSettings.speed;
         }
 
+
         void Update()
         {
             if(stunTimer > 0)
@@ -58,12 +59,14 @@ namespace Platformer.Mechanics
             var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
 
             // int layerMask = (LayerMask.GetMask("Ground"));
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
-            if (hit.collider != null)
-                Debug.Log("collider of " + hit.transform.gameObject.name + " was hit!");
-            groundCheck = hit.collider != null && hit.transform.gameObject.CompareTag("Wall");
+            // RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
+            // if (hit.collider != null)
+            //     Debug.Log("collider of " + hit.transform.gameObject.tag + " was hit!");
+            // groundCheck = hit.collider != null && hit.transform.gameObject.CompareTag("Wall");
+            // if (groundCheck)
+            //     Debug.Log("fuck");
 
-           
+            groundCheck = rBody.IsTouchingLayers(7);
 
 
             Vector2 antiVelocity;
@@ -89,8 +92,8 @@ namespace Platformer.Mechanics
                     if (double_jump && jumps > 0)
                     {
                         jumps = jumps - 1;
-                        //Vector2 vel = new Vector2(rBody.velocity.x, 0);
-                        //rBody.velocity = vel;
+                        Vector2 vel = new Vector2(rBody.velocity.x, 0);
+                        rBody.velocity = vel;
                         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 
                     }
