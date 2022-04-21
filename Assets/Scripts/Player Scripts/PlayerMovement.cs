@@ -46,6 +46,24 @@ namespace Platformer.Mechanics
             speed = playerSettings.speed;
         }
 
+        public void SetAbility(int whichAbility)
+        {
+            switch(whichAbility)
+            {
+                case 0:
+                    dash = true;
+
+                    break;
+
+                case 1:
+                    double_jump = true;
+                    break;
+
+                case 2:
+                    grapple = true;
+                    break;
+            }
+        }
 
         void Update()
         {
