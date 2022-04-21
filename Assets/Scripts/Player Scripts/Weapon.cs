@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
         Renderer rend = gameObject.transform.GetComponent<Renderer>();
         Color matColor = rend.material.color;
         float a_value = rend.material.color.a;
-        BoxCollider sword_Collider = gameObject.GetComponent<BoxCollider>();
+        BoxCollider2D sword_Collider = gameObject.GetComponent<BoxCollider2D>();
 
         timeSinceAttack += Time.deltaTime;
         if (timeSinceAttack > attackDuriation)
