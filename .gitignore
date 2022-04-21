@@ -61,5 +61,5 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Plugin
-.Assets/Plugins
+Assets/Plugins/
 Assets/Plugins.meta
