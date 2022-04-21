@@ -40,6 +40,8 @@ public class RoomManager : MonoBehaviour
     {
         removePlatforms.ResetPlatforms();
         spawnEnemies.ResetEnemies();
+        raiseLava.ResetLava();
+
     }
 
 

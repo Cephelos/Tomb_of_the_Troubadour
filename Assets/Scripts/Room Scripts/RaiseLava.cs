@@ -10,9 +10,12 @@ public class RaiseLava : MonoBehaviour
     [SerializeField] private GameObject lava;
     private float oldY;
 
+    private Vector3 originalPos;
+
     void Start()
     {
-        oldY = lava.transform.position.y;
+        originalPos = lava.transform.position;
+        oldY = originalPos.y;
     }
 
 
@@ -35,5 +38,10 @@ public class RaiseLava : MonoBehaviour
             
         }
 
+    }
+
+    public void ResetLava()
+    {
+        lava.transform.position = originalPos;
     }
 }
