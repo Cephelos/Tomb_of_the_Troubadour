@@ -14,20 +14,22 @@ public class Weapon : MonoBehaviour
         Renderer rend = gameObject.transform.GetComponent<Renderer>();
         Color matColor = rend.material.color;
         float a_value = rend.material.color.a;
-
+        BoxCollider sword_Collider = gameObject.GetComponent<BoxCollider>();
 
         timeSinceAttack += Time.deltaTime;
         if (timeSinceAttack > attackDuriation)
         {
             canDmg = false;
+            
         }
         if (!canDmg)
         {
-
-           rend.material.color = new Color(matColor.r, matColor.g, matColor.b, 0);
+            sword_Collider.size = new Vector2(0, 0);
+            rend.material.color = new Color(matColor.r, matColor.g, matColor.b, 0);
         }
         else
         {
+            sword_Collider.size = new Vector2(1, 1);
             rend.material.color = new Color(matColor.r, matColor.g, matColor.b, 0.7f);
         }
     }
