@@ -9,6 +9,7 @@ public class VoteEvery30Seconds : MonoBehaviour
     public float intensity; // intensity of effects - higher means more enemies
     public float voteInterval; // How long until votes
 
+
     private void Awake()
     {
         voteTimer = voteInterval;
@@ -36,8 +37,8 @@ public class VoteEvery30Seconds : MonoBehaviour
                     room.SpawnEnemies(intensity);
                     break;
 
-                case "Less Platforms!":
-                    room.RemovePlatforms(intensity);
+                case "Fire Rain!":
+                    room.SpawnFireRain((int)Mathf.Floor(intensity)*2 + 5);
                     break;
 
                 case "Raise the Lava!":

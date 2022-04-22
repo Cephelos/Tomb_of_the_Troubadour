@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour
     {
 
         Debug.Log("collided");
-        if (canDmg && collision.CompareTag("Enemy"))
+        if (canDmg && collision.CompareTag("Enemy") && !collision.GetComponent<Enemy>().invincible)
         {
             Debug.Log("damage");
             ///gameObject bg = other.gameObject;

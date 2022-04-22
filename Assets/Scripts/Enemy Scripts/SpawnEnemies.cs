@@ -55,6 +55,7 @@ public class SpawnEnemies : MonoBehaviour
 
     public void ResetEnemies()
     {
+        Debug.Log("help");
         while(activeEnemies.Count > 0)
         {
             Destroy(activeEnemies[0].gameObject);

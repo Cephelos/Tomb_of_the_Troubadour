@@ -9,6 +9,10 @@ public class RoomManager : MonoBehaviour
 
     public RaiseLava raiseLava;
 
+    public SpawnFireRain spawnFireRain;
+
+    private int fireCount;
+
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +38,12 @@ public class RoomManager : MonoBehaviour
     public void RaiseLava() 
     {
         raiseLava.moveLava = true;
+    }
+
+    public void SpawnFireRain(int fireCount)
+    {
+        for(int i = 0; i < fireCount; i++) 
+            spawnFireRain.Spawn();
     }
 
     public void ResetRoom()
