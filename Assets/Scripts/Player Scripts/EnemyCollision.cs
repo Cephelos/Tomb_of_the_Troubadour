@@ -22,6 +22,7 @@ public class EnemyCollision : MonoBehaviour
     [SerializeField] private float knockbackX = 5;
     [SerializeField] private float knockbackY = 5;
     [SerializeField] private float stunTime= 0.50f;
+    [SerializeField] private float invincibleTime = 1f;
     void Awake(){
         rBody = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
@@ -35,7 +36,7 @@ public class EnemyCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Enemy") && !wep_script.canDmg)
+        if (collision.CompareTag("Enemy") && !wep_script.canDmg && player.invincibleTimer == 0)
         {
             Debug.Log("tag" + collision.gameObject.tag);
             Vector3 enemyDir = (playerTransform.position - collision.gameObject.transform.position).normalized;
@@ -48,6 +49,7 @@ public class EnemyCollision : MonoBehaviour
             rBody.AddForce(new Vector3(knockbackX, knockbackY, 0), ForceMode2D.Impulse);
 
             player.stunTimer = stunTime;
+            player.invincibleTimer = invincibleTime;
 
             // Damage the player
             health.Decrement();
