@@ -154,7 +154,7 @@ namespace Platformer.Mechanics
                 //var facingDirection = worldMousePosition - transform.position;
                 //Debug.Log(facingDirection);
                 rBody.position = new Vector2(rBody.position.x, rBody.position.y+0.01f);
-                rBody.AddForce(facingDirection*24, ForceMode2D.Impulse);
+                rBody.AddForce(facingDirection*36, ForceMode2D.Impulse);
 
                 // Set cooldown timer
                 dashTimer = dashCooldown;

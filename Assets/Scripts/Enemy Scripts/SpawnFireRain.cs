@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class SpawnFireRain : MonoBehaviour
 {
-     public List<Enemy> activeEnemies = new List<Enemy>();
+     public List<Enemy> activeFire = new List<Enemy>();
     public Enemy firePrefab;
-    public int numDefaultEnemies = 3;
-    public float fadeTime = 2f; // time enemies take to fade in
-    public Color enemyColor;
+
 
     [SerializeField]
     private float leftBound, rightBound, ceiling;
@@ -16,7 +14,7 @@ public class SpawnFireRain : MonoBehaviour
     public void Spawn()
     {
         Enemy fire = Instantiate(firePrefab, transform);
-        activeEnemies.Add(fire);
+        activeFire.Add(fire);
         Vector3 roomPos = Platformer.Mechanics.GameController.Instance.currentRoom.gameObject.transform.position;
         fire.transform.position = roomPos + new Vector3(Random.Range(leftBound, rightBound), ceiling, 0);
 
@@ -30,5 +28,15 @@ public class SpawnFireRain : MonoBehaviour
         fire.collider.enabled = true;
 
         yield return null;
+    }
+
+    public void ResetFire()
+    {
+
+        while(activeFire.Count > 0)
+        {
+            Destroy(activeFire[0].gameObject);
+            activeFire.RemoveAt(0);
+        }
     }
 }
