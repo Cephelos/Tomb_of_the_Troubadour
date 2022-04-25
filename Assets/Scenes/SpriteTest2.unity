@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1154944}
   m_Layer: 0
   m_Name: TileGround (19)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 33757308}
   m_Layer: 0
   m_Name: TileGround (20)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1452,7 +1452,7 @@ GameObject:
   - component: {fileID: 327013903}
   m_Layer: 0
   m_Name: TileGround (13)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1561,7 +1561,7 @@ GameObject:
   - component: {fileID: 362452440}
   m_Layer: 0
   m_Name: TileGround (17)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2133,6 +2133,7 @@ MonoBehaviour:
   removePlatforms: {fileID: 1231240754}
   spawnEnemies: {fileID: 1883283659}
   raiseLava: {fileID: 554793548}
+  spawnFireRain: {fileID: 0}
 --- !u!1 &637530338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
-  enemyPrefab: {fileID: -6711219552106800465, guid: 8c7fc5a28cb535544bf8e7052875bfeb, type: 3}
+  enemyPrefab: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
   enemyColor: {r: 1, g: 0, b: 0, a: 1}
@@ -2932,7 +2933,7 @@ GameObject:
   - component: {fileID: 1057103735}
   m_Layer: 0
   m_Name: TileGround (18)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3571,6 +3572,7 @@ MonoBehaviour:
   removePlatforms: {fileID: 1861620520}
   spawnEnemies: {fileID: 789879054}
   raiseLava: {fileID: 1342116927}
+  spawnFireRain: {fileID: 0}
 --- !u!1 &1609201583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,7 +3586,7 @@ GameObject:
   - component: {fileID: 1609201585}
   m_Layer: 0
   m_Name: TileGround (16)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3946,7 +3948,7 @@ GameObject:
   - component: {fileID: 1736788438}
   m_Layer: 0
   m_Name: TileGround (15)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4816,7 +4818,7 @@ GameObject:
   - component: {fileID: 2059985885}
   m_Layer: 0
   m_Name: TileGround (14)
-  m_TagString: Wall
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4657012751097435806}
   - component: {fileID: 7101269440203938938}
   - component: {fileID: 7101269440203938941}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Archer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6703601025773186319}
   - component: {fileID: 6703601025773186318}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 6703601026871861854}
   - component: {fileID: 6703601026871861849}
   - component: {fileID: 6703601026871861848}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: RopeAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
