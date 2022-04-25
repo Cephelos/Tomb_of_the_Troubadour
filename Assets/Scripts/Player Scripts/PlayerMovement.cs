@@ -224,10 +224,34 @@ namespace Platformer.Mechanics
                             }
 
                             var groundForce = speed * 2f;
-                            rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0));
+                            var rawHorzInput = Input.GetAxisRaw("Horizontal");
+                            if(rawHorzInput != 0f && horizontalInput * rBody.velocity.x > 0 && Mathf.Abs(rBody.velocity.x) < groundForce) 
+                                // if we're inputting in the same direction as our movement and moving at less than max speed
+                            {
+                                rBody.AddForce(new Vector2(rawHorzInput * Mathf.Max((Mathf.Abs(horizontalInput * groundForce) - Mathf.Abs(rBody.velocity.x)) * groundForce, 0), 0)); // don't slow down!
+                            }
+                            else
+                            {
+                                rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0)); // slow down (same as before)!
+                            }
                             rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
                         }
                     }
+                }
+                else
+                {
+                    var groundForce = speed * 2f;
+                    if (rBody.velocity.x > 1f * groundForce)
+                    {
+                        rBody.AddForce(new Vector2((1f * groundForce - rBody.velocity.x) * groundForce, 0));
+
+                    }
+                    else if(rBody.velocity.x < -1f * groundForce)
+                    {
+                        rBody.AddForce(new Vector2((-(1f * groundForce + rBody.velocity.x)) * groundForce, 0));
+
+                    }
+                    rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
                 }
             //else
             //{
