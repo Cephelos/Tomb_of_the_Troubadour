@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private Platformer.Mechanics.PlayerMovement player;
+    [SerializeField] private float bowCooldown = 0.75f;
+    private float bowTimer = 0f;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -24,12 +26,28 @@ public class PlayerAttack : MonoBehaviour
         animator.SetBool("Attacking", true);
     }
 
+    void TickTimers()
+    {
+        if (bowTimer > 0)
+            bowTimer -= Time.deltaTime;
+        if (bowTimer < 0)
+            bowTimer = 0;
+    }
+
     // Update is called once per frame
     void Update()
-    {
+    {   
+        TickTimers();
+
+
         if (Input.GetKeyDown(KeyCode.RightShift) && player.stunTimer == 0f)
         {
-            Attack();
+            if(player.name.Contains("Knight") || (player.name.Contains("Archer") && bowTimer == 0))
+            {
+                Attack();
+                bowTimer = bowCooldown;
+            }
+            
         }
 
         // Tell animator if the player is no longer attacking

@@ -45,6 +45,8 @@ public class ArrowSystem : Weapon
         canDmg = true;
         timeSinceAttack = 0;
     }
+
+    
 }
 
 

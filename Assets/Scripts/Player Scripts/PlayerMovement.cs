@@ -84,6 +84,7 @@ namespace Platformer.Mechanics
                 invincibleTimer -= Time.deltaTime;
             if (invincibleTimer < 0)
                 invincibleTimer = 0;
+                
 
             if (dashTimer > 0)
                 dashTimer -= Time.deltaTime;

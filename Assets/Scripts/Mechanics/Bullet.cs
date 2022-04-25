@@ -13,4 +13,11 @@ public class Bullet : MonoBehaviour
         transform.Translate((new Vector2(1,0) * speed * Time.deltaTime));
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Wall") || collision.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
