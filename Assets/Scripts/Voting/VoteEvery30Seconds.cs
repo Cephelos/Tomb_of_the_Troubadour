@@ -38,7 +38,7 @@ public class VoteEvery30Seconds : MonoBehaviour
                     break;
 
                 case "Fire Rain!":
-                    room.SpawnFireRain((int)Mathf.Floor(intensity)*2 + 5);
+                    room.SpawnFireRain((int)Mathf.Floor(intensity)+3);
                     break;
 
                 case "Raise the Lava!":

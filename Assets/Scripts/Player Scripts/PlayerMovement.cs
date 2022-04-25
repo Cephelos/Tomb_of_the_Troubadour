@@ -24,7 +24,11 @@ namespace Platformer.Mechanics
 
         
         public float stunTimer = 0.25f;
+        public float invincibleTimer = 0f;
         public float dashSpeed = 100f;
+        public float dashTimer = 0f;
+        public float dashCooldown = 0.7f;
+        public float dashIframeDuration = 0.2f;
 
 
         bool double_jump;
@@ -69,12 +73,29 @@ namespace Platformer.Mechanics
             }
         }
 
-        void Update()
+        void TickTimers() // Subtracts time passed since the last frame from all timers (stun timer, invincibility timer and dash cooldown timer)
         {
-            if(stunTimer > 0)
+            if (stunTimer > 0)
                 stunTimer -= Time.deltaTime;
             if (stunTimer < 0)
                 stunTimer = 0;
+
+            if (invincibleTimer > 0)
+                invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0)
+                invincibleTimer = 0;
+                
+
+            if (dashTimer > 0)
+                dashTimer -= Time.deltaTime;
+            if (dashTimer < 0)
+                dashTimer = 0;
+        }
+
+        void Update()
+        {
+            TickTimers(); // Moved the code that ticks the timers into a method to make things neater, since we have a lot of them
+
             jumpInput = Input.GetAxis("Jump");
             horizontalInput = Input.GetAxis("Horizontal");
 
@@ -118,7 +139,7 @@ namespace Platformer.Mechanics
                 }
             }
 
-            if (dash && (Input.GetKeyDown("z") || Input.GetKeyDown(KeyCode.LeftShift)))
+            if (dash && (Input.GetKeyDown("z") || Input.GetKeyDown(KeyCode.LeftShift)) && dashTimer ==0)
             {
                 var facingDirection = new Vector2(1, 0);
                 // PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
@@ -134,8 +155,13 @@ namespace Platformer.Mechanics
                 //var facingDirection = worldMousePosition - transform.position;
                 //Debug.Log(facingDirection);
                 rBody.position = new Vector2(rBody.position.x, rBody.position.y+0.01f);
-                rBody.AddForce(facingDirection*24, ForceMode2D.Impulse);
+                rBody.AddForce(facingDirection*36, ForceMode2D.Impulse);
 
+                // Set cooldown timer
+                dashTimer = dashCooldown;
+
+                // Set I-frames
+                invincibleTimer = dashIframeDuration;
 
             }
             // Set animator parameters
@@ -198,10 +224,34 @@ namespace Platformer.Mechanics
                             }
 
                             var groundForce = speed * 2f;
-                            rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0));
+                            var rawHorzInput = Input.GetAxisRaw("Horizontal");
+                            if(rawHorzInput != 0f && horizontalInput * rBody.velocity.x > 0 && Mathf.Abs(rBody.velocity.x) < groundForce) 
+                                // if we're inputting in the same direction as our movement and moving at less than max speed
+                            {
+                                rBody.AddForce(new Vector2(rawHorzInput * Mathf.Max((Mathf.Abs(horizontalInput * groundForce) - Mathf.Abs(rBody.velocity.x)) * groundForce, 0), 0)); // don't slow down!
+                            }
+                            else
+                            {
+                                rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0)); // slow down (same as before)!
+                            }
                             rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
                         }
                     }
+                }
+                else
+                {
+                    var groundForce = speed * 2f;
+                    if (rBody.velocity.x > 1f * groundForce)
+                    {
+                        rBody.AddForce(new Vector2((1f * groundForce - rBody.velocity.x) * groundForce, 0));
+
+                    }
+                    else if(rBody.velocity.x < -1f * groundForce)
+                    {
+                        rBody.AddForce(new Vector2((-(1f * groundForce + rBody.velocity.x)) * groundForce, 0));
+
+                    }
+                    rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
                 }
             //else
             //{

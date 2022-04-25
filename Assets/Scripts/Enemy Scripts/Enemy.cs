@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     {
         if(enemy.name.Contains("FireRainObject"))
         {
-            Debug.Log("hit");
+
             wobbleTimer -= 1f * Time.deltaTime;
             if(wobbleTimer <= 0)
             {
