@@ -29,7 +29,7 @@ namespace Platformer.Mechanics
         public float dashSpeed = 100f;
         public float dashTimer = 0f;
         public float dashCooldown = 0.7f;
-        public float dashIframeDuration = 0.2f;
+        public float dashIframeDuration = 0.3f;
 
 
         bool double_jump;
@@ -121,8 +121,12 @@ namespace Platformer.Mechanics
 
             if (dashTimer > 0)
                 dashTimer -= Time.deltaTime;
+                
             if (dashTimer < 0)
                 dashTimer = 0;
+                
+                
+
         }
 
         void Update()
@@ -135,12 +139,16 @@ namespace Platformer.Mechanics
             horizontalInput = Input.GetAxis("Horizontal");
 
 
-            RaycastHit2D hit = Physics2D.Raycast(rBody.GetComponent<BoxCollider2D>().bounds.center, Vector2.down, rBody.GetComponent<BoxCollider2D>().bounds.extents.y + 0.05f);
+            RaycastHit2D hit1 = Physics2D.Raycast(rBody.GetComponent<BoxCollider2D>().bounds.min, Vector2.down, rBody.GetComponent<BoxCollider2D>().bounds.extents.y + 0.05f);
+            RaycastHit2D hit2 = Physics2D.Raycast(new Vector2(rBody.GetComponent<BoxCollider2D>().bounds.max.x, rBody.GetComponent<BoxCollider2D>().bounds.min.y), Vector2.down, rBody.GetComponent<BoxCollider2D>().bounds.extents.y + 0.05f);
             Color color1 = Color.red;
-            if(hit) color1 = Color.green;
-            // Debug.DrawRay(rBody.GetComponent<BoxCollider2D>().bounds.center, Vector2.down * (rBody.GetComponent<BoxCollider2D>().bounds.extents.y + 0.05f), color1);
+            Color color2 = Color.red;
+            if(hit1) color1 = Color.green;
+            if(hit2) color2 = Color.green;
+            Debug.DrawRay(rBody.GetComponent<BoxCollider2D>().bounds.min, Vector2.down * (rBody.GetComponent<BoxCollider2D>().bounds.extents.y + 0.05f), color1);
+            Debug.DrawRay(new Vector2(rBody.GetComponent<BoxCollider2D>().bounds.max.x, rBody.GetComponent<BoxCollider2D>().bounds.min.y), Vector2.down * (rBody.GetComponent<BoxCollider2D>().bounds.extents.y + 0.05f), color2);
         
-            groundCheck = hit;
+            groundCheck = hit1 || hit2;
 
 
             Vector2 antiVelocity;
@@ -194,6 +202,7 @@ namespace Platformer.Mechanics
 
                 // Set cooldown timer
                 dashTimer = dashCooldown;
+                
 
                 // Set I-frames
                 invincibleTimer = dashIframeDuration;

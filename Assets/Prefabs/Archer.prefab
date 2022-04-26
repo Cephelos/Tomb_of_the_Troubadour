@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6702397830621622035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.35, y: -7.27, z: 0}
+  m_LocalPosition: {x: -15.182, y: -7.277, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_Children:
   - {fileID: 6703601026871861854}
@@ -181,7 +181,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.69281006, y: -2.5602555}
+  m_Offset: {x: 0.00018882751, y: -2.5742545}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -192,7 +192,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.161293, y: 4.3860598}
+  m_Size: {x: 2.2592926, y: 4.134059}
   m_EdgeRadius: 0
 --- !u!120 &8632998897562166113
 LineRenderer:
@@ -351,10 +351,16 @@ MonoBehaviour:
   jumpSpeed: 60
   groundCheck: 0
   isSwinging: 0
+  saaanicParticles: {fileID: 0}
   maxJumps: 2
   jumpForce: 16
+  onIce: 0
   stunTimer: 0.25
+  invincibleTimer: 0
   dashSpeed: 100
+  dashTimer: 0
+  dashCooldown: 0.7
+  dashIframeDuration: 0.3
   isTurned: 0
 --- !u!114 &6703601026431866024
 MonoBehaviour:
@@ -448,6 +454,7 @@ MonoBehaviour:
   knockbackX: 5
   knockbackY: 5
   stunTime: 0.5
+  invincibleTime: 1
 --- !u!114 &7101269440203938938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d7dc787dc617b428ba80e6fd259957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bowCooldown: 0.75
 --- !u!1 &6703601025773186313
 GameObject:
   m_ObjectHideFlags: 0
