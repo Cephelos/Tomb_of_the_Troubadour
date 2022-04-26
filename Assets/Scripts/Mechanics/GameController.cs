@@ -1,6 +1,7 @@
 using Platformer.Core;
 using Platformer.Model;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Platformer.Mechanics
 {
@@ -19,7 +20,17 @@ namespace Platformer.Mechanics
         //shared reference when the scene loads, allowing the model to be
         //conveniently configured inside the inspector.
         public PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-        public PlayerController player;
+        public PlayerMovement player;
+        public float baseGravity = 9.81f; // Base gravity value, resets to this when changing rooms
+        public float basePlayerSpeed = 5f;
+        public PhysicsMaterial2D iceMat;
+
+        public TilemapRenderer tiles;
+        public Material defaultTiles;
+        public Material frozenTiles;
+
+        public ParticleSystem antigravParticles;
+        public ParticleSystem saaanicParticles;
 
         public RoomManager currentRoom;
 

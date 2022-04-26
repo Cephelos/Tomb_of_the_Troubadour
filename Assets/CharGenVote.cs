@@ -79,6 +79,7 @@ public class CharGenVote : MonoBehaviour
         }
         player.transform.position = spawnLoc.transform.position;
         playerMovement = player.GetComponent<Platformer.Mechanics.PlayerMovement>();
+        Platformer.Mechanics.GameController.Instance.player = player.GetComponent<Platformer.Mechanics.PlayerMovement>();
         voteGenerator.ClosePoll();
 
         voteGenerator.CreateVote("What ability should they have?", new string[3] { "Dash", "Double Jump", "Grapple" });

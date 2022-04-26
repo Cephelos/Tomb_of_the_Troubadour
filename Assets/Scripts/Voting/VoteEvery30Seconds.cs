@@ -46,6 +46,18 @@ public class VoteEvery30Seconds : MonoBehaviour
 
                     room.RaiseLava();
                     break;
+
+                case "SAAANIC FAST!":
+                    room.SpeedUpPlayer();
+                    break;
+
+                case "Decrease Gravity!":
+                    room.DecreaseGravity();
+                    break;
+
+                case "Freeze Floors!":
+                    room.FreezeFloors();
+                    break;
             }
             voteGenerator.ClosePoll();
 

@@ -35,6 +35,7 @@ public class SpawnFireRain : MonoBehaviour
 
         while(activeFire.Count > 0)
         {
+            if(activeFire[0] != null)
             Destroy(activeFire[0].gameObject);
             activeFire.RemoveAt(0);
         }

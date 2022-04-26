@@ -11,6 +11,7 @@ namespace Platformer.Mechanics
         public float jumpSpeed = 10f;
         public bool groundCheck;
         public bool isSwinging = false;
+        public ParticleSystem saaanicParticles;
         private SpriteRenderer playerSprite;
         private Rigidbody2D rBody;
         private bool isJumping;
@@ -21,7 +22,7 @@ namespace Platformer.Mechanics
         public int maxJumps = 2;
         private int jumps;
         public float jumpForce = 13f;
-
+        public bool onIce = false; // is the player walking on ice
         
         public float stunTimer = 0.25f;
         public float invincibleTimer = 0f;
@@ -71,6 +72,38 @@ namespace Platformer.Mechanics
                     grapple = true;
                     break;
             }
+        }
+
+        public void ToggleIcePhysics(bool on)
+        {
+            if(on)
+            {
+                rBody.sharedMaterial = GameController.Instance.iceMat;
+                onIce = true;
+            }
+            else
+            {
+                rBody.sharedMaterial = null;
+                onIce = false;
+            }
+        }
+
+        public void BoostSpeed(bool boost) // If boost = true, boosts speed by 1 level; otherwise, resets to base value
+        {
+            if (boost)
+            {
+                speed += GameController.Instance.basePlayerSpeed;
+                if(saaanicParticles == null)
+                    saaanicParticles = Instantiate(GameController.Instance.saaanicParticles, transform);
+            }
+            else
+            {
+                speed = GameController.Instance.basePlayerSpeed;
+                if(saaanicParticles != null)
+                    Destroy(saaanicParticles.gameObject);
+                saaanicParticles = null;
+            }
+
         }
 
         void TickTimers() // Subtracts time passed since the last frame from all timers (stun timer, invincibility timer and dash cooldown timer)
@@ -224,16 +257,33 @@ namespace Platformer.Mechanics
                             }
 
                             var groundForce = speed * 2f;
-                            var rawHorzInput = Input.GetAxisRaw("Horizontal");
-                            if(rawHorzInput != 0f && horizontalInput * rBody.velocity.x > 0 && Mathf.Abs(rBody.velocity.x) < groundForce) 
-                                // if we're inputting in the same direction as our movement and moving at less than max speed
+                            var rawHorizInput = Input.GetAxisRaw("Horizontal");
+                            Vector2 force = new Vector2();
+                            
+                            if (groundCheck && onIce) // If we're on ice, use ice physics
                             {
-                                rBody.AddForce(new Vector2(rawHorzInput * Mathf.Max((Mathf.Abs(horizontalInput * groundForce) - Mathf.Abs(rBody.velocity.x)) * groundForce, 0), 0)); // don't slow down!
+                                if (rawHorizInput != 0f && horizontalInput * rBody.velocity.x > 0 && Mathf.Abs(rBody.velocity.x) < groundForce)
+                                // if we're inputting in the same direction as our movement and moving at less than max speed
+                                {
+                                    force = new Vector2(rawHorizInput * Mathf.Max((Mathf.Abs(horizontalInput * groundForce) - Mathf.Abs(rBody.velocity.x)) * groundForce/5f, 0), 0); // don't slow down!
+                                }
+                                else
+                                {
+                                    force = new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce/5f, 0); // slow down (same as before)!
+                                }
+                            }
+                            else
+                                if (rawHorizInput != 0f && horizontalInput * rBody.velocity.x > 0 && Mathf.Abs(rBody.velocity.x) < groundForce)
+                            // if we're inputting in the same direction as our movement and moving at less than max speed
+                            {
+                                force = new Vector2(rawHorizInput * Mathf.Max((Mathf.Abs(horizontalInput * groundForce) - Mathf.Abs(rBody.velocity.x)) * groundForce, 0), 0); // don't slow down!
                             }
                             else
                             {
-                                rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0)); // slow down (same as before)!
+                                force = new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0); // slow down (same as before)!
                             }
+
+                            rBody.AddForce(force);
                             rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
                         }
                     }
