@@ -6,6 +6,11 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
 {
     public Collider2D collider;
     public SpriteRenderer renderer;
+    public Rigidbody2D RBody { get { if (rBody == null)
+                rBody = GetComponent<Rigidbody2D>();
+                return rBody;
+        } }
+    private Rigidbody2D rBody;
 
     [SerializeField]
     private GameObject enemy;
@@ -21,6 +26,7 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     void Start()
     {
         wobbleTimer = wobble;
+        rBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()

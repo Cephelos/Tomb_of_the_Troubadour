@@ -19,6 +19,8 @@ public class SpawnEnemies : MonoBehaviour
         Vector3 roomPos = Platformer.Mechanics.GameController.Instance.currentRoom.gameObject.transform.position;
         enemy.transform.position = roomPos + new Vector3(Random.Range(spawnLocLowerLeft.x, spawnLocUpperRight.x), Random.Range(spawnLocLowerLeft.y, spawnLocUpperRight.y), 0);
         enemy.collider.enabled = false;
+        enemy.RBody.gravityScale = 0;
+        
         Platformer.Mechanics.GameController.Instance.StartCoroutine(FadeIn(enemy, intensity));
     }
 
@@ -46,6 +48,7 @@ public class SpawnEnemies : MonoBehaviour
 
         enemy.enabled = true;
         enemy.collider.enabled = true;
+        enemy.RBody.gravityScale = 1;
         yield return null;
     }
 
