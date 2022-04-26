@@ -5,7 +5,7 @@ using UnityEngine;
 public class Skeleton : MonoBehaviour
 {
     private enum State { Attack, Move, Idle };
-    public float idleTime = 50f; // time skeleton idles for
+    public float idleTime = 25f; // time skeleton idles for
 
     [SerializeField] private float speed;
     public float Speed { get { return speed; } set { speed = value; } }

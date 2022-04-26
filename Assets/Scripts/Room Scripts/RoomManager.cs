@@ -11,14 +11,7 @@ public class RoomManager : MonoBehaviour
 
     public SpawnFireRain spawnFireRain;
 
-    private int fireCount;
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+ 
     public bool AllEnemiesDead()
     {
         return spawnEnemies.activeEnemies.Count == 0;
@@ -31,8 +24,11 @@ public class RoomManager : MonoBehaviour
 
     public void SpawnEnemies(float intensity)
     {
+
         for(int i = 0; i < 1+Mathf.FloorToInt(intensity/2); i++) // Intensity goes up by 1 any time the audience finishes a vote. Use this to make the bad stuff get worse over time!
+            {
             spawnEnemies.Spawn(intensity);
+            }
     }
 
     public void RaiseLava() 

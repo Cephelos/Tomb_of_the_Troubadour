@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
 {
     public Collider2D collider;
     public SpriteRenderer renderer;
-    public FollowPath followPath;
 
     [SerializeField]
     private GameObject enemy;
@@ -50,13 +49,6 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
                 //enemy.GetComponent<Enemy>().Destruct();
                 this.Destruct();
             }
-        }
-    }
-    public void MakePath(Vector2 lowerLeft, Vector2 upperRight, int nodes)
-    {
-        for(int i = 0; i < nodes; i++)
-        {
-            followPath.AddNode(new Vector2(Random.Range(lowerLeft.x, upperRight.x), Random.Range(lowerLeft.y, upperRight.y)));
         }
     }
 

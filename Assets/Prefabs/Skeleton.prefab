@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 696837708054856473}
   - component: {fileID: -5244557980385989844}
   - component: {fileID: 2417460265168488906}
-  - component: {fileID: 3174995190701158577}
-  m_Layer: 0
+  - component: {fileID: -3867994663001520031}
+  - component: {fileID: 2196366941419301337}
+  m_Layer: 8
   m_Name: Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -76,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2140195979458053779, guid: 81174d320c238234fb83823692762bc2, type: 3}
+  m_Sprite: {fileID: 4035959289877228764, guid: b88b38611a34cfd48bcdbd8980b5ede5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.45, y: 0.5}
+  m_Size: {x: 0.45, y: 0.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -104,8 +105,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.45, y: 0.5}
-    newSize: {x: 0.45, y: 0.5}
+    oldSize: {x: 0.45, y: 0.51}
+    newSize: {x: 0.45, y: 0.51}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -132,7 +133,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &-5244557980385989844
 Animator:
@@ -165,10 +166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c970edf31a5360469e4b20f2d19c27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleTime: 2
+  idleTime: 1
   speed: 1
   timer: 0
---- !u!114 &3174995190701158577
+  state: 1
+--- !u!114 &-3867994663001520031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,10 +182,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca9f7c53a198ef46845d75f46071b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 0}
-  renderer: {fileID: 0}
-  followPath: {fileID: 0}
-  enemy: {fileID: 0}
+  collider: {fileID: 6237770865132379926}
+  renderer: {fileID: 1327640449905336753}
+  followPath: {fileID: 2196366941419301337}
+  enemy: {fileID: 2825369673686083230}
   invincible: 0
   fallSpeed: 0
   wobble: 100
+--- !u!114 &2196366941419301337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2825369673686083230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf0ad9a04209e5643ad93f47083d057a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  positions: []
+  index: 0

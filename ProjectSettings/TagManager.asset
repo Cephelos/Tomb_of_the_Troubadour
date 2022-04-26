@@ -12,6 +12,7 @@ TagManager:
   - Lava
   - Skeleton
   - Ground
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - UI
   - Pivot
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 

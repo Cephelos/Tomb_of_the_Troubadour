@@ -30,6 +30,7 @@ public class VoteEvery30Seconds : MonoBehaviour
 
         if(voteGenerator.GetVoteResult() != "")
         {
+            
             RoomManager room = Platformer.Mechanics.GameController.Instance.currentRoom;
             switch (voteGenerator.GetVoteResult())
             {
@@ -47,6 +48,7 @@ public class VoteEvery30Seconds : MonoBehaviour
                     break;
             }
             voteGenerator.ClosePoll();
+
             intensity += 1f;
         }
     }
