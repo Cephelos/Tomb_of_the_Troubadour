@@ -1,5 +1,4 @@
 using Platformer.Core;
-using Platformer.Model;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -19,7 +18,6 @@ namespace Platformer.Mechanics
         //through the simulation and events. Unity will deserialize over this
         //shared reference when the scene loads, allowing the model to be
         //conveniently configured inside the inspector.
-        public PlatformerModel model = Simulation.GetModel<PlatformerModel>();
         public PlayerMovement player;
         public float baseGravity = 9.81f; // Base gravity value, resets to this when changing rooms
         public float basePlayerSpeed = 5f;

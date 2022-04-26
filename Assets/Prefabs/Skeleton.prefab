@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: -5244557980385989844}
   - component: {fileID: 2417460265168488906}
   - component: {fileID: -3867994663001520031}
-  - component: {fileID: 2196366941419301337}
   m_Layer: 8
   m_Name: Skeleton
   m_TagString: Enemy
@@ -184,23 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 6237770865132379926}
   renderer: {fileID: 1327640449905336753}
-  followPath: {fileID: 2196366941419301337}
   enemy: {fileID: 2825369673686083230}
   invincible: 0
   fallSpeed: 0
   wobble: 100
---- !u!114 &2196366941419301337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2825369673686083230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf0ad9a04209e5643ad93f47083d057a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  positions: []
-  index: 0
