@@ -127,6 +127,8 @@ namespace Platformer.Mechanics
 
         void Update()
         {
+            this.GetComponent<RopeSystem>().enabled = grapple;
+
             TickTimers(); // Moved the code that ticks the timers into a method to make things neater, since we have a lot of them
 
             jumpInput = Input.GetAxis("Jump");
