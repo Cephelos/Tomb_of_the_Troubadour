@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Teleport : MonoBehaviour
 {
     private GameObject currentTeleporter;
@@ -14,10 +15,11 @@ public class Teleport : MonoBehaviour
         {
             if (currentTeleporter != null && Platformer.Mechanics.GameController.Instance.currentRoom.AllEnemiesDead())
             {
+
                 transform.position = currentTeleporter.GetComponent<Door>().GetDestination().position;
                 currentTeleporter.GetComponent<Door>().ChangeRoom();
             }
-            Debug.Log(currentTeleporter);
+
             
         }
     }
@@ -28,8 +30,9 @@ public class Teleport : MonoBehaviour
         if (collision.CompareTag("Teleporter"))
         {
             currentTeleporter = collision.gameObject;
+            Debug.Log(currentTeleporter);
         }
-        Debug.Log(currentTeleporter);
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

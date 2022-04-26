@@ -303,8 +303,10 @@ MonoBehaviour:
   jumpSpeed: 60
   groundCheck: 0
   isSwinging: 0
+  saaanicParticles: {fileID: 0}
   maxJumps: 2
   jumpForce: 16
+  onIce: 0
   stunTimer: 0.25
   invincibleTimer: 0
   dashSpeed: 100
@@ -738,7 +740,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7101269441561948903}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7c69622e66d3c34dbcce43f1c3fca2c, type: 3}
   m_Name: 

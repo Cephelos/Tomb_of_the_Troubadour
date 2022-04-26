@@ -59,6 +59,7 @@ public class EnemyCollision : MonoBehaviour
             
         }
         if (collision.CompareTag("Lava")) {
+            Debug.Log("Lava");
             Destroy (gameObject);
         }
 
