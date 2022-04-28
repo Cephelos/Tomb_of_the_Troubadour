@@ -12,12 +12,19 @@ public class SpawnEnemies : MonoBehaviour
 
     public Vector2 spawnLocLowerLeft; // These vector2s define the corners of the rectangle where enemies can spawn and move
     public Vector2 spawnLocUpperRight;
+
+    private GameObject[] enemyPosList;
+
+    void Start()
+    {
+        enemyPosList = Platformer.Mechanics.GameController.Instance.currentRoom.gameObject.GetComponent<RoomManager>().spawnLocations;
+    }
     public void Spawn(float intensity)
     {
         Enemy enemy = Instantiate(enemyPrefab, transform);
         activeEnemies.Add(enemy);
-        Vector3 roomPos = Platformer.Mechanics.GameController.Instance.currentRoom.gameObject.transform.position;
-        enemy.transform.position = roomPos + new Vector3(Random.Range(spawnLocLowerLeft.x, spawnLocUpperRight.x), Random.Range(spawnLocLowerLeft.y, spawnLocUpperRight.y), 0);
+        Vector3 spawnLoc = enemyPosList[Random.Range(0, enemyPosList.Length-1)].transform.position;
+        enemy.transform.position = new Vector3(spawnLoc.x + Random.Range(-2, 2), spawnLoc.y, spawnLoc.z);
         enemy.collider.enabled = false;
         enemy.GetComponent<Rigidbody2D>().isKinematic = true;
         Platformer.Mechanics.GameController.Instance.StartCoroutine(FadeIn(enemy, intensity));

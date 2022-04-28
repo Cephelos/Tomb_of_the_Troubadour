@@ -12,8 +12,9 @@ public class RoomManager : MonoBehaviour
     public SpawnFireRain spawnFireRain;
 
     public ParticleSystem antigravParticles;
-
+    public GameObject[] spawnLocations;
     private int fireCount;
+
 
     // Update is called once per frame
     void Update()
