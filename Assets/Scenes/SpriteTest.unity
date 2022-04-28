@@ -1356,7 +1356,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500192395}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &500192397
 Camera:
   m_ObjectHideFlags: 0
@@ -1482,7 +1482,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514984490}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!4 &514984493
 Transform:
   m_ObjectHideFlags: 0
@@ -15026,7 +15026,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672364123}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1672364126
 Camera:
   m_ObjectHideFlags: 0
@@ -15372,15 +15372,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8452312256488128407, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452312256700977985, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -782.8514
       objectReference: {fileID: 0}
     - target: {fileID: 8452312256700977985, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -258.5007
+      value: -916.3608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452312256700977985, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 27.308716
       objectReference: {fileID: 0}
     - target: {fileID: 8452312256700977985, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -129.25034
+      value: 458.18042
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
@@ -15405,7 +15413,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1754240608}
   - component: {fileID: 1754240607}
-  - component: {fileID: 1754240609}
   - component: {fileID: 1754240610}
   - component: {fileID: 1754240611}
   - component: {fileID: 1754240612}
@@ -15453,18 +15460,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1754240609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754240606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eabb3e8a9f87443da0ea2a1a2101fb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1754240610
 MonoBehaviour:
   m_ObjectHideFlags: 0
