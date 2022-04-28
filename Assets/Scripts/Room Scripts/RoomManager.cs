@@ -70,7 +70,7 @@ public class RoomManager : MonoBehaviour
 
     public void ResetRoom()
     {
-        removePlatforms.ResetPlatforms();
+        //removePlatforms.ResetPlatforms();
         spawnEnemies.ResetEnemies();
         raiseLava.ResetLava();
         spawnFireRain.ResetFire();
