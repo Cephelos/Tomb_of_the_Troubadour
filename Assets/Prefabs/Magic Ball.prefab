@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5952355808466800744}
   - component: {fileID: 5952355808466800743}
   - component: {fileID: 559560138386893207}
-  - component: {fileID: 5263731003932844614}
   - component: {fileID: -8702126130311695943}
+  - component: {fileID: 1923001164287959866}
   m_Layer: 2
   m_Name: Magic Ball
   m_TagString: Untagged
@@ -125,22 +125,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5263731003932844614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5952355808466800746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c69622e66d3c34dbcce43f1c3fca2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 1
-  canDmg: 0
-  attackDuriation: 100
-  timeSinceAttack: 0
 --- !u!50 &-8702126130311695943
 Rigidbody2D:
   serializedVersion: 4
@@ -162,3 +146,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &1923001164287959866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952355808466800746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193dd01196eb4f442931f41b60ef115d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 0
+  canDmg: 1
+  attackDuriation: 5
+  timeSinceAttack: 0
+  blastRadius: 10
+  explosionGraphic: {fileID: 1094509351040959689, guid: 67e86c8ac9e99e84ca6abae85cdcac18, type: 3}

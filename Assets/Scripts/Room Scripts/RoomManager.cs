@@ -21,6 +21,7 @@ public class RoomManager : MonoBehaviour
     {
         
     }
+
     public bool AllEnemiesDead()
     {
         return spawnEnemies.activeEnemies.Count == 0;
@@ -69,9 +70,10 @@ public class RoomManager : MonoBehaviour
         Platformer.Mechanics.GameController.Instance.player.GetComponent<Platformer.Mechanics.PlayerMovement>().BoostSpeed(true);
     }
 
-    public void ResetRoom()
+    public void ResetRoom() // Called when a room is entered
     {
         //removePlatforms.ResetPlatforms();
+        spawnEnemies.InitSpawner();
         spawnEnemies.ResetEnemies();
         raiseLava.ResetLava();
         spawnFireRain.ResetFire();

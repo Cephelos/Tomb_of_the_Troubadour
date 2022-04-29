@@ -620,7 +620,6 @@ GameObject:
   - component: {fileID: 7101269441561948902}
   - component: {fileID: 7101269441561948923}
   - component: {fileID: 7101269441561948920}
-  - component: {fileID: 7101269441561948921}
   - component: {fileID: 1590120942040171332}
   m_Layer: 2
   m_Name: Weapon
@@ -720,22 +719,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7101269441561948921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7101269441561948903}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c69622e66d3c34dbcce43f1c3fca2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 1
-  canDmg: 0
-  attackDuriation: 0.35
-  timeSinceAttack: 0
 --- !u!114 &1590120942040171332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,7 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   canDmg: 0
-  attackDuriation: 0.5
+  attackDuriation: 0.3
   timeSinceAttack: 0
   bulletPrefab: {fileID: 5952355808466800746, guid: f0e4e5476b87b3f4b9f35b54cc946774, type: 3}
   explosion_size: 20

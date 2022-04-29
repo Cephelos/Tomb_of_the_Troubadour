@@ -17,6 +17,11 @@ public class SpawnEnemies : MonoBehaviour
 
     void Start()
     {
+
+    }
+
+    public void InitSpawner() // Gets the list of enemy spawners for the current room (have to do this after switching rooms)
+    {
         enemyPosList = Platformer.Mechanics.GameController.Instance.currentRoom.gameObject.GetComponent<RoomManager>().spawnLocations;
     }
     public void Spawn(float intensity)
