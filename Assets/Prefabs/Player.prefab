@@ -276,10 +276,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.25, y: 2.25}
+  m_Size: {x: 3.62, y: 3.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &4557603481620602574
@@ -321,7 +321,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.62, y: 3.54}
-    newSize: {x: 2.25, y: 2.25}
+    newSize: {x: 3.62, y: 3.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -486,9 +486,17 @@ MonoBehaviour:
   jumpSpeed: 10
   groundCheck: 0
   isSwinging: 0
+  saaanicParticles: {fileID: 0}
   maxJumps: 2
+  jumpForce: 13
+  onIce: 0
   stunTimer: 25
+  invincibleTimer: 0
   dashSpeed: 100
+  dashTimer: 0
+  dashCooldown: 0.7
+  dashIframeDuration: 0.2
+  isTurned: 0
 --- !u!114 &4578823209721599457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,6 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 1
+  playerCanDie: 0
 --- !u!114 &5285999629219971815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,3 +589,4 @@ MonoBehaviour:
   knockbackX: 5
   knockbackY: 5
   stunTime: 50
+  invincibleTime: 1
