@@ -736,4 +736,4 @@ MonoBehaviour:
   attackDuriation: 0.3
   timeSinceAttack: 0
   bulletPrefab: {fileID: 5952355808466800746, guid: f0e4e5476b87b3f4b9f35b54cc946774, type: 3}
-  explosion_size: 20
+  explosion_size: 5

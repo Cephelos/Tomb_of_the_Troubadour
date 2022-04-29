@@ -49,6 +49,7 @@ public class MagicSystem : Weapon
             if (!playerMovement.isTurned)
                 clone.transform.RotateAround(clone.transform.position, Vector3.forward, 180);
             Bomb arrowWpn = clone.GetComponent<Bomb>();
+            arrowWpn.blastRadius = explosion_size;
             arrowWpn.Attack(playerMovement);
             canDmg = true;
             timeSinceAttack = 0;
@@ -56,8 +57,8 @@ public class MagicSystem : Weapon
         }
         else
         {
-            clone.transform.localScale += new Vector3(explosion_size, explosion_size, 0);
-            Destroy(clone);
+            Bomb arrowWpn = clone.GetComponent<Bomb>();
+            arrowWpn.Detonate();
             Ready_to_attack = true;
         }
     }
