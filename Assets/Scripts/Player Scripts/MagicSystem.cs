@@ -54,6 +54,9 @@ public class MagicSystem : Weapon
             canDmg = true;
             timeSinceAttack = 0;
             Ready_to_attack = false;
+
+            // Play shooting SFX
+            Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Magic Fire");
         }
         else
         {

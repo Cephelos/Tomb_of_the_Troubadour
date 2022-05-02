@@ -1,3 +1,4 @@
+using Platformer.Mechanics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,13 @@ public class Bomb : Weapon
 
             Detonate();
         }
+    }
+
+    public override void Attack(PlayerMovement playerMovement)
+    {
+        // Don't play SFX!
+        canDmg = true;
+        timeSinceAttack = 0;
     }
 
     public void Detonate()
@@ -35,6 +43,11 @@ public class Bomb : Weapon
                 enemy.Destruct();
             }
         }
+
+        // play SFX
+        Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Explosion");
+        // destroy projectile
+        Destroy(gameObject);
 
     }
 }

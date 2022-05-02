@@ -12,9 +12,16 @@ public class RoomManager : MonoBehaviour
     public SpawnFireRain spawnFireRain;
 
     public ParticleSystem antigravParticles;
+
+    public AudioSource audioSource;
     public GameObject[] spawnLocations;
     private int fireCount;
 
+
+    private void Start()
+    {
+        audioSource = GetComponentInChildren<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()

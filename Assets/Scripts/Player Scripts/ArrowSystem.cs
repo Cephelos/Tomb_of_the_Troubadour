@@ -44,6 +44,9 @@ public class ArrowSystem : Weapon
         arrowWpn.Attack(playerMovement);
         canDmg = true;
         timeSinceAttack = 0;
+
+        // Play SFX
+        Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Arrow Fire");
     }
 
     

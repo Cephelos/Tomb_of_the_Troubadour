@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public float dmg;
     public bool canDmg;
     public float attackDuriation;
+    public AudioClip attackSound;
     [SerializeField] public float timeSinceAttack;
 
     void Update()
@@ -39,6 +40,7 @@ public class Weapon : MonoBehaviour
         Debug.Log("attacked");
         canDmg = true;
         timeSinceAttack = 0;
+        Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Slash");
     }
 
     public void StopAttack()
@@ -59,6 +61,8 @@ public class Weapon : MonoBehaviour
         {
             Debug.Log("damage");
             ///gameObject bg = other.gameObject;
+            // Play hit fx
+            Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Hit");
 
             collision.gameObject.GetComponent<Enemy>().Destruct();
             canDmg = false;

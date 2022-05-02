@@ -33,6 +33,13 @@ public class SpawnEnemies : MonoBehaviour
         enemy.collider.enabled = false;
         enemy.GetComponent<Rigidbody2D>().isKinematic = true;
         Platformer.Mechanics.GameController.Instance.StartCoroutine(FadeIn(enemy, intensity));
+
+        // Play spawn SFX (if not playing)
+        AudioController audioController = Platformer.Mechanics.GameController.Instance.audioController;
+        if(!audioController.IsPlayingSFX("Skeleton Spawn"))
+        {
+            audioController.PlaySFX("Skeleton Spawn");
+        }
     }
 
     public IEnumerator FadeIn(Enemy enemy, float intensity)

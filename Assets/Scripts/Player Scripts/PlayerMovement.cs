@@ -13,6 +13,7 @@ namespace Platformer.Mechanics
         public bool isSwinging = false;
         public ParticleSystem saaanicParticles;
         private SpriteRenderer playerSprite;
+        public AudioSource audioSource;
         private Rigidbody2D rBody;
         private bool isJumping;
         private Animator animator;
@@ -31,6 +32,8 @@ namespace Platformer.Mechanics
         public float dashCooldown = 0.7f;
         public float dashIframeDuration = 0.3f;
 
+        public float walkSoundTimer = 0f;
+
 
         bool double_jump;
         bool grapple;
@@ -44,6 +47,7 @@ namespace Platformer.Mechanics
             playerSprite = GetComponent<SpriteRenderer>();
             rBody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
+            audioSource = GetComponent<AudioSource>();
             
 
             PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
@@ -125,7 +129,11 @@ namespace Platformer.Mechanics
             if (dashTimer < 0)
                 dashTimer = 0;
                 
-                
+
+            if(walkSoundTimer > 0)
+                walkSoundTimer -= Time.deltaTime;
+            else
+                walkSoundTimer = 0;
 
         }
 
@@ -137,6 +145,13 @@ namespace Platformer.Mechanics
 
             jumpInput = Input.GetAxis("Jump");
             horizontalInput = Input.GetAxis("Horizontal");
+
+            // If we're moving on the ground, play walk sounds
+            if(Mathf.Abs(rBody.velocity.x) > 1f && groundCheck && walkSoundTimer == 0)
+            {
+                GameController.Instance.audioController.PlaySFX("Walk");
+                walkSoundTimer = 0.3f + Random.Range(0f, 0.1f);
+            }
 
 
             RaycastHit2D hit1 = Physics2D.Raycast(rBody.GetComponent<BoxCollider2D>().bounds.min, Vector2.down, rBody.GetComponent<BoxCollider2D>().bounds.extents.y + 0.05f);
@@ -166,7 +181,7 @@ namespace Platformer.Mechanics
                     rBody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                     jumps = maxJumps - 1;
 
-
+                    GameController.Instance.audioController.PlaySFX("Jump");
                 }
                 else
                 //Double Jump Capabilities
@@ -178,6 +193,7 @@ namespace Platformer.Mechanics
                         rBody.velocity = vel;
                         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 
+                        GameController.Instance.audioController.PlaySFX("Jump");
                     }
                 }
             }
@@ -206,6 +222,9 @@ namespace Platformer.Mechanics
 
                 // Set I-frames
                 invincibleTimer = dashIframeDuration;
+
+                // Play dash FX
+                Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Dash");
 
             }
             // Set animator parameters
