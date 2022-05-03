@@ -18,9 +18,13 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     private float wobbleTimer;
     private bool wobbleDir = true;
 
+    public int maxHP;
+    int currentHP;
+
     void Start()
     {
         wobbleTimer = wobble;
+        currentHP = maxHP;
     }
 
     void Update()
@@ -56,5 +60,15 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     {
         Platformer.Mechanics.GameController.Instance.currentRoom.spawnEnemies.activeEnemies.Remove(this);
         Destroy(gameObject);
+    }
+
+    public void Decrement()
+    {
+        currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
+        if (currentHP == 0)
+        {
+
+            this.Destruct();
+        }
     }
 }

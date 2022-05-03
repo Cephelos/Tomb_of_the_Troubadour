@@ -60,7 +60,7 @@ public class Weapon : MonoBehaviour
             Debug.Log("damage");
             ///gameObject bg = other.gameObject;
 
-            collision.gameObject.GetComponent<Enemy>().Destruct();
+            collision.gameObject.GetComponent<Enemy>().Decrement();
             canDmg = false;
 
         }
