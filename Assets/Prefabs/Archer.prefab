@@ -462,7 +462,7 @@ MonoBehaviour:
   grapple: 0
   dash: 0
   speed: 5
-  maxHP: 999
+  maxHP: 10
 --- !u!114 &7101269440203938941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,7 +584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caffd9b4dd17c8342b41eea19d6f4bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioClipNames: []
+  audioClips: []
+  audioSources: []
 --- !u!1 &6703601025773186313
 GameObject:
   m_ObjectHideFlags: 0

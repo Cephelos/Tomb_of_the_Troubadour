@@ -314,6 +314,7 @@ MonoBehaviour:
   dashTimer: 0
   dashCooldown: 0.7
   dashIframeDuration: 0.2
+  walkSoundTimer: 0
   isTurned: 0
 --- !u!251 &4070546682684773713
 PlatformEffector2D:
@@ -346,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffad43bb006db4856a9c527b89b48db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
+  maxHP: 2
   playerCanDie: 1
 --- !u!114 &3159101720004363182
 MonoBehaviour:
@@ -411,7 +412,7 @@ MonoBehaviour:
   grapple: 0
   dash: 0
   speed: 5
-  maxHP: 999
+  maxHP: 20
 --- !u!114 &7101269440203938941
 MonoBehaviour:
   m_ObjectHideFlags: 0

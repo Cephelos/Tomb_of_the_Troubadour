@@ -54,7 +54,7 @@ public class EnemyCollision : MonoBehaviour
             player.invincibleTimer = invincibleTime;
 
             // Damage the player
-            //health.Decrement();
+            health.Decrement();
 
             // Tell animator that the player has been hurt
             animator.SetBool("Hurt", true);
