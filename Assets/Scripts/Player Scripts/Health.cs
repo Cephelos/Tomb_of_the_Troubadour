@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Health : MonoBehaviour
 {
     public int maxHP;
@@ -21,7 +20,7 @@ public class Health : MonoBehaviour
     private Rigidbody2D rBody;
     private Transform playerTransform;
     private Health health;
-    private PlayerMovement player;
+    private Platformer.Mechanics.PlayerMovement player;
     private Vector3 direction;
     private Weapon wep_script;
     private GameObject weapon;
@@ -45,7 +44,7 @@ public class Health : MonoBehaviour
         currentHP = Mathf.Clamp(currentHP + incrementValue, 0, maxHP);
     }
 
-    public void Decrement(int decrementValue, float knockbackX, float knockbackY, Vector3 enemy_pos)
+    public void Decrement(int decrementValue, Vector3 enemy_pos, float knockbackX = 5, float knockbackY = 5)
     {
         Debug.Log("decreasing health");
         currentHP = Mathf.Clamp(currentHP - decrementValue, 0, maxHP);
