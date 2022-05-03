@@ -20,11 +20,10 @@ GameObject:
   - component: {fileID: 462101442335196079}
   - component: {fileID: 3159101720004363182}
   - component: {fileID: 5281023140509723111}
-  - component: {fileID: 4657012751097435806}
   - component: {fileID: 7101269440203938938}
   - component: {fileID: 7101269440203938941}
   - component: {fileID: -4921023742766819633}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Wizard
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -349,6 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 10
   playerCanDie: 1
+  currentHP: 0
 --- !u!114 &3159101720004363182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,22 +380,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4657012751097435806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6702397830621622035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 211defebcc459764881a3cf775d1739c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackX: 5
-  knockbackY: 5
-  stunTime: 0.5
-  invincibleTime: 1
 --- !u!114 &7101269440203938938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,7 +516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6703601025773186319}
   - component: {fileID: 6703601025773186318}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +599,7 @@ GameObject:
   - component: {fileID: 6703601026871861854}
   - component: {fileID: 6703601026871861849}
   - component: {fileID: 6703601026871861848}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: RopeAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,7 +704,7 @@ GameObject:
   - component: {fileID: 7101269441561948923}
   - component: {fileID: 7101269441561948920}
   - component: {fileID: 1590120942040171332}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
