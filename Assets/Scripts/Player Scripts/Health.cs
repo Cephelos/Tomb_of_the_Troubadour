@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         playerTransform = GetComponent<Transform>();
 
         rBody = GetComponent<Rigidbody2D>();
-        player = GetComponent<PlayerMovement>();
+        player = GetComponent<Platformer.Mechanics.PlayerMovement>();
         weapon = gameObject.transform.GetChild(2).gameObject;
         wep_script = weapon.GetComponent<Weapon>();
     }
