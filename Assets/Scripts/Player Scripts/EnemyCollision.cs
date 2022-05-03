@@ -38,7 +38,7 @@ public class EnemyCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Enemy") && collision.gameObject.GetComponent<Skeleton>().isAttacking && !wep_script.canDmg && player.invincibleTimer == 0)
+        if (collision.CompareTag("Enemy")  && (collision.gameObject.GetComponent<Skeleton>() == null || collision.gameObject.GetComponent<Skeleton>().isAttacking ) && !wep_script.canDmg && player.invincibleTimer == 0)
         {
             Debug.Log("tag" + collision.gameObject.tag);
             Vector3 enemyDir = (playerTransform.position - collision.gameObject.transform.position).normalized;

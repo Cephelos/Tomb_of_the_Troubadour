@@ -14877,6 +14877,10 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 598589145}
+    - target: {fileID: 7036351820446057186, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: gamePlayCanvasii.Array.data[0]
+      value: 
+      objectReference: {fileID: 1752916510}
     - target: {fileID: 7036351820446057187, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
       propertyPath: votePanel
       value: 
@@ -15781,6 +15785,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37973ac7cc0363942955f8890844b3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &1752916510 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8452312256488128404, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
+  m_PrefabInstance: {fileID: 1752916508}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1778541605
 GameObject:
   m_ObjectHideFlags: 0
