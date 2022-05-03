@@ -19,8 +19,6 @@ public class Skeleton : MonoBehaviour
     private float timer;
     private State state;
 
-    public bool isAttacking = false;
-
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -38,7 +36,6 @@ public class Skeleton : MonoBehaviour
         {
             if (!leftPlayerDetection.Item2 && !rightPlayerDetection.Item2)
             {
-                isAttacking = true;
                 if (edgeDetection)
                 {
                     animator.SetBool("Idle", true);
@@ -55,7 +52,6 @@ public class Skeleton : MonoBehaviour
         }
         else if (state == State.Move)
         {
-            isAttacking = false;
             if (leftPlayerDetection.Item2 || rightPlayerDetection.Item2)
             {
                 animator.SetBool("Attack", true);
@@ -71,7 +67,6 @@ public class Skeleton : MonoBehaviour
         }
         else if (state == State.Idle)
         {
-            isAttacking = false;
             if (leftPlayerDetection.Item2 || rightPlayerDetection.Item2)
             {
                 animator.SetBool("Attack", true);
@@ -185,7 +180,7 @@ public class Skeleton : MonoBehaviour
 
     void AttackAnimationEnded()
     {
-        if (playerHealth != null)
+        if (playerHealth != null && state == State.Attack)
         {
             playerHealth.Decrement(damage, transform.position);
         }
