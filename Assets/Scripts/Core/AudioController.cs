@@ -30,7 +30,7 @@ public class AudioController : MonoBehaviour
             
     }
 
-    public void PlaySFX(string Name, bool randomizePitchVol = true)
+    public void PlaySFX(string Name, bool randomizePitchVol = true, bool loop = false)
     {
         AudioSource audioSource = audioSources[audioClipNames.IndexOf(Name)];
         audioSource.clip = audioClips[audioClipNames.IndexOf(Name)];
@@ -45,7 +45,15 @@ public class AudioController : MonoBehaviour
             audioSource.pitch = 1f;
             audioSource.volume = 1f;
         }
+        if (loop)
+            audioSource.loop = true;
         audioSource.Play();
+    }
+
+    public void StopSFX(string Name)
+    {
+        AudioSource audioSource = audioSources[audioClipNames.IndexOf(Name)];
+        audioSource.Stop();
     }
 
     public void PlayMusic(string Name)
