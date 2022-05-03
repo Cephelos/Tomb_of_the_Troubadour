@@ -32,7 +32,7 @@ public class Bomb : Weapon
             if (enemy != null)
             {
                 Debug.Log("Hit enemy!");
-                enemy.Destruct();
+                enemy.Decrement();
             }
         }
 
