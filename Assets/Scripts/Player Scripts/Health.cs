@@ -14,11 +14,11 @@ public class Health : MonoBehaviour
     [SerializeField] private float invincibleTime = 1f;
 
     private Animator animator;
+    private HealthBar healthBar;
     private bool died;
 
     private Rigidbody2D rBody;
     private Transform playerTransform;
-    private Health health;
     private Platformer.Mechanics.PlayerMovement player;
     private Vector3 direction;
     private Weapon wep_script;
@@ -27,6 +27,7 @@ public class Health : MonoBehaviour
     void Awake()
     {   
         animator = gameObject.GetComponent<Animator>();
+        healthBar = GameObject.FindObjectOfType(typeof(HealthBar)) as HealthBar;
         PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
         currentHP = playerSettings.maxHP;
         maxHP = playerSettings.maxHP;
@@ -44,8 +45,11 @@ public class Health : MonoBehaviour
 
     public void Decrement(int decrementValue, Vector3 enemy_pos, float knockbackX = 5, float knockbackY = 5)
     {
-        Debug.Log(currentHP);
         currentHP = Mathf.Clamp(currentHP - decrementValue, 0, maxHP);
+        if (gameObject.name == "Player")
+        {
+            healthBar.DecreaseHealthBar(currentHP, maxHP);
+        }
         if (currentHP == 0 && playerCanDie)
         {
             if (!died)
