@@ -9,9 +9,22 @@ public class Health : MonoBehaviour
     public bool IsAlive => currentHP > 0;
 
     [SerializeField] private int currentHP;
+    [SerializeField] private float knockbackX = 5;
+    [SerializeField] private float knockbackY = 5;
+    [SerializeField] private float stunTime = 0.50f;
+    [SerializeField] private float invincibleTime = 1f;
+
 
     private Animator animator;
     private bool died;
+
+    private Rigidbody2D rBody;
+    private Transform playerTransform;
+    private Health health;
+    private PlayerMovement player;
+    private Vector3 direction;
+    private Weapon wep_script;
+    private GameObject weapon;
 
     void Awake()
     {   
@@ -20,6 +33,11 @@ public class Health : MonoBehaviour
         currentHP = playerSettings.maxHP;
         maxHP = playerSettings.maxHP;
         playerTransform = GetComponent<Transform>();
+
+        rBody = GetComponent<Rigidbody2D>();
+        player = GetComponent<PlayerMovement>();
+        weapon = gameObject.transform.GetChild(2).gameObject;
+        wep_script = weapon.GetComponent<Weapon>();
     }
 
     public void Increment(int incrementValue)
