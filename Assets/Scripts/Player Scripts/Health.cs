@@ -28,6 +28,7 @@ public class Health : MonoBehaviour
 
     public void Decrement(int decrementValue)
     {
+        Debug.Log(currentHP);
         currentHP = Mathf.Clamp(currentHP - decrementValue, 0, maxHP);
         if (currentHP == 0 && playerCanDie)
         {
