@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 5281023140509723111}
   - component: {fileID: 7101269440203938938}
   - component: {fileID: 7101269440203938941}
+  - component: {fileID: 6506516010337550707}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Player
@@ -397,6 +398,10 @@ MonoBehaviour:
   maxHP: 100
   playerCanDie: 1
   currentHP: 0
+  knockbackX: 5
+  knockbackY: 5
+  stunTime: 0.5
+  invincibleTime: 1
 --- !u!114 &3159101720004363182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +463,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bowCooldown: 0.75
+--- !u!114 &6506516010337550707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6702397830621622035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211defebcc459764881a3cf775d1739c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackX: 5
+  knockbackY: 5
+  stunTime: 0.5
+  invincibleTime: 1
 --- !u!1 &6703601025773186313
 GameObject:
   m_ObjectHideFlags: 0

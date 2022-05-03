@@ -186,6 +186,6 @@ public class Skeleton : MonoBehaviour
     void AttackAnimationEnded()
     {
         Debug.Log("attack over");
-        playerHealth.Decrement(damage);
+        playerHealth.Decrement(damage, transform.position);
     }
 }
