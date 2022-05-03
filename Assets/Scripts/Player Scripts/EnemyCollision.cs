@@ -57,12 +57,18 @@ public class EnemyCollision : MonoBehaviour
             //health.Decrement();
 
             // Tell animator that the player has been hurt
-            //animator.SetBool("Hurt", true);
+            animator.SetBool("Hurt", true);
+
+                // Play SFX
+            GameController.Instance.audioController.PlaySFX("Player Hit");
             
         }
         if (collision.CompareTag("Lava")) {
             Debug.Log("Lava");
             Destroy (gameObject);
+
+                // Play death SFX
+            GameController.Instance.audioController.PlaySFX("Player Die");
         }
 
     }

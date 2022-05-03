@@ -204,6 +204,9 @@ namespace Platformer.Mechanics
                         ropeJoint.enabled = true;
                         ropeHingeAnchorSprite.enabled = true;
                     }
+
+                    // Play grapple SFX
+                    GameController.Instance.audioController.PlaySFX("Grapple");
                 }
                 
                 else

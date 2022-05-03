@@ -12,15 +12,24 @@ public class RoomManager : MonoBehaviour
     public SpawnFireRain spawnFireRain;
 
     public ParticleSystem antigravParticles;
+
+    public AudioSource audioSource;
     public GameObject[] spawnLocations;
     private int fireCount;
 
+
+    private void Start()
+    {
+        audioSource = GetComponentInChildren<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         
     }
+
+    public AudioController AudioController { get { return Platformer.Mechanics.GameController.Instance.audioController; } }
 
     public bool AllEnemiesDead()
     {
@@ -44,18 +53,21 @@ public class RoomManager : MonoBehaviour
     public void RaiseLava() 
     {
         raiseLava.moveLava = true;
+        AudioController.PlaySFX("Raise Lava");
     }
 
     public void SpawnFireRain(int fireCount)
     {
         for(int i = 0; i < fireCount; i++) 
             spawnFireRain.Spawn();
+        AudioController.PlaySFX("Fire Rain");
     }
 
     public void DecreaseGravity() // Cuts gravity in half
     {
         Physics2D.gravity -= Physics2D.gravity / 2;
         antigravParticles = Instantiate(Platformer.Mechanics.GameController.Instance.antigravParticles, transform, false);
+        AudioController.PlaySFX("Dec Grav", false, true);
     }
 
     public void FreezeFloors() // Nasty
@@ -63,11 +75,14 @@ public class RoomManager : MonoBehaviour
         Platformer.Mechanics.GameController gameController = Platformer.Mechanics.GameController.Instance;
         gameController.player.GetComponent<Platformer.Mechanics.PlayerMovement>().ToggleIcePhysics(true);
         gameController.tiles.sharedMaterial = gameController.frozenTiles;
+        AudioController.PlaySFX("Freeze Platforms");
     }
 
     public void SpeedUpPlayer()
     {
         Platformer.Mechanics.GameController.Instance.player.GetComponent<Platformer.Mechanics.PlayerMovement>().BoostSpeed(true);
+        Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Speed Boost Fire");
+        AudioController.PlaySFX("Speed Boost", false, true);
     }
 
     public void ResetRoom() // Called when a room is entered
@@ -90,7 +105,8 @@ public class RoomManager : MonoBehaviour
         gameController.tiles.sharedMaterial = gameController.defaultTiles;
 
         gameController.player.GetComponent<Platformer.Mechanics.PlayerMovement>().BoostSpeed(false);
-        
+        gameController.audioController.StopSFX("Dec Grav");
+        gameController.audioController.StopSFX("Speed Boost");
     }
 
 

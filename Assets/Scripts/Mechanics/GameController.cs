@@ -32,9 +32,17 @@ namespace Platformer.Mechanics
 
         public RoomManager currentRoom;
 
+        public AudioController audioController;
+
+        // Sound FX
+        public AudioClip walkSFX;
+        public AudioClip jumpSFX;
+
         void OnEnable()
         {
             Instance = this;
+            audioController = GetComponent<AudioController>();
+            audioController.PlayMusic("BGM");
         }
 
         void OnDisable()

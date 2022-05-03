@@ -60,6 +60,9 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     {
         Platformer.Mechanics.GameController.Instance.currentRoom.spawnEnemies.activeEnemies.Remove(this);
         Destroy(gameObject);
+
+        // Play SFX
+        Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Skeleton Die");
     }
 
     public void Decrement()

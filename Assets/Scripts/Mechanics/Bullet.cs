@@ -18,6 +18,9 @@ public class Bullet : MonoBehaviour
         if(collision.CompareTag("Wall") || collision.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+
+            // Play 'ding' SFX
+            Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Arrow Ding");
         }
     }
 }
