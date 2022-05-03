@@ -401,7 +401,7 @@ MonoBehaviour:
   grapple: 0
   dash: 0
   speed: 5
-  maxHP: 10
+  maxHP: 40
 --- !u!114 &7101269440203938941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d7dc787dc617b428ba80e6fd259957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowCooldown: 0.75
+  bowCooldown: 0.7
 --- !u!82 &-4921023742766819633
 AudioSource:
   m_ObjectHideFlags: 0
