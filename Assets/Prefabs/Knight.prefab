@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 7101269440203938938}
   - component: {fileID: 7101269440203938941}
   - component: {fileID: 9123335111851494668}
+  - component: {fileID: 2340237754820818756}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -349,6 +350,10 @@ MonoBehaviour:
   maxHP: 100
   playerCanDie: 1
   currentHP: 0
+  knockbackX: 5
+  knockbackY: 5
+  stunTime: 0.5
+  invincibleTime: 1
 --- !u!114 &3159101720004363182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +401,7 @@ MonoBehaviour:
   grapple: 0
   dash: 0
   speed: 5
-  maxHP: 100
+  maxHP: 180
 --- !u!114 &7101269440203938941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d7dc787dc617b428ba80e6fd259957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowCooldown: 0.75
+  bowCooldown: 0.3
 --- !u!82 &9123335111851494668
 AudioSource:
   m_ObjectHideFlags: 0
@@ -506,6 +511,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2340237754820818756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6702397830621622035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211defebcc459764881a3cf775d1739c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackX: 5
+  knockbackY: 5
+  stunTime: 0.5
+  invincibleTime: 1
 --- !u!1 &6703601025773186313
 GameObject:
   m_ObjectHideFlags: 0

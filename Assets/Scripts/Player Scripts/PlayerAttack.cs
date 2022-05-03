@@ -42,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightShift) && player.stunTimer == 0f)
         {
-            if(player.name.Contains("Knight") || player.name.Contains("Wizard") || (player.name.Contains("Archer") && bowTimer == 0))
+            if(bowTimer == 0)
             {
                 Attack();
                 bowTimer = bowCooldown;

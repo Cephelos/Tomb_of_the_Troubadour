@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 696837708054856473}
   - component: {fileID: -5244557980385989844}
   - component: {fileID: 2417460265168488906}
-  - component: {fileID: -3867994663001520031}
+  - component: {fileID: 3174995190701158577}
   m_Layer: 8
   m_Name: Skeleton
   m_TagString: Enemy
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleTime: 1
   speed: 1
-  timer: 0
-  state: 0
+  damage: 10
+  isAttacking: 0
 --- !u!114 &3174995190701158577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +188,37 @@ MonoBehaviour:
   invincible: 0
   fallSpeed: 0
   wobble: 100
+  maxHP: 2
+--- !u!1 &8388245174117678139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5019854946951715547, guid: ed36c78063c368941a65924529eb2b33, type: 3}
+  m_PrefabInstance: {fileID: 342314674716162242}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7950310802596401650}
+  m_Layer: 0
+  m_Name: 'Flight_0 (Missing Prefab with guid: ed36c78063c368941a65924529eb2b33)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7950310802596401650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7680054563774769456, guid: ed36c78063c368941a65924529eb2b33, type: 3}
+  m_PrefabInstance: {fileID: 342314674716162242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388245174117678139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4157439168672565257}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &342314674716162242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -245,8 +276,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed36c78063c368941a65924529eb2b33, type: 3}
---- !u!4 &7950310802596401650 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7680054563774769456, guid: ed36c78063c368941a65924529eb2b33, type: 3}
-  m_PrefabInstance: {fileID: 342314674716162242}
-  m_PrefabAsset: {fileID: 0}

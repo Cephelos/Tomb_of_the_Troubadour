@@ -14885,6 +14885,38 @@ PrefabInstance:
       propertyPath: votePanel
       value: 
       objectReference: {fileID: 1752916509}
+    - target: {fileID: 7036351820446057187, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: pollOptions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036351820446057187, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: pollOptionNames.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036351820446057187, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: pollOptionNames.Array.data[0]
+      value: Fire Rain!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036351820446057187, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: pollOptionNames.Array.data[1]
+      value: More Enemies!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036351820446057187, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: pollOptionNames.Array.data[2]
+      value: Raise the Lava!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036351820446057187, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: pollOptionNames.Array.data[3]
+      value: Freeze Floors!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036351820446057187, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: pollOptionNames.Array.data[4]
+      value: Decrease Gravity!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036351820446057187, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: pollOptionNames.Array.data[5]
+      value: Speed up Player!
+      objectReference: {fileID: 0}
     - target: {fileID: 7036351820446057189, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
       propertyPath: spawnLoc
       value: 

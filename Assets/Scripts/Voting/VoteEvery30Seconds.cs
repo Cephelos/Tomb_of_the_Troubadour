@@ -17,9 +17,9 @@ public class VoteEvery30Seconds : MonoBehaviour
 
     private void Update()
     {
-        if(voteTimer <= 0f)
+        if (voteTimer <= 0f && Platformer.Mechanics.GameController.Instance.currentRoom.gameObject.name != "Room 0")
         {
-            voteGenerator.CreateVote(voteGenerator.NextPoll());
+            voteGenerator.CreateTwoOptionVote();
             voteTimer = voteInterval;
         }    
         else
@@ -47,7 +47,7 @@ public class VoteEvery30Seconds : MonoBehaviour
                     room.RaiseLava();
                     break;
 
-                case "SAAANIC FAST!":
+                case "Speed up Player!":
                     room.SpeedUpPlayer();
                     break;
 

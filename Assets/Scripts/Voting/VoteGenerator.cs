@@ -18,6 +18,8 @@ public class VoteGenerator : MonoBehaviour
     public VotingPanel votePanel;
     public List<Poll> polls;
 
+    public List<string> pollOptionNames = new List<string>();
+
     public void CreateVote(string question, string[] options) // creates a poll and sets it to be the active poll; sends a warning to the console if there is already a poll active
     {
         CreateVote(new Poll(question, options));
@@ -30,6 +32,15 @@ public class VoteGenerator : MonoBehaviour
         currentPoll = poll;
         Debug.Log("Creating Poll " + currentPoll.question + "!");
         votePanel.Initialize(poll);
+    }
+
+    public void CreateTwoOptionVote()
+    {
+        int firstSelectionID = Random.Range(0, pollOptionNames.Count);
+        int secondSelectionID = firstSelectionID + Random.Range(1, pollOptionNames.Count - 1);
+        if (secondSelectionID > pollOptionNames.Count - 1)
+            secondSelectionID -= pollOptionNames.Count;
+        CreateVote(new Poll("What should happen next?", new string[2] { pollOptionNames[firstSelectionID], pollOptionNames[secondSelectionID] }));
     }
         
     public Poll NextPoll() // Gets the next poll on the list and returns it, then moves it to the back of the list
@@ -139,7 +150,7 @@ public class VoteGeneratorEditor : Editor // Lets you generate polls using the i
     {
         base.OnInspectorGUI();
         VoteGenerator vote = target as VoteGenerator;
-        
+        /*
             GUILayout.Label("----FOR TESTING----");
             if (pollUnderConstruction != null)
             {
@@ -184,6 +195,28 @@ public class VoteGeneratorEditor : Editor // Lets you generate polls using the i
             }
 
         }
+        
+
+        GUILayout.Label("Add Poll Options Here:");
+
+        for (int i = 0; i < vote.pollOptionNames.Count; i++)
+        {
+            string optionName = vote.pollOptionNames[i];
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Option " + (i + 1) + ":");
+            optionName = GUILayout.TextField(optionName);
+            if (GUILayout.Button("Remove Option"))
+            {
+                vote.pollOptionNames.RemoveAt(i);
+                i--;
+            }
+            GUILayout.EndHorizontal();
+
+        }
+        if (GUILayout.Button("Add New Option"))
+            vote.pollOptions.Add(new PollOption("New Option"));
+        */
+
         if (GUILayout.Button("Close Poll"))
         {
             vote.ClosePoll();
