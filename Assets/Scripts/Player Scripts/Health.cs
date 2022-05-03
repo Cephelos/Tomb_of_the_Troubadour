@@ -79,7 +79,7 @@ public class Health : MonoBehaviour
             //    animator.SetBool("Hurt", true);
 
             // Play SFX
-            GameController.Instance.audioController.PlaySFX("Player Hit");
+            Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Player Hit");
 
             
             Debug.Log("in stun animation state: " + animator.GetCurrentAnimatorStateInfo(0).IsName("stun"));
