@@ -185,6 +185,9 @@ public class Skeleton : MonoBehaviour
 
     void AttackAnimationEnded()
     {
-        playerHealth.Decrement(damage, transform.position);
+        if (playerHealth != null)
+        {
+            playerHealth.Decrement(damage, transform.position);
+        }
     }
 }

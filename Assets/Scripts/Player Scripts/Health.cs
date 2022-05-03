@@ -46,7 +46,7 @@ public class Health : MonoBehaviour
     public void Decrement(int decrementValue, Vector3 enemy_pos, float knockbackX = 5, float knockbackY = 5)
     {
         currentHP = Mathf.Clamp(currentHP - decrementValue, 0, maxHP);
-        if (gameObject.name == "Player")
+        if (gameObject.tag == "Player")
         {
             healthBar.DecreaseHealthBar(currentHP, maxHP);
         }
