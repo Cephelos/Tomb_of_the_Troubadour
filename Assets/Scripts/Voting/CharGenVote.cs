@@ -12,6 +12,7 @@ public class CharGenVote : MonoBehaviour
     public GameObject spawnLoc;
 
     public Platformer.Mechanics.PlayerMovement playerMovement;
+    public GameObject startDoor;
 
     private void Awake()
     {
@@ -104,5 +105,6 @@ public class CharGenVote : MonoBehaviour
         voteGenerator.ClosePoll();
 
         eventVotes.enabled = true;
+        startDoor.SetActive(true);
     }
 }

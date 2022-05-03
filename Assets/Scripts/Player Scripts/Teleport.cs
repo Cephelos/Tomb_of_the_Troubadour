@@ -19,6 +19,7 @@ public class Teleport : MonoBehaviour
                 transform.position = currentTeleporter.GetComponent<Door>().GetDestination().position;
                 currentTeleporter.GetComponent<Door>().ChangeRoom();
             }
+            
 
             
         }

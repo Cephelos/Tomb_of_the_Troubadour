@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
         newCamera.enabled = true;
         oldCamera.GetComponent<AudioListener>().enabled = false;
         newCamera.GetComponent<AudioListener>().enabled = true;
-        oldRoom.gameObject.SetActive(false);
+        //oldRoom.gameObject.SetActive(false);
         newRoom.gameObject.SetActive(true);
         Platformer.Mechanics.GameController.Instance.currentRoom = newRoom;
         newRoom.ResetRoom();

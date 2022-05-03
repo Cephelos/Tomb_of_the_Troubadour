@@ -6,7 +6,7 @@ public class SpawnEnemies : MonoBehaviour
 {
     public List<Enemy> activeEnemies = new List<Enemy>();
     public Enemy enemyPrefab;
-    public int numDefaultEnemies = 3;
+    public int numDefaultEnemies = 4;
     public float fadeTime = 2f; // time enemies take to fade in
     public Color enemyColor;
 
