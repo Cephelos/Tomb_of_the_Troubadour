@@ -187,3 +187,4 @@ MonoBehaviour:
   invincible: 0
   fallSpeed: 0
   wobble: 100
+  maxHP: 2

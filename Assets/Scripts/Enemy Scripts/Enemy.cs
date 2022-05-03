@@ -18,9 +18,13 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     private float wobbleTimer;
     private bool wobbleDir = true;
 
+    public int maxHP;
+    int currentHP;
+
     void Start()
     {
         wobbleTimer = wobble;
+        currentHP = maxHP;
     }
 
     void Update()
@@ -59,5 +63,15 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
 
         // Play SFX
         Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Skeleton Die");
+    }
+
+    public void Decrement()
+    {
+        currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
+        if (currentHP == 0)
+        {
+
+            this.Destruct();
+        }
     }
 }

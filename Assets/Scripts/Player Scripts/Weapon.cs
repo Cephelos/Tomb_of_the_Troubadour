@@ -64,7 +64,7 @@ public class Weapon : MonoBehaviour
             // Play hit fx
             Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Hit");
 
-            collision.gameObject.GetComponent<Enemy>().Destruct();
+            collision.gameObject.GetComponent<Enemy>().Decrement();
             canDmg = false;
 
         }
