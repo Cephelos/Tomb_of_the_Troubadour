@@ -13775,7 +13775,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
-  enemyColor: {r: 1, g: 0, b: 0, a: 1}
+  enemyColor: {r: 1, g: 1, b: 1, a: 1}
   spawnLocLowerLeft: {x: -24, y: -12}
   spawnLocUpperRight: {x: 17, y: 7}
 --- !u!1 &820463114
@@ -14995,7 +14995,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
-  enemyColor: {r: 1, g: 0, b: 0, a: 1}
+  enemyColor: {r: 1, g: 1, b: 1, a: 1}
   spawnLocLowerLeft: {x: -24, y: -12}
   spawnLocUpperRight: {x: 17, y: 11}
 --- !u!4 &1532340568
@@ -15816,7 +15816,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
-  enemyColor: {r: 1, g: 0, b: 0, a: 1}
+  enemyColor: {r: 1, g: 1, b: 1, a: 1}
   spawnLocLowerLeft: {x: -24, y: -12}
   spawnLocUpperRight: {x: 17, y: 7}
 --- !u!4 &1909921588 stripped
@@ -15935,7 +15935,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
-  enemyColor: {r: 1, g: 0, b: 0, a: 1}
+  enemyColor: {r: 1, g: 1, b: 1, a: 1}
   spawnLocLowerLeft: {x: -24, y: -12}
   spawnLocUpperRight: {x: 17, y: 7}
 --- !u!4 &2007701040
