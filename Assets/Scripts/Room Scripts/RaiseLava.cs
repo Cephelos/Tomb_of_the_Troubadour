@@ -6,7 +6,7 @@ public class RaiseLava : MonoBehaviour
 {
     public bool moveLava = false;
     [SerializeField] private float speed = 0f;
-    [SerializeField] private int dist = 0;
+    [SerializeField] private float dist = 0;
     [SerializeField] private GameObject lava;
     private float oldY;
 
