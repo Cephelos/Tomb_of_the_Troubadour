@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int maxHP;
     public bool playerCanDie = false;
     public bool IsAlive => currentHP > 0;
 
     [SerializeField] private int currentHP;
+    private int maxHP;
 
     private Animator animator;
     private bool died;
@@ -28,22 +28,18 @@ public class Health : MonoBehaviour
 
     public void Decrement(int decrementValue)
     {
-        Debug.Log("decreasing health");
         currentHP = Mathf.Clamp(currentHP - decrementValue, 0, maxHP);
         if (currentHP == 0 && playerCanDie)
         {
             if (!died)
             {
                 animator.SetTrigger("Death");
-                Debug.Log("in death animation state: " + animator.GetCurrentAnimatorStateInfo(0).IsName("Death"));
                 died = true;
             }
         }
         else
         {
-            Debug.Log("hurt animation");
             animator.SetBool("Stun", true);
-            Debug.Log("in stun animation state: " + animator.GetCurrentAnimatorStateInfo(0).IsName("stun"));
         }
     }
 

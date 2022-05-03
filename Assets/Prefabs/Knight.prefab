@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffad43bb006db4856a9c527b89b48db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2
+  maxHP: 100
   playerCanDie: 1
   currentHP: 0
 --- !u!114 &3159101720004363182
@@ -396,7 +396,7 @@ MonoBehaviour:
   grapple: 0
   dash: 0
   speed: 5
-  maxHP: 20
+  maxHP: 100
 --- !u!114 &7101269440203938941
 MonoBehaviour:
   m_ObjectHideFlags: 0
