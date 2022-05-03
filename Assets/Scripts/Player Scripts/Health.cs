@@ -1,64 +1,59 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using static Platformer.Core.Simulation;
 
-namespace Platformer.Mechanics
+public class Health : MonoBehaviour
 {
-    /// <summary>
-    /// Represebts the current vital statistics of some game entity.
-    /// </summary>
-    public class Health : MonoBehaviour
+    public int maxHP;
+    public bool playerCanDie = false;
+    public bool IsAlive => currentHP > 0;
+
+    [SerializeField] private int currentHP;
+
+    private Animator animator;
+    private bool died;
+
+    void Awake()
+    {   
+        animator = gameObject.GetComponent<Animator>();
+        PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
+        currentHP = playerSettings.maxHP;
+        maxHP = playerSettings.maxHP;
+    }
+
+    public void Increment(int incrementValue)
     {
-        /// <summary>
-        /// The maximum hit points for the entity.
-        /// </summary>
-        
-        public int maxHP;
-        public bool playerCanDie = false; // Setting this false for now so y'all's scenes aren't completely messed up before we fix weapon collision
-        ///maxHP = playerSettings.maxHP;
+        currentHP = Mathf.Clamp(currentHP + incrementValue, 0, maxHP);
+    }
 
-        /// <summary>
-        /// Indicates if the entity should be considered 'alive'.
-        /// </summary>
-        public bool IsAlive => currentHP > 0;
-
-        int currentHP;
-
-        /// <summary>
-        /// Increment the HP of the entity.
-        /// </summary>
-        public void Increment()
+    public void Decrement(int decrementValue)
+    {
+        Debug.Log("decreasing health");
+        currentHP = Mathf.Clamp(currentHP - decrementValue, 0, maxHP);
+        if (currentHP == 0 && playerCanDie)
         {
-            currentHP = Mathf.Clamp(currentHP + 1, 0, maxHP);
-        }
-
-        /// <summary>
-        /// Decrement the HP of the entity. Will trigger a HealthIsZero event when
-        /// current HP reaches 0.
-        /// </summary>
-        public void Decrement()
-        {
-            currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
-            if (currentHP == 0 && playerCanDie)
+            if (!died)
             {
-
-                Destroy(gameObject);
+                animator.SetTrigger("Death");
+                Debug.Log("in death animation state: " + animator.GetCurrentAnimatorStateInfo(0).IsName("Death"));
+                died = true;
             }
         }
-
-        /// <summary>
-        /// Decrement the HP of the entitiy until HP reaches 0.
-        /// </summary>
-        public void Die()
+        else
         {
-            while (currentHP > 0) Decrement();
+            Debug.Log("hurt animation");
+            animator.SetBool("Stun", true);
+            Debug.Log("in stun animation state: " + animator.GetCurrentAnimatorStateInfo(0).IsName("stun"));
         }
+    }
 
-        void Awake()
-        {   
-            PlayerSettings playerSettings = gameObject.GetComponent<PlayerSettings>();
-            currentHP = playerSettings.maxHP;
-            maxHP = playerSettings.maxHP;
-        }
+    void DeathAnimationEnded()
+    {
+        Destroy(gameObject);
+    }
+
+    void StunAnimationEnded()
+    {
+        animator.SetBool("Stun", false);
     }
 }

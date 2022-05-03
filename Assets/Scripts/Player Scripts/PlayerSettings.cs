@@ -11,7 +11,7 @@ public class PlayerSettings : MonoBehaviour
 
     public float speed = 5f;
 
-    public int maxHP = 1;
+    public int maxHP = 100;
 
     void set_abilities(bool dj, bool grap, bool dsh)
     {

@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Skeleton : MonoBehaviour
 {
+    private Health playerHealth;
+
     private enum State { Attack, Move, Idle };
     public float idleTime = 25f; // time skeleton idles for
 
     [SerializeField] private float speed;
     public float Speed { get { return speed; } set { speed = value; } }
 
-    private Animator animator;
+    [SerializeField] private int damage = 10;
+    public int Damage { get { return damage; } set { damage = value; } }
 
-    [SerializeField] private float timer;
-    [SerializeField] private State state;
+    private Animator animator;
+    private float timer;
+    private State state;
 
     public bool isAttacking = false;
 
@@ -21,6 +25,7 @@ public class Skeleton : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         timer = idleTime;
+        playerHealth = GameObject.FindObjectOfType(typeof(Health)) as Health;
     }
 
     void Update()
@@ -93,7 +98,7 @@ public class Skeleton : MonoBehaviour
         // handle actions based on state
         if (state == State.Attack)
         {
-            Debug.Log("attacking!");
+            // Debug.Log("attacking!");
         }
         else if (state == State.Move)
         {
@@ -176,5 +181,11 @@ public class Skeleton : MonoBehaviour
                 state = State.Idle;
             }
         }
+    }
+
+    void AttackAnimationEnded()
+    {
+        Debug.Log("attack over");
+        playerHealth.Decrement(damage);
     }
 }
