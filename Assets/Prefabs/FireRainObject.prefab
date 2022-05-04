@@ -119,7 +119,7 @@ MonoBehaviour:
   invincible: 1
   fallSpeed: 5
   wobble: 0.2
-  contactDamage: 0
+  contactDamage: 15
   maxHP: 0
 --- !u!50 &-302364828150261891
 Rigidbody2D:

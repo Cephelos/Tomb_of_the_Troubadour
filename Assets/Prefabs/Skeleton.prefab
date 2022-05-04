@@ -168,8 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleTime: 1
   speed: 1
-  damage: 10
-  isAttacking: 0
+  damage: 20
 --- !u!114 &3174995190701158577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +187,7 @@ MonoBehaviour:
   invincible: 0
   fallSpeed: 0
   wobble: 100
+  contactDamage: 0
   maxHP: 2
 --- !u!1 &8388245174117678139
 GameObject:

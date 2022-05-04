@@ -38,7 +38,7 @@ public class EnemyCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
             
-       /* if (collision.CompareTag("Trap") && !wep_script.canDmg && player.invincibleTimer == 0)
+        if (collision.CompareTag("Trap") && !wep_script.canDmg && player.invincibleTimer == 0)
         {
             Debug.Log("tag" + collision.gameObject.tag);
             Vector3 enemyDir = (playerTransform.position - collision.gameObject.transform.position).normalized;
@@ -62,7 +62,7 @@ public class EnemyCollision : MonoBehaviour
                 // Play SFX
             GameController.Instance.audioController.PlaySFX("Player Hit");
             
-        }*/
+        }
         if (collision.CompareTag("Lava")) {
             Debug.Log("Lava");
             Destroy (gameObject);
