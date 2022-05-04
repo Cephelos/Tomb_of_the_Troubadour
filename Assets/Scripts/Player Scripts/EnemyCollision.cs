@@ -65,10 +65,10 @@ public class EnemyCollision : MonoBehaviour
         }
         if (collision.CompareTag("Lava")) {
             Debug.Log("Lava");
-            Destroy (gameObject);
+            gameObject.GetComponent<Health>().Decrement(99999999, new Vector3(0,0,0));
 
                 // Play death SFX
-            GameController.Instance.audioController.PlaySFX("Player Die");
+            //GameController.Instance.audioController.PlaySFX("Player Die");
         }
 
     }

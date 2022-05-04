@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
     public bool playerCanDie = false;
     public bool IsAlive => currentHP > 0;
 
-    [SerializeField] private int currentHP;
+    public int currentHP;
     [SerializeField] private int maxHP;
     [SerializeField] private float knockbackX = 5;
     [SerializeField] private float knockbackY = 5;
@@ -82,6 +82,7 @@ public class Health : MonoBehaviour
     {
         Debug.Log("the bitch died");
         Destroy(gameObject);
+        Platformer.Mechanics.GameController.Instance.deathState();
     }
 
     void StunAnimationEnded()

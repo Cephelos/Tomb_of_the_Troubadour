@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bomb : Weapon
 {
-    public float blastRadius = 10f;
+    public float blastRadius = 5f;
     public SpriteRenderer explosionGraphic;
 
     public void OnTriggerEnter2D(Collider2D other)

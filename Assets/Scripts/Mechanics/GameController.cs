@@ -1,6 +1,7 @@
 using Platformer.Core;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 namespace Platformer.Mechanics
 {
@@ -34,6 +35,11 @@ namespace Platformer.Mechanics
 
         public AudioController audioController;
 
+        public GameObject deathMessage;
+        private bool dead = false;
+
+        public int score = 0;
+
         // Sound FX
         public AudioClip walkSFX;
         public AudioClip jumpSFX;
@@ -53,6 +59,18 @@ namespace Platformer.Mechanics
         void Update()
         {
             if (Instance == this) Simulation.Tick();
+            if (dead && Input.GetKeyDown(KeyCode.Return)) mainMenu();
+        }
+
+        public void deathState()
+        {
+            deathMessage.SetActive(true);
+            dead = true;
+        }
+
+        public void mainMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

@@ -319,19 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2643,25 +2631,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 114954002}
     m_Modifications:
+    - target: {fileID: 2289170795698031970, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
+      propertyPath: moveLava
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3438015715633980530, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
       propertyPath: m_Name
       value: LavaPool
       objectReference: {fileID: 0}
     - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2864,6 +2844,87 @@ Transform:
   m_Father: {fileID: 114954002}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &515541827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515541828}
+  - component: {fileID: 515541830}
+  - component: {fileID: 515541829}
+  m_Layer: 5
+  m_Name: You Died! Color
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &515541828
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515541827}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 693411750}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0021972656, y: 0.0008544922}
+  m_SizeDelta: {x: 615.36, y: 332.46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &515541829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515541827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 422c80378802e7c47890aab140def6dd, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 2
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'You Died!
+
+    Press ENTER to restart'
+--- !u!222 &515541830
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515541827}
+  m_CullTransparentMesh: 1
 --- !u!1 &527418701 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5489209221293283128, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
@@ -2932,10 +2993,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 555092560}
     m_Modifications:
-    - target: {fileID: 2289170795698031970, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: dist
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3438015715633980530, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
       propertyPath: m_Name
       value: LavaPool
@@ -2946,19 +3003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3438015715633980531, guid: 61883ac0a49ceaf4bbfc89f1e6020c71, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14760,6 +14805,88 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7520c7c73cb9ed14da7a9b17b69ce13b, type: 3}
+--- !u!1 &693411749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693411750}
+  - component: {fileID: 693411752}
+  - component: {fileID: 693411751}
+  m_Layer: 5
+  m_Name: You Died!
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &693411750
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693411749}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 515541828}
+  m_Father: {fileID: 1699040623}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_SizeDelta: {x: 615.3687, y: 332.4548}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &693411751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693411749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 422c80378802e7c47890aab140def6dd, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'You Died!
+
+    Press ENTER to restart'
+--- !u!222 &693411752
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693411749}
+  m_CullTransparentMesh: 1
 --- !u!1 &699112959
 GameObject:
   m_ObjectHideFlags: 0
@@ -51729,6 +51856,10 @@ PrefabInstance:
       propertyPath: currentRoom
       value: 
       objectReference: {fileID: 321397819}
+    - target: {fileID: 7036351820446057183, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: deathMessage
+      value: 
+      objectReference: {fileID: 693411749}
     - target: {fileID: 7036351820446057184, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -52261,6 +52392,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1134009709}
+  - {fileID: 693411750}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52430,6 +52562,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 458.18042
       objectReference: {fileID: 0}
+    - target: {fileID: 8452312256785838425, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 8452312256785838425, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f649e350affbb6449c26903764b1fb7, type: 3}
 --- !u!114 &1752916509 stripped

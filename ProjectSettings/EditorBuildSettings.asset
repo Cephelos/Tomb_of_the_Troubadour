@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpriteTest.unity
     guid: e0fab1c2705eaf24f8d5ee71a79a7377
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 86db71a75bf65cf4c9a8c73ba59c4b7a
   m_configObjects: {}
