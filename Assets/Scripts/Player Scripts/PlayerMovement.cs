@@ -27,6 +27,7 @@ namespace Platformer.Mechanics
         
         public float stunTimer = 0.25f;
         public float invincibleTimer = 0f;
+        public float attackTimer = 0f;
         public float dashSpeed = 100f;
         public float dashTimer = 0f;
         public float dashCooldown = 0.7f;
@@ -121,6 +122,11 @@ namespace Platformer.Mechanics
                 invincibleTimer -= Time.deltaTime;
             if (invincibleTimer < 0)
                 invincibleTimer = 0;
+
+            if(attackTimer > 0)
+                attackTimer -= Time.deltaTime;
+            if(attackTimer < 0)
+                attackTimer = 0;
                 
 
             if (dashTimer > 0)

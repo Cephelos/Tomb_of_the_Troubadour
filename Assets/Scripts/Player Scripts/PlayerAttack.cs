@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
         bool isAttacking = false;
         foreach(Weapon w in GetComponentsInChildren<Weapon>())
         {
-            if (w.CanDamage())
+            if (w.timeSinceAttack < w.attackDuriation)
                 isAttacking = true;
         }
         if (!isAttacking)
