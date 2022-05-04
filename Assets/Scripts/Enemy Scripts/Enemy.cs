@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     [SerializeField]
     private float fallSpeed = 0, wobble = 100f;
 
+    public int contactDamage = 0;
     private float wobbleTimer;
     private bool wobbleDir = true;
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -302364828150261891}
   m_Layer: 0
   m_Name: FireRainObject
-  m_TagString: Enemy
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,11 +115,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 3062660845481373957}
   renderer: {fileID: 1306733255229397930}
-  followPath: {fileID: 0}
   enemy: {fileID: 1544962040375250520}
   invincible: 1
   fallSpeed: 5
   wobble: 0.2
+  contactDamage: 0
+  maxHP: 0
 --- !u!50 &-302364828150261891
 Rigidbody2D:
   serializedVersion: 4

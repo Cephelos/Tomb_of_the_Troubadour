@@ -4,15 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TutorialRequirement
   - Wall
-  - lava
   - Teleporter
   - Enemy
   - Lava
   - Skeleton
   - Ground
   - Weapon
+  - Trap
   layers:
   - Default
   - TransparentFX
