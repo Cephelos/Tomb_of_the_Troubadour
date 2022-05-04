@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Platformer.Core;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -24,6 +26,7 @@ namespace Platformer.Mechanics
         public float basePlayerSpeed = 5f;
         public enum whichEnemiesToSpawn { All, Skeletons, Eyes }
         public whichEnemiesToSpawn whichEnemies = whichEnemiesToSpawn.All;
+        public List<Enemy> enemyPrefabs;
         public PhysicsMaterial2D iceMat;
 
         public TilemapRenderer tiles;

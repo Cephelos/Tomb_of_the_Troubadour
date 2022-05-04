@@ -51,8 +51,9 @@ public class RoomManager : MonoBehaviour
 
         for(int i = 0; i < 1+Mathf.FloorToInt(intensity/2); i++) // Intensity goes up by 1 any time the audience finishes a vote. Use this to make the bad stuff get worse over time!
             {
-            spawnEnemies.Spawn(intensity, Random.Range(0, 2));
-            }
+            int whichEnemies = (int)Platformer.Mechanics.GameController.Instance.whichEnemies;
+            spawnEnemies.Spawn(intensity, Random.Range(whichEnemies != 2 ? 0 : 1, whichEnemies != 1 ? 2 : 1));
+        }
     }
 
     public void RaiseLava() 

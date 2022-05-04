@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour
 {
     public List<Enemy> activeEnemies = new List<Enemy>();
-    public List<Enemy> enemyPrefabs;
     public int numDefaultEnemies = 4;
     public float fadeTime = 2f; // time enemies take to fade in
     public Color enemyColor;
@@ -27,7 +26,7 @@ public class SpawnEnemies : MonoBehaviour
 
     public void Spawn(float intensity, int whichEnemy = 0)
     {
-        Enemy enemy = Instantiate(enemyPrefabs[whichEnemy], transform);
+        Enemy enemy = Instantiate(Platformer.Mechanics.GameController.Instance.enemyPrefabs[whichEnemy], transform);
         activeEnemies.Add(enemy);
         Vector3 spawnLoc = enemyPosList[Random.Range(0, enemyPosList.Length-1)].transform.position;
         enemy.transform.position = new Vector3(spawnLoc.x + Random.Range(-2, 2), spawnLoc.y, spawnLoc.z);
