@@ -22,6 +22,8 @@ namespace Platformer.Mechanics
         public PlayerMovement player;
         public float baseGravity = 9.81f; // Base gravity value, resets to this when changing rooms
         public float basePlayerSpeed = 5f;
+        public enum whichEnemiesToSpawn { All, Skeletons, Eyes }
+        public whichEnemiesToSpawn whichEnemies = whichEnemiesToSpawn.All;
         public PhysicsMaterial2D iceMat;
 
         public TilemapRenderer tiles;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour
 {
     public List<Enemy> activeEnemies = new List<Enemy>();
-    public Enemy enemyPrefab;
+    public List<Enemy> enemyPrefabs;
     public int numDefaultEnemies = 4;
     public float fadeTime = 2f; // time enemies take to fade in
     public Color enemyColor;
@@ -24,9 +24,10 @@ public class SpawnEnemies : MonoBehaviour
     {
         enemyPosList = Platformer.Mechanics.GameController.Instance.currentRoom.gameObject.GetComponent<RoomManager>().spawnLocations;
     }
-    public void Spawn(float intensity)
+
+    public void Spawn(float intensity, int whichEnemy = 0)
     {
-        Enemy enemy = Instantiate(enemyPrefab, transform);
+        Enemy enemy = Instantiate(enemyPrefabs[whichEnemy], transform);
         activeEnemies.Add(enemy);
         Vector3 spawnLoc = enemyPosList[Random.Range(0, enemyPosList.Length-1)].transform.position;
         enemy.transform.position = new Vector3(spawnLoc.x + Random.Range(-2, 2), spawnLoc.y, spawnLoc.z);
@@ -82,7 +83,8 @@ public class SpawnEnemies : MonoBehaviour
         int numEnemies = numDefaultEnemies+Random.Range(-1, 1);
         for(int i = 0; i < numEnemies; i++)
         {
-            Spawn(1);
+            int whichEnemies = (int)Platformer.Mechanics.GameController.Instance.whichEnemies;
+            Spawn(1, Random.Range(whichEnemies != 2 ? 0 : 1, whichEnemies != 1 ? 2 : 1));
         }
     }
 }
