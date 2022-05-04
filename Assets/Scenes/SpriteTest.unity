@@ -50962,9 +50962,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
-  enemyPrefabs:
-  - {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
-  - {fileID: 4832823874901644348, guid: d9bc73b78e64989439e6b1e297fb5612, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -51862,6 +51859,18 @@ PrefabInstance:
       propertyPath: deathMessage
       value: 
       objectReference: {fileID: 693411749}
+    - target: {fileID: 7036351820446057183, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: enemyPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036351820446057183, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: enemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
+    - target: {fileID: 7036351820446057183, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 4832823874901644348, guid: d9bc73b78e64989439e6b1e297fb5612, type: 3}
     - target: {fileID: 7036351820446057184, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -52078,7 +52087,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
-  enemyPrefabs: []
   numDefaultEnemies: 3
   fadeTime: 2
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -52695,9 +52703,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
-  enemyPrefabs:
-  - {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
-  - {fileID: 4832823874901644348, guid: d9bc73b78e64989439e6b1e297fb5612, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -52816,9 +52821,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
-  enemyPrefabs:
-  - {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
-  - {fileID: 4832823874901644348, guid: d9bc73b78e64989439e6b1e297fb5612, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
