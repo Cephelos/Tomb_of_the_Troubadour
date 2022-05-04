@@ -9,7 +9,7 @@ public class EnemyCollision : MonoBehaviour
     private Rigidbody2D rBody;
     private Transform playerTransform;
     private Animator animator;
-    private Health health;
+    private Health playerHealth;
 
     private PlayerMovement player;
 
@@ -30,7 +30,7 @@ public class EnemyCollision : MonoBehaviour
         playerTransform = GetComponent<Transform>();
         player = GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
-        health = GetComponent<Health>();
+        playerHealth = GetComponent<Health>();
         weapon = gameObject.transform.GetChild(2).gameObject;
         wep_script = weapon.GetComponent<Weapon>();
 
@@ -38,7 +38,7 @@ public class EnemyCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
             
-        /*if (collision.CompareTag("Enemy")  && (collision.gameObject.GetComponent<Skeleton>() == null || collision.gameObject.GetComponent<Skeleton>().isAttacking ) && !wep_script.canDmg && player.invincibleTimer == 0)
+       /* if (collision.CompareTag("Trap") && !wep_script.canDmg && player.invincibleTimer == 0)
         {
             Debug.Log("tag" + collision.gameObject.tag);
             Vector3 enemyDir = (playerTransform.position - collision.gameObject.transform.position).normalized;
@@ -54,7 +54,7 @@ public class EnemyCollision : MonoBehaviour
             player.invincibleTimer = invincibleTime;
 
             // Damage the player
-            health.Decrement();
+            playerHealth.Decrement(collision.gameObject.GetComponent<Enemy>().contactDamage, transform.position);
 
             // Tell animator that the player has been hurt
             animator.SetBool("Hurt", true);
