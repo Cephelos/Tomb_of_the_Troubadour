@@ -56,6 +56,9 @@ public class Health : MonoBehaviour
             {
                 animator.SetTrigger("Death");
                 died = true;
+
+                // Play death sfx
+                Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Player Die");
             }
         }
         else

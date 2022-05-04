@@ -43,6 +43,7 @@ public class RaiseLava : MonoBehaviour
     public void ResetLava()
     {
         lava.transform.position = originalPos;
+        oldY = lava.transform.position.y;
         moveLava = false;
     }
 }

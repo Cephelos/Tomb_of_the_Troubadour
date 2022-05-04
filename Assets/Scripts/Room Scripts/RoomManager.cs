@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class RoomManager : MonoBehaviour
 {
@@ -92,11 +93,11 @@ public class RoomManager : MonoBehaviour
     public void ResetRoom() // Called when a room is entered
     {
         //removePlatforms.ResetPlatforms();
+        waveCounter = 0;
         spawnEnemies.InitSpawner();
         spawnEnemies.ResetEnemies();
         raiseLava.ResetLava();
         spawnFireRain.ResetFire();
-        waveCounter = 0;
 
         Platformer.Mechanics.GameController gameController = Platformer.Mechanics.GameController.Instance;
         Physics2D.gravity = Vector2.down * gameController.baseGravity;
@@ -116,3 +117,36 @@ public class RoomManager : MonoBehaviour
 
 
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(RoomManager))]
+public class RoomEditor : Editor
+{
+    public int eventIntensity;
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        RoomManager roomManager = (RoomManager)target;
+
+        GUILayout.Label("---FOR TESTING---");
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Event Intensity: ");
+        eventIntensity = EditorGUILayout.IntField(eventIntensity);
+
+        GUILayout.EndHorizontal();
+        if (GUILayout.Button("Fire Rain"))
+            roomManager.SpawnFireRain(eventIntensity);
+        if (GUILayout.Button("Spawn Enemies"))
+            roomManager.SpawnEnemies(eventIntensity);
+        if (GUILayout.Button("Raise Lava"))
+            roomManager.RaiseLava();
+        if (GUILayout.Button("Decrease Gravity"))
+            roomManager.DecreaseGravity();
+        if (GUILayout.Button("Freeze Floors"))
+            roomManager.FreezeFloors();
+        if (GUILayout.Button("Speed up Player"))
+            roomManager.SpeedUpPlayer();
+    }
+}
+#endif
