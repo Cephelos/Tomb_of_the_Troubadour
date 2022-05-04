@@ -239,7 +239,7 @@ namespace Platformer.Mechanics
             animator.SetBool("Jumping", !groundCheck && rBody.velocity.y > 0f);
             if (stunTimer == 0)
             {
-                animator.SetBool("Hurt", false);
+                animator.SetBool("Stun", false);
             }
         }
 
