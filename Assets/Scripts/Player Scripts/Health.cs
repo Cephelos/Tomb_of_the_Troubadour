@@ -80,11 +80,13 @@ public class Health : MonoBehaviour
 
     void DeathAnimationEnded()
     {
+        Debug.Log("the bitch died");
         Destroy(gameObject);
     }
 
     void StunAnimationEnded()
     {
+        Debug.Log("done being stunned");
         animator.SetBool("Stun", false);
     }
 }
