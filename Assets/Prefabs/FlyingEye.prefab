@@ -165,13 +165,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca9f7c53a198ef46845d75f46071b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 0}
-  renderer: {fileID: 0}
-  followPath: {fileID: 0}
-  enemy: {fileID: 0}
+  collider: {fileID: 4636714978470714105}
+  renderer: {fileID: 5315731520791700906}
+  enemy: {fileID: 8886232418936044872}
   invincible: 0
   fallSpeed: 0
   wobble: 100
+  contactDamage: 0
+  maxHP: 0
 --- !u!114 &36652135745896081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,4 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efeae003085d2b4dbac9591190ad1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  flyTime: 50
+  speed: 3
+  timer: 0

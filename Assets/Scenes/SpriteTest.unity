@@ -50835,7 +50835,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
-  enemyPrefab: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
+  enemyPrefabs:
+  - {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
+  - {fileID: 4832823874901644348, guid: d9bc73b78e64989439e6b1e297fb5612, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -51945,7 +51947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
-  enemyPrefab: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
+  enemyPrefabs: []
   numDefaultEnemies: 3
   fadeTime: 2
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -52553,7 +52555,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
-  enemyPrefab: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
+  enemyPrefabs:
+  - {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
+  - {fileID: 4832823874901644348, guid: d9bc73b78e64989439e6b1e297fb5612, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -52672,7 +52676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: []
-  enemyPrefab: {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
+  enemyPrefabs:
+  - {fileID: 3174995190701158577, guid: f44a1f14ddcbf324ca8d89f10bedc277, type: 3}
+  - {fileID: 4832823874901644348, guid: d9bc73b78e64989439e6b1e297fb5612, type: 3}
   numDefaultEnemies: 3
   fadeTime: 2
   enemyColor: {r: 1, g: 1, b: 1, a: 1}
