@@ -28,7 +28,7 @@ public class FlyingEye : MonoBehaviour
             // reverse direction if needed
             ReverseDirection();
         }
-        Debug.Log(direction);
+        //Debug.Log(direction);
         transform.position += direction * Time.deltaTime * speed;
     }
 

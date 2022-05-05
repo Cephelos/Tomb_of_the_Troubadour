@@ -91,11 +91,7 @@ public class Skeleton : MonoBehaviour
             }
         }
         // handle actions based on state
-        if (state == State.Attack)
-        {
-            // Debug.Log("attacking!");
-        }
-        else if (state == State.Move)
+        if (state == State.Move)
         {
             transform.position += transform.localScale.x * transform.right * Time.deltaTime * speed;
         }
@@ -129,6 +125,17 @@ public class Skeleton : MonoBehaviour
                     return (true, false);
                 }
             }
+            else if (hit.distance <= 1.5 && Mathf.Sign(transform.localScale.x) == Mathf.Sign(direction.x) && hit.collider.gameObject.tag == "Wall")
+            {
+                // detected wall
+                if (state != State.Idle)
+                {
+                    animator.SetBool("Idle", true);
+                    animator.SetBool("Attack", false);
+                    animator.SetBool("Walk", false);
+                    state = State.Idle;
+                }
+            }
         }
         return (false, false);
     }
@@ -150,32 +157,6 @@ public class Skeleton : MonoBehaviour
             return true;
         }
         return false;
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Player")
-        {
-            // hit player so attack if not attacking
-            if (state != State.Attack)
-            {
-                animator.SetBool("Attack", true);
-                animator.SetBool("Idle", false);
-                animator.SetBool("Walk", false);
-                state = State.Attack;
-            }
-        }
-        else
-        {
-            // hit wall so idle if not idling
-            if (state != State.Idle)
-            {
-                animator.SetBool("Idle", true);
-                animator.SetBool("Attack", false);
-                animator.SetBool("Walk", false);
-                state = State.Idle;
-            }
-        }
     }
 
     void AttackAnimationEnded()
