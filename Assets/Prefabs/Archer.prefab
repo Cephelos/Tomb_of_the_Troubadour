@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3160701817517379297}
   - component: {fileID: 30116906533287606}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 7101269440203938938}
   - component: {fileID: 7101269440203938941}
   - component: {fileID: 6506516010337550707}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Archer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -358,6 +358,7 @@ MonoBehaviour:
   onIce: 0
   stunTimer: 0.25
   invincibleTimer: 0
+  attackTimer: 0
   dashSpeed: 100
   dashTimer: 0
   dashCooldown: 0.7
@@ -375,7 +376,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 767
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
@@ -395,9 +396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffad43bb006db4856a9c527b89b48db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
   playerCanDie: 1
   currentHP: 0
+  maxHP: 100
   knockbackX: 5
   knockbackY: 5
   stunTime: 0.5
@@ -489,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6703601025773186319}
   - component: {fileID: 6703601025773186318}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +573,7 @@ GameObject:
   - component: {fileID: 6703601026871861854}
   - component: {fileID: 6703601026871861849}
   - component: {fileID: 6703601026871861848}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RopeAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

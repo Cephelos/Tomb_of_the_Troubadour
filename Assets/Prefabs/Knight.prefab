@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 7101269440203938938}
   - component: {fileID: 7101269440203938941}
   - component: {fileID: 2340237754820818756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 767
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
