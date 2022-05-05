@@ -19,7 +19,21 @@ public class VoteGenerator : MonoBehaviour
     public List<Poll> polls;
 
     public List<string> pollOptionNames = new List<string>();
+    public List<string> availablePollOptionNames = new List<string>();
 
+
+    private void Start()
+    {
+        ResetAvailablePollOptions();
+    }
+
+    void ResetAvailablePollOptions()
+    {
+        availablePollOptionNames.Clear();
+        availablePollOptionNames.AddRange(pollOptionNames);
+        if (Platformer.Mechanics.GameController.Instance.currentRoom.IsRoomFrozen())
+            availablePollOptionNames.Remove("Freeze Floors!");
+    }
     public void CreateVote(string question, string[] options) // creates a poll and sets it to be the active poll; sends a warning to the console if there is already a poll active
     {
         CreateVote(new Poll(question, options));
@@ -36,11 +50,18 @@ public class VoteGenerator : MonoBehaviour
 
     public void CreateTwoOptionVote()
     {
-        int firstSelectionID = Random.Range(0, pollOptionNames.Count);
-        int secondSelectionID = firstSelectionID + Random.Range(1, pollOptionNames.Count - 1);
-        if (secondSelectionID > pollOptionNames.Count - 1)
-            secondSelectionID -= pollOptionNames.Count;
-        CreateVote(new Poll("What should happen next?", new string[2] { pollOptionNames[firstSelectionID], pollOptionNames[secondSelectionID] }));
+        int firstSelectionID = Random.Range(0,availablePollOptionNames.Count);
+        int secondSelectionID = firstSelectionID + Random.Range(1, availablePollOptionNames.Count - 1);
+        string firstOption = availablePollOptionNames[firstSelectionID];
+        if (secondSelectionID > availablePollOptionNames.Count - 1)
+            secondSelectionID -= availablePollOptionNames.Count;
+        string secondOption = availablePollOptionNames[secondSelectionID]; // this will be important later
+        CreateVote(new Poll("What should happen next?", new string[2] { firstOption, secondOption }));
+
+        // Prevent repeated poll options
+        ResetAvailablePollOptions();
+        availablePollOptionNames.Remove(firstOption);
+        availablePollOptionNames.Remove(secondOption);
     }
         
     public Poll NextPoll() // Gets the next poll on the list and returns it, then moves it to the back of the list

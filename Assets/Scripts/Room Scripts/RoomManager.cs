@@ -19,7 +19,7 @@ public class RoomManager : MonoBehaviour
     private int fireCount;
     private int waveCounter = 0;
 
-    private int numWaves = 1;
+    public int numWaves = 1;
 
 
     private void Start()
@@ -74,6 +74,16 @@ public class RoomManager : MonoBehaviour
         Physics2D.gravity -= Physics2D.gravity / 2;
         antigravParticles = Instantiate(Platformer.Mechanics.GameController.Instance.antigravParticles, transform, false);
         AudioController.PlaySFX("Dec Grav", false, true);
+    }
+
+    public bool IsRoomFrozen()
+    {
+
+        Platformer.Mechanics.GameController gameController = Platformer.Mechanics.GameController.Instance;
+        if (gameController.tiles.sharedMaterial == gameController.frozenTiles)
+            return true;
+        else
+            return false;
     }
 
     public void FreezeFloors() // Nasty
