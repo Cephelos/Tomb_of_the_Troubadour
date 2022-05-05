@@ -317,8 +317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -588.144, y: 241.64581}
-  m_SizeDelta: {x: 433.712, y: 146.7084}
+  m_AnchoredPosition: {x: 3.4133, y: -102.88403}
+  m_SizeDelta: {x: 1616.8265, y: 835.7678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352270502
 MonoBehaviour:
@@ -340,7 +340,39 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Game Design, Programming, Sound: --------------------------------------------
+    TJ Calabrese, William Nolan, Kameron Dawson, Mike Teodros, Amber Liu
+
+    Knight
+    Sprite ----------------------------------------------------------------------------
+    Aamatniekss
+
+    Archer, Wizard, Flying Eye Sprite -------------------------------------------------
+    OcO
+
+    Skeleton Sprite -------------------------------------------------------------------------
+    LuizMelo
+
+    Backgrounds ----------------------------------------------------------------------------
+    StingerDev
+
+    Lava ---------------------------------------------------------------------------------------
+    Frankthemilkman
+
+    Tiles ---------------------------------------------------------------------------------------
+    0x72
+
+    Fireball -----------------------------------------------------------------------------------
+    TJ Calabrese
+
+    Arrow -------------------------------------------------------------------------------------
+
+    Magic
+    Blast -----------------------------------------------------------------------------
+
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

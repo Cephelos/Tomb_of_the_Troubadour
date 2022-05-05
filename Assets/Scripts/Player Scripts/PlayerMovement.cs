@@ -16,7 +16,7 @@ namespace Platformer.Mechanics
         public AudioSource audioSource;
         private Rigidbody2D rBody;
         private bool isJumping;
-        private Animator animator;
+        public Animator animator;
         private float jumpInput;
         private float horizontalInput;
         
@@ -35,6 +35,7 @@ namespace Platformer.Mechanics
 
         public float walkSoundTimer = 0f;
 
+        public bool dead = false;
 
         bool double_jump;
         bool grapple;
@@ -178,7 +179,7 @@ namespace Platformer.Mechanics
 
             rBody.AddForce(antiVelocity, ForceMode2D.Force);
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.UpArrow))
+            if (CanAct() && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 
                 if (groundCheck)
@@ -204,7 +205,7 @@ namespace Platformer.Mechanics
                 }
             }
 
-            if (dash && (Input.GetKeyDown("z") || Input.GetKeyDown(KeyCode.LeftShift)) && dashTimer ==0)
+            if (CanAct() && dash && (Input.GetKeyDown("z") || Input.GetKeyDown(KeyCode.LeftShift)) && dashTimer ==0)
             {
                 var facingDirection = new Vector2(1, 0);
                 // PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
@@ -246,7 +247,7 @@ namespace Platformer.Mechanics
         void FixedUpdate()
         {   //if (!isSwinging)
             //{
-            if (stunTimer == 0)
+            if (CanAct())
             {
                 if (horizontalInput < 0f || horizontalInput > 0f)
                 {
@@ -345,6 +346,14 @@ namespace Platformer.Mechanics
             //animator.SetFloat("Speed", 0f);
             //}
             }
+        }
+
+        public bool CanAct()
+        {
+            if (dead || stunTimer > 0f)
+                return false;
+            else
+                return true;
         }
     }
 }

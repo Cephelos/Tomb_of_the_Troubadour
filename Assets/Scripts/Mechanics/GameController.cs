@@ -37,6 +37,7 @@ namespace Platformer.Mechanics
         public ParticleSystem saaanicParticles;
 
         public RoomManager currentRoom;
+        public VoteGenerator votes;
 
         public AudioController audioController;
 
@@ -54,6 +55,7 @@ namespace Platformer.Mechanics
             Instance = this;
             audioController = GetComponent<AudioController>();
             audioController.PlayMusic("BGM");
+            votes = GetComponent<VoteGenerator>();
         }
 
         void OnDisable()

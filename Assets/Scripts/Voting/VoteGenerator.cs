@@ -31,8 +31,23 @@ public class VoteGenerator : MonoBehaviour
     {
         availablePollOptionNames.Clear();
         availablePollOptionNames.AddRange(pollOptionNames);
-        if (Platformer.Mechanics.GameController.Instance.currentRoom.IsRoomFrozen())
+        Platformer.Mechanics.GameController gameController = Platformer.Mechanics.GameController.Instance;
+        if (gameController.currentRoom.IsRoomFrozen())
             availablePollOptionNames.Remove("Freeze Floors!");
+
+        if (Mathf.Abs(Physics2D.gravity.y) < gameController.baseGravity)
+            availablePollOptionNames.Remove("Decrease Gravity!");
+        else
+            Debug.Log("Current gravity: " + Mathf.Abs(Physics.gravity.y) + "; decrease gravity is allowed!");
+
+        if(gameController.player != null)
+        {
+            if (gameController.player.speed > gameController.basePlayerSpeed)
+                availablePollOptionNames.Remove("Speed up Player!");
+            else
+                Debug.Log("Player Speed: " + gameController.player.speed + "; speed player is allowed!");
+
+        }
     }
     public void CreateVote(string question, string[] options) // creates a poll and sets it to be the active poll; sends a warning to the console if there is already a poll active
     {
@@ -59,9 +74,15 @@ public class VoteGenerator : MonoBehaviour
         CreateVote(new Poll("What should happen next?", new string[2] { firstOption, secondOption }));
 
         // Prevent repeated poll options
-        ResetAvailablePollOptions();
-        availablePollOptionNames.Remove(firstOption);
-        availablePollOptionNames.Remove(secondOption);
+        ResetAvailablePollOptions(); 
+        
+        // Only remove both options if we have at least 4 options to begin with
+        if(availablePollOptionNames.Count > 3)
+        {
+
+            availablePollOptionNames.Remove(firstOption);
+            availablePollOptionNames.Remove(secondOption);
+        }
     }
         
     public Poll NextPoll() // Gets the next poll on the list and returns it, then moves it to the back of the list

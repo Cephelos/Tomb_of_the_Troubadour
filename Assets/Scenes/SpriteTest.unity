@@ -296,6 +296,7 @@ MonoBehaviour:
   - {fileID: 730807343}
   - {fileID: 645582523}
   - {fileID: 978986995}
+  numWaves: 1
 --- !u!4 &135745453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8516609088958146892, guid: 7520c7c73cb9ed14da7a9b17b69ce13b, type: 3}
@@ -1162,6 +1163,7 @@ MonoBehaviour:
   antigravParticles: {fileID: 0}
   audioSource: {fileID: 0}
   spawnLocations: []
+  numWaves: 1
 --- !u!4 &321397820
 Transform:
   m_ObjectHideFlags: 0
@@ -3095,6 +3097,7 @@ MonoBehaviour:
   - {fileID: 1077883018}
   - {fileID: 1143475817}
   - {fileID: 378716422}
+  numWaves: 1
 --- !u!1 &584253292
 GameObject:
   m_ObjectHideFlags: 0
@@ -51925,6 +51928,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7036351820217667591, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 81fec24e87e4169429ce6c22d62e9e1d, type: 3}
     - target: {fileID: 7036351820446057182, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
       propertyPath: m_Name
       value: GameController (1)
@@ -52061,6 +52068,10 @@ PrefabInstance:
       propertyPath: startRoom
       value: 
       objectReference: {fileID: 321397818}
+    - target: {fileID: 7036351820446057190, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
+      propertyPath: audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 81fec24e87e4169429ce6c22d62e9e1d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30e3b81f00970f14b80bd7a8aea7f75e, type: 3}
 --- !u!1 &1360283102
@@ -52248,6 +52259,7 @@ MonoBehaviour:
   - {fileID: 1360283102}
   - {fileID: 1937472565}
   - {fileID: 1019864161}
+  numWaves: 1
 --- !u!850595691 &1632932747
 LightingSettings:
   m_ObjectHideFlags: 0
