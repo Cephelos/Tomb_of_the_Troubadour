@@ -181,7 +181,7 @@ namespace Platformer.Mechanics
             }
             Debug.Log(isTurned);
 
-            if (Input.GetKeyDown("z"))
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 Debug.Log("got input");
                 if (cooldownTimer2 != 0)
@@ -260,6 +260,8 @@ namespace Platformer.Mechanics
 
             if (ropeAttached && Input.GetAxis("Jump") != 0 && lastJump != Input.GetAxis("Jump"))
             {
+                float jumpforce = 13f;
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
                 ResetRope("Manual Jump Cancel Impulse");
             }
         }
