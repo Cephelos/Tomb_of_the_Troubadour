@@ -188,7 +188,7 @@ MonoBehaviour:
   fallSpeed: 0
   wobble: 100
   contactDamage: 0
-  maxHP: 2
+  maxHP: 3
 --- !u!1 &8388245174117678139
 GameObject:
   m_ObjectHideFlags: 0

@@ -59,11 +59,15 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
 
     public void Destruct() // Removes enemy from spawnEnemies.activeEnemies and destroys it
     {
-        Platformer.Mechanics.GameController.Instance.currentRoom.spawnEnemies.activeEnemies.Remove(this);
+        Platformer.Mechanics.GameController gameController = Platformer.Mechanics.GameController.Instance;
+        gameController.currentRoom.spawnEnemies.activeEnemies.Remove(this);
         Destroy(gameObject);
 
         // Play SFX
-        Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Skeleton Die");
+        gameController.audioController.PlaySFX("Skeleton Die");
+
+        // Increase 'enemies killed'  value
+        gameController.enemiesKilled++;
     }
 
     public void Decrement()

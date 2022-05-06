@@ -26,5 +26,7 @@ public class Door : MonoBehaviour
         Platformer.Mechanics.GameController.Instance.currentRoom = newRoom;
         newRoom.ResetRoom();
         Debug.Log("here");
+
+        Platformer.Mechanics.GameController.Instance.roomsCleared++;
     }
 }

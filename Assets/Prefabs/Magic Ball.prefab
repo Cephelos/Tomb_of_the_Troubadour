@@ -161,6 +161,7 @@ MonoBehaviour:
   dmg: 0
   canDmg: 1
   attackDuriation: 5
+  attackSound: {fileID: 0}
   timeSinceAttack: 0
-  blastRadius: 10
+  blastRadius: 7
   explosionGraphic: {fileID: 1094509351040959689, guid: 67e86c8ac9e99e84ca6abae85cdcac18, type: 3}

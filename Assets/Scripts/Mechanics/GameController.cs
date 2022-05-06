@@ -44,7 +44,8 @@ namespace Platformer.Mechanics
         public GameObject deathMessage;
         private bool dead = false;
 
-        public int score = 0;
+        public int roomsCleared = 0;
+        public int enemiesKilled = 0;
 
         // Sound FX
         public AudioClip walkSFX;
@@ -72,6 +73,7 @@ namespace Platformer.Mechanics
         public void deathState()
         {
             deathMessage.SetActive(true);
+            deathMessage.SendMessage("DisplayScore", (roomsCleared, enemiesKilled));
             dead = true;
         }
 

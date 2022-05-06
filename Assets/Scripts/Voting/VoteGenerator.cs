@@ -37,15 +37,11 @@ public class VoteGenerator : MonoBehaviour
 
         if (Mathf.Abs(Physics2D.gravity.y) < gameController.baseGravity)
             availablePollOptionNames.Remove("Decrease Gravity!");
-        else
-            Debug.Log("Current gravity: " + Mathf.Abs(Physics.gravity.y) + "; decrease gravity is allowed!");
 
         if(gameController.player != null)
         {
             if (gameController.player.speed > gameController.basePlayerSpeed)
                 availablePollOptionNames.Remove("Speed up Player!");
-            else
-                Debug.Log("Player Speed: " + gameController.player.speed + "; speed player is allowed!");
 
         }
     }
