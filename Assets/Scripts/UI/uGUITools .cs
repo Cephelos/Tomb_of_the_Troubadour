@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public class uGUITools : MonoBehaviour {
 	[MenuItem("uGUI/Anchors to Corners %[")]
 	static void AnchorsToCorners(){
@@ -28,3 +29,4 @@ public class uGUITools : MonoBehaviour {
 		t.offsetMin = t.offsetMax = new Vector2(0, 0);
 	}
 }
+#endif
