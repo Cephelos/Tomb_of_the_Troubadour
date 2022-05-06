@@ -73,6 +73,9 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     public void Decrement()
     {
         currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
+
+        // Play enemy damage SFX
+        Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Hit");
         if (currentHP == 0)
         {
 

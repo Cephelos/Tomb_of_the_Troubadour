@@ -61,8 +61,6 @@ public class Weapon : MonoBehaviour
         {
             Debug.Log("damage");
             ///gameObject bg = other.gameObject;
-            // Play hit fx
-            Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Hit");
 
             collision.gameObject.GetComponent<Enemy>().Decrement();
             canDmg = false;
