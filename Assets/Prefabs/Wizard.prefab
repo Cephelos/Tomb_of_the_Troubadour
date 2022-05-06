@@ -305,6 +305,7 @@ MonoBehaviour:
   isSwinging: 0
   saaanicParticles: {fileID: 0}
   audioSource: {fileID: 0}
+  animator: {fileID: 0}
   maxJumps: 2
   jumpForce: 16
   onIce: 0
@@ -316,6 +317,7 @@ MonoBehaviour:
   dashCooldown: 0.7
   dashIframeDuration: 0.2
   walkSoundTimer: 0
+  dead: 0
   isTurned: 0
 --- !u!251 &4070546682684773713
 PlatformEffector2D:
@@ -415,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d7dc787dc617b428ba80e6fd259957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowCooldown: 0.7
+  bowCooldown: 0.4
 --- !u!82 &-4921023742766819633
 AudioSource:
   m_ObjectHideFlags: 0
@@ -838,8 +840,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   canDmg: 0
-  attackDuriation: 0.3
+  attackDuriation: 0.4
   attackSound: {fileID: 0}
   timeSinceAttack: 0
   bulletPrefab: {fileID: 5952355808466800746, guid: f0e4e5476b87b3f4b9f35b54cc946774, type: 3}
-  explosion_size: 5
+  explosion_size: 3

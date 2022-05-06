@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 193dd01196eb4f442931f41b60ef115d
+=======
+<<<<<<< HEAD:Assets/Scripts/Core/AudioController.cs.meta
+guid: caffd9b4dd17c8342b41eea19d6f4bb1
+=======
+guid: 193dd01196eb4f442931f41b60ef115d
+>>>>>>> bc070cbf851c7b825a72d23724cdf10010b342ba:Assets/Scripts/Player Scripts/Bomb.cs.meta
+>>>>>>> bc070cbf851c7b825a72d23724cdf10010b342ba
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

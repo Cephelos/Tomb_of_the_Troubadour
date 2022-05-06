@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8606468705403266504}
   - component: {fileID: 4832823874901644348}
   - component: {fileID: 36652135745896081}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: FlyingEye
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   fallSpeed: 0
   wobble: 100
   contactDamage: 0
-  maxHP: 0
+  maxHP: 2
 --- !u!114 &36652135745896081
 MonoBehaviour:
   m_ObjectHideFlags: 0

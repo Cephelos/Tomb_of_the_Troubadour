@@ -48,6 +48,7 @@ public class SpawnEnemies : MonoBehaviour
         Color finalColor = Color.clear;
         while (timeRemaining > 0)
         {
+            if(enemy != null)
             if (!enemy.gameObject.activeInHierarchy)
                 yield break;
             float timeRatio = (fadeTime - timeRemaining) / fadeTime;

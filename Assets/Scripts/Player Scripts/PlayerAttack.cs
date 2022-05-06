@@ -40,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
         TickTimers();
 
 
-        if (Input.GetKeyDown(KeyCode.RightShift) && player.stunTimer == 0f)
+        if (player.CanAct() && Input.GetKeyDown(KeyCode.RightShift))
         {
             if(bowTimer == 0)
             {

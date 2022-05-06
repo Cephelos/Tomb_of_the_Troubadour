@@ -45,7 +45,7 @@ public class MagicSystem : Weapon
     {
         if (Ready_to_attack)
         {
-            clone = Instantiate(bulletPrefab, transform.position + Vector3.down * 1, transform.rotation);
+            clone = Instantiate(bulletPrefab, transform.position +Vector3.down * 0.5f, transform.rotation);
             if (!playerMovement.isTurned)
                 clone.transform.RotateAround(clone.transform.position, Vector3.forward, 180);
             Bomb arrowWpn = clone.GetComponent<Bomb>();

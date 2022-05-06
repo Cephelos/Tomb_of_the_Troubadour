@@ -37,13 +37,15 @@ namespace Platformer.Mechanics
         public ParticleSystem saaanicParticles;
 
         public RoomManager currentRoom;
+        public VoteGenerator votes;
 
         public AudioController audioController;
 
         public GameObject deathMessage;
         private bool dead = false;
 
-        public int score = 0;
+        public int roomsCleared = 0;
+        public int enemiesKilled = 0;
 
         // Sound FX
         public AudioClip walkSFX;
@@ -54,6 +56,7 @@ namespace Platformer.Mechanics
             Instance = this;
             audioController = GetComponent<AudioController>();
             audioController.PlayMusic("BGM");
+            votes = GetComponent<VoteGenerator>();
         }
 
         void OnDisable()
@@ -70,6 +73,7 @@ namespace Platformer.Mechanics
         public void deathState()
         {
             deathMessage.SetActive(true);
+            deathMessage.SendMessage("DisplayScore", (roomsCleared, enemiesKilled));
             dead = true;
         }
 

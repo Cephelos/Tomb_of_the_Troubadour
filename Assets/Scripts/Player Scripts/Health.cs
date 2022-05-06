@@ -54,8 +54,10 @@ public class Health : MonoBehaviour
         {
             if (!died)
             {
-                animator.SetTrigger("Death");
+                animator.SetBool("Death", true);
                 died = true;
+
+                player.dead = true; // this prevents the player from moving, jumping or attacking during the death animation
 
                 // Play death sfx
                 Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Player Die");

@@ -50,7 +50,8 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
 
     public void Destruct() // Removes enemy from spawnEnemies.activeEnemies and destroys it
     {
-        Platformer.Mechanics.GameController.Instance.currentRoom.spawnEnemies.activeEnemies.Remove(this);
+        Platformer.Mechanics.GameController gameController = Platformer.Mechanics.GameController.Instance;
+        gameController.currentRoom.spawnEnemies.activeEnemies.Remove(this);
         Destroy(gameObject);
         if (enemy.name.Contains("Skeleton"))
         {
