@@ -80,14 +80,12 @@ public class Health : MonoBehaviour
 
     void DeathAnimationEnded()
     {
-        Debug.Log("the bitch died");
         Destroy(gameObject);
         Platformer.Mechanics.GameController.Instance.deathState();
     }
 
     void StunAnimationEnded()
     {
-        Debug.Log("done being stunned");
         animator.SetBool("Stun", false);
     }
 }

@@ -14,6 +14,7 @@ public class HealthBar : MonoBehaviour
 
     public void DecreaseHealthBar(int currentHP, int maxHP)
     {
+        Debug.Log("decreasing health bar");
         float healthPercent = (float)currentHP/maxHP;
         if (healthPercent != healthBar.fillAmount)
         {

@@ -7,12 +7,14 @@ public class Bomb : Weapon
 {
     public float blastRadius = 5f;
     public SpriteRenderer explosionGraphic;
+    
+    [SerializeField] private int damage = 10;
+    public int Damage { get { return damage; } set { damage = value; } }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy") || other.CompareTag("Wall"))
         {
-
             Detonate();
         }
     }
@@ -36,11 +38,10 @@ public class Bomb : Weapon
         Collider2D[] collidersHit = Physics2D.OverlapCircleAll(transform.position, blastRadius);
         foreach (Collider2D collider in collidersHit)
         {
-            Enemy enemy = collider.gameObject.GetComponent<Enemy>();
-            if (enemy != null)
+            EnemyHealth enemyHealth = collider.gameObject.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
             {
-                Debug.Log("Hit enemy!");
-                enemy.Decrement();
+                enemyHealth.Decrement(damage, transform.position);
             }
         }
 
@@ -48,6 +49,5 @@ public class Bomb : Weapon
         Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Explosion");
         // destroy projectile
         Destroy(gameObject);
-
     }
 }

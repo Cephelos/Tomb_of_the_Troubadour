@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public float dmg;
+    public int dmg;
     public bool canDmg;
     public float attackDuriation;
     public AudioClip attackSound;
@@ -37,7 +37,6 @@ public class Weapon : MonoBehaviour
 
     public virtual void Attack(Platformer.Mechanics.PlayerMovement playerMovement)
     {
-        Debug.Log("attacked");
         canDmg = true;
         timeSinceAttack = 0;
         Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Slash");
@@ -55,19 +54,11 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        Debug.Log("collided");
-        if (canDmg && collision.CompareTag("Enemy") && !collision.GetComponent<Enemy>().invincible)
+        if (canDmg && collision.CompareTag("Enemy") && collision.GetComponent<EnemyHealth>().enemyCanDie)
         {
-            Debug.Log("damage");
-            ///gameObject bg = other.gameObject;
-            // Play hit fx
             Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Hit");
-
-            collision.gameObject.GetComponent<Enemy>().Decrement();
+            collision.gameObject.GetComponent<EnemyHealth>().Decrement(dmg, transform.position);
             canDmg = false;
-
         }
-
     }
 }

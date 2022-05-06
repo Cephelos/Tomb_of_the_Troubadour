@@ -47,9 +47,5 @@ public class ArrowSystem : Weapon
 
         // Play SFX
         Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Arrow Fire");
-    }
-
-    
+    }   
 }
-
-

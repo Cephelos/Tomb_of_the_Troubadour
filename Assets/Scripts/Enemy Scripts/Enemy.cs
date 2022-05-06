@@ -10,36 +10,28 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     [SerializeField]
     private GameObject enemy;
 
-    public bool invincible = false;
-
     [SerializeField]
     private float fallSpeed = 0, wobble = 100f;
 
-    public int contactDamage = 0;
     private float wobbleTimer;
     private bool wobbleDir = true;
-
-    public int maxHP;
-    int currentHP;
 
     void Start()
     {
         wobbleTimer = wobble;
-        currentHP = maxHP;
     }
 
     void Update()
     {
         if(enemy.name.Contains("FireRainObject"))
         {
-
             wobbleTimer -= 1f * Time.deltaTime;
-            if(wobbleTimer <= 0)
+            if (wobbleTimer <= 0)
             {
                 wobbleDir = !wobbleDir;
                 wobbleTimer = wobble;
             }
-            if(wobbleDir)
+            if (wobbleDir)
             {
                 
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + 5f, transform.position.y - 10), Time.deltaTime * fallSpeed);
@@ -49,9 +41,8 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x - 5f, transform.position.y - 10), Time.deltaTime * fallSpeed);
             }
 
-            if(transform.position.y <= -18)
+            if (transform.position.y <= -18)
             {
-                //enemy.GetComponent<Enemy>().Destruct();
                 this.Destruct();
             }
         }
@@ -61,34 +52,17 @@ public class Enemy : MonoBehaviour // For storing variables related to enemies, 
     {
         Platformer.Mechanics.GameController.Instance.currentRoom.spawnEnemies.activeEnemies.Remove(this);
         Destroy(gameObject);
-
-        // Play SFX
-        Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Skeleton Die");
-    }
-
-    public void Decrement()
-    {
-        currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
-        if (currentHP == 0)
+        if (enemy.name.Contains("Skeleton"))
         {
-
-            this.Destruct();
+            Platformer.Mechanics.GameController.Instance.audioController.PlaySFX("Skeleton Die");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.CompareTag("Lava"))
         {
-
             this.Destruct();
-
-            // Play death SFX
-            //GameController.Instance.audioController.PlaySFX("Player Die");
         }
-
     }
 }
-
-
