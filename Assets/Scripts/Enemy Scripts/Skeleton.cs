@@ -142,9 +142,15 @@ public class Skeleton : MonoBehaviour
 
     void ReverseDirection()
     {
+        // flip skeleton object
         Vector3 currentScale = transform.localScale;
         currentScale.x *= -1;
         transform.localScale = currentScale;
+        // keep healthbar facing right
+        Transform healthbarTransform = transform.Find("Canvas/HealthBarBackground/HealthBar");
+        Vector3 healthbarScale = healthbarTransform.localScale;
+        healthbarScale.x *= -1;
+        healthbarTransform.localScale = healthbarScale;
     }
 
     bool DetectEdge(Vector3 direction)
