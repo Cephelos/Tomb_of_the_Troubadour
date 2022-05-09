@@ -278,8 +278,8 @@ MonoBehaviour:
   enemyCanDie: 1
   currentHP: 0
   maxHP: 10
-  knockbackX: 5
-  knockbackY: 5
+  knockbackX: 3
+  knockbackY: 3
 --- !u!1 &5264432535145562212
 GameObject:
   m_ObjectHideFlags: 0

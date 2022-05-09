@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public bool enemyCanDie = false;
     public bool IsAlive => currentHP > 0;
+    public bool IsHurt => currentHP < maxHP;
 
     public int currentHP;
     [SerializeField] private int maxHP;
